@@ -26,7 +26,9 @@ French Toast를 만들며 계속 던진 질문은 ‘어디서 역할을 나눠�
 
 ![AX 개발 워크플로. 신규 또는 진행 중 요청이 디자인, 설계 검토, 구현, 코드 검토, 테스트와 독립 테스트 검토를 거쳐 최종 보고로 이어진다.](docs/assets/ax-workflow.png)
 
-단계별 호출과 재시도는 [전환표](.agent/workflows/development.md)를 따른다. 개발 작업은 로컬 Codex와 프로젝트 지침으로 실행한다. 그림은 같은 흐름을 LangGraph `StateGraph`로 표현한 문서 산출물이다.
+LangGraph `StateGraph` 그림은 주요 역할과 판정의 흐름을 보여준다. 로컬 Codex는 프로젝트 지침과 [전환표](.agent/workflows/development.md)에 따라 개발 작업을 진행한다.
+
+두 규칙은 모든 단계에 적용된다. 필수 역할을 실행할 대체 경로가 없으면 `BLOCKED`로 보고한다. 선행 승인이 현재 입력과 맞지 않으면 영향을 받는 가장 앞 단계로 돌아간다.
 
 ## 디렉토리
 
