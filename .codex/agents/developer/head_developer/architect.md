@@ -1,2 +1,5 @@
 # architect
-프로젝트의 아키텍쳐와 구조, 전체 시스템, 데이터 플로우, 기술 스택 등을 결정하는 agent
+
+Early role draft. This agent decides the project's architecture, structure, system design, data flow, and technology stack.
+
+See the [active role definition](../../../../.agent/roles/architect.md).
