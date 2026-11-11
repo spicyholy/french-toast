@@ -33,9 +33,9 @@ The [transition table](.agent/workflows/development.md) specifies agent calls an
 | Path | Contents |
 | --- | --- |
 | [`AGENTS.md`](AGENTS.md) | Root instructions and role entry conditions for local Codex |
-| [`.agent/`](.agent/) | Main role, shared standards, transitions, and diagram renderer |
-| [`.codex/agents/`](.codex/agents/) | Six subagent TOML files and early role drafts. See `AGENTS.md` for the active roles. |
-| [`.agents/skills/`](.agents/skills/) | Skills for tracing execution paths and producing test evidence |
+| [`.agent/`](.agent/) | The `architect` role, shared standards, transitions, and diagram renderer linked from the root instructions |
+| [`.codex/agents/`](.codex/agents/) | Six project subagent TOML files loaded by Codex |
+| [`.agents/skills/`](.agents/skills/) | Change tracing and test evidence skills discovered by Codex |
 | [`docs/`](docs/) | PRD, API contract, ADRs, designs, implementation briefs, test records, and the diagram. The examples share requirement EX-BMK-001. |
 
 ## Run with local Codex
