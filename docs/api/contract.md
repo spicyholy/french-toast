@@ -1,19 +1,19 @@
-# API 계약
+# API contract
 
-문서 유형 · 공개 API 명세\
-상태 · 제품 API 미정 / Example 수록\
-갱신일 · 2026-11-11\
-관련 요구사항과 문서 · EX-BMK-001 (Example), [PRD](../prd/product.md), [기술 결정](../adr/000_example.md)
+Document type · Public API specification\
+Status · Product API pending / Example included\
+Updated · 2026-11-11\
+Related requirements and documents · EX-BMK-001 (Example), [PRD](../prd/product.md), [technical decision](../adr/000_example.md)
 
-제품 API가 생기면 현재 입력, 출력, 오류, 호환성과 필요한 Migration을 이 문서에 기록한다.
+When the product has an API, record its current inputs, outputs, errors, compatibility, and required migrations here.
 
-## Example · 문서의 북마크 저장과 조회
+## Example · Save and read a document bookmark
 
-| 요청 | 입력 | 응답 |
+| Request | Input | Response |
 | --- | --- | --- |
-| `PUT /documents/{documentId}/bookmark` | 인증된 세션, 문서 ID. 본문 없음. | `200`과 `{"saved": true}`. 새 저장과 중복 저장에 같은 응답을 사용한다. |
-| `GET /documents/{documentId}/bookmark` | 인증된 세션, 문서 ID | `200`과 `{"saved": true}` 또는 `{"saved": false}`. 현재 사용자의 상태를 반환한다. |
+| `PUT /documents/{documentId}/bookmark` | Authenticated session and document ID. No request body. | `200` with `{"saved": true}` for both new and repeated saves. |
+| `GET /documents/{documentId}/bookmark` | Authenticated session and document ID | `200` with `{"saved": true}` or `{"saved": false}` for the current user. |
 
-두 요청 모두 로그인 세션이 없으면 `401`, 문서가 없거나 열람할 수 없으면 `404`를 반환한다. 저장이 일시적으로 불가능하면 PUT은 `503`과 `{"code": "BOOKMARK_UNAVAILABLE"}`을 반환한다. 클라이언트는 같은 PUT으로 재시도할 수 있다.
+Both requests return `401` without a signed-in session and `404` when the document is missing or the user cannot access it. When storage is temporarily unavailable, PUT returns `503` with `{"code": "BOOKMARK_UNAVAILABLE"}`. The client can retry the same PUT.
 
-이 예시는 신규 엔드포인트 추가를 가정한다. 기존 API의 응답 형식은 유지하고, 저장소에는 북마크 테이블과 사용자·문서 조합의 유일성 제약을 추가하는 Migration이 필요하다. 배포 시 Migration을 먼저 적용한다.
+This example adds endpoints while preserving existing API response formats. A migration adds a bookmark table and a uniqueness constraint on the user and document pair. Apply the migration before deploying the endpoints.

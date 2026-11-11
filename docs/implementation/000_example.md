@@ -1,17 +1,17 @@
-# Example · 문서 북마크 구현 명세
+# Example · Document bookmark implementation brief
 
-문서 유형 · 구현 인수인계\
-상태 · Example / 배정 전\
-갱신일 · 2026-11-11\
-관련 요구사항과 문서 · EX-BMK-001 AC1–AC3, [PRD](../prd/product.md), [ADR](../adr/000_example.md), [API 계약](../api/contract.md), [디자인](../design/000_example.md)
+Document type · Implementation handoff\
+Status · Example / Pending assignment\
+Updated · 2026-11-11\
+Related requirements and documents · EX-BMK-001 AC1–AC3, [PRD](../prd/product.md), [ADR](../adr/000_example.md), [API contract](../api/contract.md), [design](../design/000_example.md)
 
-작업 ID · EX-BMK\
-담당 · `coder` 한 명
+Task ID · EX-BMK\
+Owner · One `coder`
 
-| 순서 | 예상 변경 범위 | 영향받는 호출 경로 | 수용 기준과 검증 |
+| Order | Expected change | Affected call path | Acceptance criterion and verification |
 | --- | --- | --- | --- |
-| 1 | 저장소 Migration 및 북마크 저장소 | API → 저장소 → DB 유일성 제약 | AC2. 중복 및 동시 저장 후 레코드 한 개를 확인한다. |
-| 2 | 문서 북마크 GET·PUT 핸들러 | HTTP → 인증 및 문서 권한 확인 → 저장소 | AC1·AC2. 저장 전후 조회와 반복 요청을 검증한다. |
-| 3 | 문서 상세 버튼과 오류 상태 | 상세 화면 → GET으로 초기 상태 조회 → PUT으로 저장 및 재시도 | AC1·AC3. 화면을 다시 열어 상태를 확인하고 503 뒤 재시도한다. |
+| 1 | Database migration and bookmark storage | API → storage layer → database uniqueness constraint | AC2. Check for one record after repeated and concurrent saves. |
+| 2 | Document bookmark GET and PUT handlers | HTTP → authentication and document access check → storage | AC1 and AC2. Verify lookup before and after saving and after repeated requests. |
+| 3 | Detail page button and error state | Detail page → GET initial state → PUT to save or retry | AC1 and AC3. Reopen the page to verify state and retry after a 503. |
 
-회귀 검증 · 문서 상세 접근 권한, 권한 없는 문서의 응답, 기존 문서 상세 렌더링을 확인한다. [실행 결과 예시](../test/000_example.md)에 명령과 관찰값을 기록한다.
+Regression checks cover document access controls, responses for inaccessible documents, and existing detail page rendering. Record commands and observations using the [test record example](../test/000_example.md).

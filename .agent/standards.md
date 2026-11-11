@@ -1,36 +1,36 @@
-# 공통 작성과 검증 규칙
+# Shared writing and verification standards
 
-문서 유형 · 저장소 운영 표준\
-상태 · 적용 중\
-갱신일 · 2026-11-11\
-관련 요구사항과 문서 · [PRD](../docs/prd/product.md), [개발 워크플로](workflows/development.md)
+Document type · Repository operating standards\
+Status · Active\
+Updated · 2026-11-11\
+Related requirements and documents · [PRD](../docs/prd/product.md), [development workflow](workflows/development.md)
 
-## 작업과 기록
+## Work and records
 
-- 작업 전에 저장소 루트, 기존 diff, `README.md`, 적용 범위의 `AGENTS.md`와 `AGENTS.override.md`, `.agent/`, `.codex/`, `docs/`, 테스트 경로를 확인한다. 사용자 변경과 기존 설정을 보존한다. 전달과 보고에서 파일 경로는 저장소 루트를 기준으로 기록한다.
-- 사용자 소통과 새 문서는 한국어로 작성하며 기술 용어는 원어를 쓸 수 있다. Markdown 상단에 제목, 유형, 상태, 작성일 또는 갱신일, 관련 요구사항 ID와 문서 링크를 둔다. 도구가 요구하는 헤더가 있으면 먼저 둔다. 예시는 `Example`로 표시한다.
-- 중요한 결정에 문제, 근거, 제약, 영향 범위를 남긴다. 요구사항과 Acceptance Criteria를 바꿀 때 PRD를 바로 갱신하고 실제 구현·검증 상태를 따로 표시한다. 기존 PRD와 API 정본이 있으면 해당 파일에 연결한다.
-- 테스트는 변경 경로와 영향받는 기존 동작을 실제로 실행한다. 실행하지 못한 경우 이유를 기록한다. 커밋과 푸시는 각각 사용자 요청에 따라 수행한다.
+- Before work, inspect the repository root, existing diff, `README.md`, applicable `AGENTS.md` and `AGENTS.override.md`, `.agent/`, `.codex/`, `docs/`, and test paths. Preserve user changes and existing configuration. Use repository-relative paths in handoffs and reports.
+- Write user communications and new documents in English. Put the title, document type, status, creation or update date, related requirement IDs, and document links at the top of new Markdown files. Put any header required by a tool first. Mark examples as `Example`.
+- Record the problem, rationale, constraints, and impact for material decisions. Update the PRD when requirements or acceptance criteria change. Track implementation and verification status separately. Link to the existing PRD and API sources of truth when they exist.
+- Exercise the changed path and affected existing behavior. Explain any checks that could not run. Commit and push when requested by the user.
 
-## 변경본 식별과 검토 근거
+## Revision identification and review evidence
 
-- 단계가 확인한 기준 커밋 SHA와 파일 목록을 남긴다. 변경될 수 있는 파일은 경로별 현재 내용의 해시를 함께 남긴다. 예를 들어 `git hash-object --no-filters -- <경로>`로 작업 트리 파일을 식별하고 삭제된 파일은 삭제로 표시한다. 미추적 신규 파일과 바이너리도 해당 단계의 입력이면 포함한다.
-- 설계 검토는 정본과 설계 입력을, 코드 검토는 제품 변경을, 테스트와 독립 테스트 검토는 실제로 실행한 제품 및 테스트 코드를 식별한다. 실행 뒤 작성한 증거 기록은 실행한 제품 변경과 구분해 경로로 연결한다. 기록 작성만으로 테스트 대상 버전이 바뀌지 않는다.
-- 검토 지적에는 영향을 받는 요구사항이나 기존 동작, 파일과 위치, 문제가 발생하는 조건, 관찰 또는 추론의 근거와 해결 조건을 담는다. 필수 수용 기준, 정확성, 계약 또는 필수 검증에 영향을 주는 지적은 다음 단계를 막는다. 개선 권고는 근거와 함께 따로 적는다.
+- Record the base commit SHA and file list used at each stage. Record hashes of the current contents of files that may change. For example, identify a worktree file with `git hash-object --no-filters -- <path>` and mark deleted files as deleted. Include untracked files and binaries when they are part of that stage's input.
+- Identify the requirement and design inputs for architecture review, the product changes for code review, and the product and test code actually executed for testing and independent test review. Link to evidence records written after execution by path. Writing a record leaves the revision under test unchanged.
+- A finding names the affected requirement or existing behavior, file and location, triggering conditions, observed or reasoned evidence, and the condition for resolution. Findings that affect required acceptance criteria, correctness, contracts, or required verification block the next stage. Record suggestions separately with their rationale.
 
-## 정본과 문서 유형
+## Sources of truth and document types
 
-| 경로 | 기록하는 내용 |
+| Path | Contents |
 | --- | --- |
-| [`docs/prd/`](../docs/prd/product.md) | 제품 범위, 사용자 시나리오, 안정적인 요구사항 ID와 Acceptance Criteria |
-| [`docs/api/`](../docs/api/contract.md) | 공개 API의 입력, 출력, 오류, 호환성 및 필요한 Migration |
-| [`docs/adr/`](../docs/adr/000_example.md) | 기술 결정의 맥락, 결정, 대안, 근거와 영향. 기존 결정을 대체할 때는 다음 번호에서 이전 ADR을 참조한다. |
-| [`docs/design/`](../docs/design/000_example.md) | 화면 흐름, 상태, 상호작용, 접근성, 디자인 산출물과 참조 링크 |
-| [`docs/implementation/`](../docs/implementation/000_example.md) | 작업 순서, 관련 PRD·ADR·API·디자인, 수용 기준, 예상 변경 범위, 영향받는 호출 경로와 회귀 검증. 전달한 명세가 크게 바뀌면 후속 파일에 이전 번호를 참조한다. |
-| [`docs/test/`](../docs/test/000_example.md) | 실행별 검증 결과. 스크립트는 저장소의 기존 테스트 경로에 둔다. 첫 테스트라면 제품 스택 관례에 맞는 위치를 구현 명세에서 정한다. |
+| [`docs/prd/`](../docs/prd/product.md) | Product scope, user scenarios, stable requirement IDs, and acceptance criteria |
+| [`docs/api/`](../docs/api/contract.md) | Public API input, output, errors, compatibility, and required migrations |
+| [`docs/adr/`](../docs/adr/000_example.md) | Context, decision, alternatives, rationale, and impact. When replacing a decision, reference the previous ADR from the next numbered file. |
+| [`docs/design/`](../docs/design/000_example.md) | Screen flows, states, interactions, accessibility, design artifacts, and reference links |
+| [`docs/implementation/`](../docs/implementation/000_example.md) | Work order, PRD, ADR, API, and design references, acceptance criteria, expected scope, affected call paths, and regression checks. Add a follow-up file that references the previous number if a handed-off brief changes substantially. |
+| [`docs/test/`](../docs/test/000_example.md) | Results for each verification run. Put executable tests in existing test paths. If this is the first test, specify a path that follows the stack's conventions in the brief. |
 
-## 번호와 테스트 이력
+## Numbering and test history
 
-- `adr`, `design`, `implementation`, `test`의 `000_example.md`는 각 유형의 예시다. 실사용 문서는 디렉토리별 `001`부터 `<번호>_<영문_설명>.md`로 추가한다. 다른 저장소에 적용할 때 이미 쓰이는 번호 규칙과 예시는 유지하고 새 문서가 따를 방식을 명세에 기록한다.
-- 생성 직전에 해당 디렉토리와 이전 기록에서 사용된 번호를 다시 확인하고 다음 번호를 고른다. 작성자를 순차 배정하고 파일은 배타 생성 모드(예를 들어 Python의 `open(path, "x", encoding="utf-8")`)로 추가한다. 충돌하면 다시 번호를 확인해 다음 번호를 사용한다.
-- `docs/test/`의 기존 파일은 수정, 덮어쓰기, 이름 변경, 삭제를 금지한다. `tester`의 검증 실행마다 새 파일을 추가한다. 재실행과 정정은 새 파일에서 이전 결과를 참조한다. [테스트 증거 스킬](../.agents/skills/ax-test-evidence/SKILL.md)의 결과 표를 사용한다. 예시 결과는 실제 검증 이력에 포함하지 않는다.
+- The `000_example.md` files in `adr`, `design`, `implementation`, and `test` are examples. Add actual records as `<number>_<english_description>.md`, beginning with `001` in each directory. When adopting AX in another repository, retain any numbering conventions and examples already in use and document the convention in the brief.
+- Immediately before creation, check the directory and previous records for used numbers. Assign authors sequentially and create files exclusively, for example with Python's `open(path, "x", encoding="utf-8")`. On a collision, check the numbers again and use the next one.
+- Existing `docs/test/` files must never be edited, overwritten, renamed, or deleted. Add a file per `tester` run. Reference the earlier result in a rerun or correction. Use the table in the [test evidence skill](../.agents/skills/ax-test-evidence/SKILL.md). Example results are outside the actual verification history.

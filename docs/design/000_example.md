@@ -1,28 +1,28 @@
-# Example · 문서 상세 북마크 버튼
+# Example · Bookmark button on the document detail page
 
-문서 유형 · 화면 설계\
-상태 · Example / 미적용\
-갱신일 · 2026-11-11\
-관련 요구사항과 문서 · EX-BMK-001 AC1–AC3, [PRD](../prd/product.md), [API 계약](../api/contract.md), [구현 명세](../implementation/000_example.md)
+Document type · Screen design\
+Status · Example / Pending adoption\
+Updated · 2026-11-11\
+Related requirements and documents · EX-BMK-001 AC1–AC3, [PRD](../prd/product.md), [API contract](../api/contract.md), [implementation brief](../implementation/000_example.md)
 
-## 로컬 와이어프레임
+## Local wireframe
 
 ```text
-문서 상세
-┌─────────────────────────────────┐
-│ 문서 제목           [북마크 저장] │
-│                                 │
-│ 문서 내용                       │
-└─────────────────────────────────┘
-버튼 아래 상태 영역 · 저장 중 / 저장됨 / 저장에 실패했습니다 [다시 시도]
+Document detail
+┌────────────────────────────────┐
+│ Document title       [Bookmark] │
+│                                │
+│ Document content               │
+└────────────────────────────────┘
+Status area below the button · Saving / Saved / Save failed [Retry]
 ```
 
-| 상태 | 동작 |
+| State | Behavior |
 | --- | --- |
-| 초기 조회 | 조회 중 상태를 표시하고 버튼의 저장 동작을 잠근다. 북마크가 없으면 «북마크 저장», 있으면 «저장됨»을 표시한다. |
-| 저장 중 | 버튼 위치와 크기를 유지하고 중복 클릭을 막는다. 문서 상세 화면에 머문다. |
-| 저장 성공 | «저장됨»을 표시한다. 다시 들어오면 조회 결과로 상태를 복원한다. |
-| 저장 실패 | 오류 메시지와 «다시 시도» 버튼을 표시한다. 재시도는 같은 저장 요청을 보낸다. |
-| 문서 없음 | 기존 상세 화면의 문서 없음 상태를 사용한다. 저장 조작은 제공하지 않는다. |
+| Initial lookup | Show a loading state and disable the save action. Show “Bookmark” if unsaved or “Saved” if saved. |
+| Saving | Keep the button in place at the same size and prevent duplicate clicks. Stay on the detail page. |
+| Save succeeds | Show “Saved.” On reentry, restore the state from the lookup. |
+| Save fails | Show the error and a “Retry” button. Retrying sends the same save request. |
+| Document missing | Show the existing document missing state. Hide the save action. |
 
-기존 버튼 색상과 본문에서 쓰는 간격을 사용한다. 제목과 버튼 사이 기본 간격은 16px, 버튼 테두리는 1px로 한다. 성공과 실패는 색상과 텍스트로 표시한다. 키보드로 버튼을 조작할 수 있게 하고 포커스 표시를 유지한다. 상태는 스크린 리더에 알리고 별도 화면 전환 애니메이션 없이 텍스트를 갱신한다. 디자인 참조가 생기면 [참조 폴더](references/) 또는 접근 가능한 Figma 링크를 사용한다.
+Use existing button colors and spacing from the detail page. Leave 16 px between the title and button and use a 1 px button border. Use text and color to show success and failure. Make the action keyboard accessible, keep a visible focus indicator, and announce status to screen readers. Update the text without a page transition animation. Add design references to the [references directory](references/) or link an accessible Figma file.

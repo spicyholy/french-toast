@@ -1,39 +1,39 @@
-# AX 개발 워크플로
+# AX development workflow
 
-문서 유형 · 단계와 전환 기준\
-상태 · 적용 중\
-갱신일 · 2026-11-11\
-관련 요구사항과 문서 · [PRD](../../docs/prd/product.md), [역할 정의](../roles/architect.md), [공통 규칙](../standards.md), [제어 흐름 그림](../../docs/assets/ax-workflow.png)
+Document type · Stages and transitions\
+Status · Active\
+Updated · 2026-11-11\
+Related requirements and documents · [PRD](../../docs/prd/product.md), [role definition](../roles/architect.md), [shared standards](../standards.md), [control flow diagram](../../docs/assets/ax-workflow.png)
 
-## 시작과 인수인계
+## Start and handoff
 
-1. 신규 프로젝트는 `architect`가 제품 요구사항 초안을 작성한다. 진행 중인 프로젝트는 PRD·API·ADR과 코드에서 변경의 진입점, 의존성, 사용자 흐름과 데이터 영향을 확인한다. 결함 수정이라면 변경 전에 가능한 범위에서 정상 진입점으로 문제를 재현하고 명령과 관찰값을 기록한다.
-2. 화면 또는 사용자 상호작용을 만들거나 변경하면 `designer`를 호출한다. 디자인 결과를 반영한 기술 설계와 구현 명세를 `architect`가 작성한다. 작은 비UI 변경에도 근거와 검증 기준을 담은 명세를 준비한다.
-3. `architecture_reviewer`에게 설계와 구현 명세를 독립 검토하도록 배정한다. 이후 전환은 아래 표를 따른다.
+1. For a new project, the `architect` drafts the product requirements. For an existing project, inspect the PRD, API, ADRs, and code for entry points, dependencies, user flows, and data impact. For a bug fix, reproduce the issue through a normal entry point before making changes where practical and record the command and observation.
+2. Invoke `designer` when creating or changing screens or interactions. The `architect` uses the design result in the technical design and implementation brief. Include the rationale and verification criteria for small changes with no UI impact.
+3. Assign `architecture_reviewer` to independently review the design and implementation brief. Then follow the transitions below.
 
-각 호출에는 작업 ID, 사용자 의도와 범위, 요구사항 ID와 정본 경로, 배정 파일, [변경본 식별 정보](../standards.md#변경본-식별과-검토-근거), 다음 단계가 처리할 판정과 증거를 담는다. 검토에 필요한 자료를 전달하고 리뷰어에게 작성자의 결론과 별도로 판단하도록 요청한다. 설계 수정은 `architect`, 제품 코드 수정은 한 명의 `coder`, 테스트 스크립트와 실행 기록은 `tester`가 맡는다. 화면 산출물은 `designer`가 맡는다. 같은 파일에 작성자가 동시에 쓰지 않도록 이전 작업의 반환을 확인한 뒤 다음 쓰기를 배정한다.
+Each invocation includes the task ID, user intent and scope, requirement IDs and source documents, assigned files, [revision information](../standards.md#revision-identification-and-review-evidence), and findings and evidence for the next stage. Give reviewers the necessary materials and ask them to reach their own conclusions. The `architect` updates the design, one `coder` owns product code, and `tester` writes test code and execution records. The `designer` owns screen design artifacts. Wait for one writer's result before assigning edits to the same files.
 
-리뷰어는 변경 작성자와 별도 스레드로 호출한다. 저장소를 읽기 전용으로 다루며 [검토 근거 규칙](../standards.md#변경본-식별과-검토-근거)에 따라 지적을 보고한다. 반론은 재현 가능한 근거로 기록하고 리뷰어에게 재확인받는다. 재검토에 독립된 판단이 필요하면 새 스레드를 사용한다. 결과를 받고 더 쓸 일이 없는 스레드는 정리한다.
+Reviewers work in separate threads from the author and treat the repository as read-only. Report findings using the [review evidence rules](../standards.md#revision-identification-and-review-evidence). Record reproducible evidence for a rebuttal and ask the reviewer to check it. Use a fresh thread when a re-review needs an independent assessment. Close threads after receiving their results when they are no longer needed.
 
-## 판정과 다음 단계
+## Verdicts and transitions
 
-| 판정 지점 | 조건 | 다음 단계 |
+| Decision point | Condition | Next stage |
 | --- | --- | --- |
-| `architecture_reviewer` | `APPROVED` · 설계 승인 | `coder` → `code_reviewer` |
-| `architecture_reviewer` | `REVISION_REQUIRED` · 설계 보완 | `architect`가 수정하거나 반론을 기록한다. UI 변경이 필요하면 `designer`를 경유하고 `architecture_reviewer`가 재검토한다. |
-| `code_reviewer` | `APPROVED` · 코드 승인 | `tester` → `test_reviewer` |
-| `code_reviewer` | `DESIGN_ISSUE` · 설계 또는 요구사항 문제 | `architect`가 설계를 다시 검토한다. UI 영향이 있으면 `designer`를 경유하고 `architecture_reviewer`부터 재진행한다. |
-| `code_reviewer` | `IMPLEMENTATION_ISSUE` · 구현 또는 규칙 문제 | `coder`가 수정하고 `code_reviewer`가 재검토한다. |
-| `test_reviewer` | `TEST_DEFECT` · 테스트 설계 또는 코드 결함 | `architect`가 평가 기준과 테스트 방식을 재검토한다. 요구사항·계약·설계가 같으면 `tester`부터, 변경되면 설계 검토부터 재진행한다. |
-| `test_reviewer` | `PRODUCT_FAILURE` · 재현 가능한 제품 결함 | `architect`가 원인을 판단한다. 설계 문제면 설계 검토부터, 구현 문제면 `coder`부터 재진행한다. |
-| `test_reviewer` | `UNVERIFIABLE` · 필수 검증 실행 불가 | `architect`가 대체 환경이나 경로를 시도한다. 가능하면 `tester`부터 재진행하고 필수 검증을 끝낼 수 없으면 `BLOCKED`로 보고한다. |
-| `test_reviewer` | `APPROVED` · 필수 수용 기준과 회귀 승인 | `architect`가 검증한 변경본, 현재 변경본과 문서를 대조한 뒤 일치하면 `PASS`로 보고한다. |
+| `architecture_reviewer` | `APPROVED` · design approved | `coder` → `code_reviewer` |
+| `architecture_reviewer` | `REVISION_REQUIRED` · design needs revision | The `architect` revises or records a rebuttal. Route through `designer` if the UI needs changes, then return to `architecture_reviewer`. |
+| `code_reviewer` | `APPROVED` · code approved | `tester` → `test_reviewer` |
+| `code_reviewer` | `DESIGN_ISSUE` · design or requirements issue | The `architect` reconsiders the design. Route through `designer` if the UI is affected, then resume at `architecture_reviewer`. |
+| `code_reviewer` | `IMPLEMENTATION_ISSUE` · implementation or rules issue | `coder` makes the fix and `code_reviewer` reviews it again. |
+| `test_reviewer` | `TEST_DEFECT` · test design or code defect | The `architect` reconsiders the test method and criteria. Resume at `tester` if requirements, contract, and design stay the same. Resume at design review if any changes. |
+| `test_reviewer` | `PRODUCT_FAILURE` · reproducible product defect | The `architect` identifies the cause. Resume at design review for a design issue or at `coder` for an implementation issue. |
+| `test_reviewer` | `UNVERIFIABLE` · required verification cannot run | The `architect` tries an alternative environment or route. Resume at `tester` if possible. Report `BLOCKED` if required verification cannot be completed. |
+| `test_reviewer` | `APPROVED` · required acceptance and regression checks approved | The `architect` compares the reviewed revision, current revision, and documents. Report `PASS` when they match. |
 
-설계 문제와 구현 문제가 함께 발견되면 설계부터 처리한다. 요구사항·API·설계, 제품 코드, 테스트가 바뀌면 각각 설계 검토, 코드 검토가 이어지는 구현 단계, 테스트 단계 중 영향받는 가장 앞 단계부터 다시 진행한다. 각 승인에 사용한 파일의 내용이 바뀌면 해당 승인을 갱신한다. `architect`는 코드 리뷰의 제품 파일이 실제 테스트한 제품 파일과 일치하는지, 테스트 리뷰가 같은 제품·테스트 변경본의 실행 결과를 승인했는지 확인한다. 최종 대조에서 차이를 발견해도 이 기준으로 재진행한다.
+Handle a design issue first when design and implementation issues occur together. If requirements, API, or design change, resume from design review. For product code changes, resume from implementation and code review. For test changes, resume from testing. Use the earliest affected stage. Refresh each approval when its input files change. The `architect` checks that code review and testing covered the same product files and that test review approved the results for the same product and test revision. Apply the same transitions if the final comparison finds a difference.
 
-## 재시도와 종료
+## Retries and completion
 
-- `architect`는 수정 후 이전 단계로 돌아갈 때마다 작업 단위 재시도 횟수를 한 번 올린다. 전환표 전반에 합산해 기본 6회를 허용하고 사용자가 한도를 지정하면 그 값을 쓴다. 같은 결함이 연속 두 번 수정된 뒤에도 근거와 결과가 같거나 실질적인 해결 경로가 소진되면 중단한다.
-- `PASS`는 필수 검증을 끝내고 `test_reviewer`가 현재 변경본을 승인했을 때 사용한다. 해결되지 않은 확인된 결함이나 검토 이견은 `UNRESOLVED`, 환경·권한·필수 도구 부족은 `BLOCKED`로 보고한다. 재시도 한도에 닿으면 남아 있는 원인으로 상태를 결정한다.
-- 서브에이전트 도구나 지정 역할을 로드할 수 없으면 앱·CLI에서 가용한 방법을 진단하고 준비를 계속한다. 필수 독립 검토가 불가능하면 해당 단계를 `BLOCKED`로 기록한다.
-- 설치나 로그인이 사용자에게 필요한 경우 대상 이름, 공식 링크, 필요 이유, 영향을 받는 검증과 재개 방법을 전달한다. 독립적으로 할 수 있는 작업은 이어간다. 재개 시 최신 구현 명세, 테스트 실행 기록, 지적과 누적 재시도 횟수를 대조해 재개 지점을 정한다.
+- The `architect` counts each return to a previous stage after a correction once. Allow six total retries across the transition table by default, or use the user's limit. Stop when two consecutive corrections for the same issue leave the evidence and outcome unchanged, or when practical resolution paths are exhausted.
+- Use `PASS` when required verification is complete and `test_reviewer` has approved the current revision. Use `UNRESOLVED` for a confirmed defect or review disagreement that remains open. Use `BLOCKED` for a missing environment, permission, or required tool. At the retry limit, choose the status based on the remaining cause.
+- If a subagent tool or named role cannot load, diagnose available options in the app or CLI and continue preparation. Mark the stage `BLOCKED` when a required independent review cannot be performed.
+- If the user needs to install something or sign in, provide its name, the official link, the reason, the verification affected, and how to resume. Continue independent work. On resumption, use the latest brief, test records, review findings, and total retry count to identify the resume point.

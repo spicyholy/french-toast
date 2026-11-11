@@ -1,20 +1,20 @@
 ---
 name: ax-test-evidence
-description: AX 제품 테스트를 설계하거나 독립 검토할 때 수용 기준에서 기대값을 도출하고 실행한 변경본과 실제 관찰을 기록하며 거짓 양성을 찾는다.
+description: Derive expected outcomes from acceptance criteria, identify executed revisions, record observed results, and detect false positives when designing or independently reviewing AX product tests.
 ---
 
-# AX 테스트 증거
+# AX test evidence
 
-문서 유형 · 저장소 테스트 스킬\
-상태 · 적용 중\
-갱신일 · 2026-11-11\
-관련 요구사항과 문서 · [PRD](../../../docs/prd/product.md), [API 계약](../../../docs/api/contract.md), [개발 워크플로](../../../.agent/workflows/development.md), [결과 예시](../../../docs/test/000_example.md)
+Document type · Repository testing skill\
+Status · Active\
+Updated · 2026-11-11\
+Related requirements and documents · [PRD](../../../docs/prd/product.md), [API contract](../../../docs/api/contract.md), [development workflow](../../../.agent/workflows/development.md), [result example](../../../docs/test/000_example.md)
 
-1. PRD와 공개 API에서 기대값을 먼저 정한다. 각 필수 기준을 실행 가능한 검사와 연결하고 정상·실패·경계·회귀 중 변경에 해당하는 사례를 고른다.
-2. 실제 공개 동작으로 진입하는 최소한의 검사를 사용한다. 명령 또는 UI 조작 순서, 데이터 준비, 환경과 버전, 종료 코드와 실제 관찰, 로그나 화면 캡처 위치를 남긴다. [공통 규칙](../../../.agent/standards.md)에 따라 기준 커밋과 실행한 제품·테스트 변경본을 식별한다.
-3. 결함 수정은 가능하면 같은 절차가 격리된 수정 전 버전에서 해당 결함 때문에 실패하고 수정 후 통과하는지 확인한다. 설치 오류 등 결함과 무관한 실패는 근거에서 제외한다. 이전 버전 실행이 어려우면 통제된 잘못된 입력이나 대체 검사와 한계를 기록한다. 공유 작업 트리의 제품 코드를 고의로 깨뜨리지 않는다.
-4. 독립 검토에서는 skip, 잘못된 테스트 탐색, 과도한 Mock, 빈 assertion과 실제값을 복사한 기대값을 확인한다. 기대 동작을 위반하는 결과를 테스트가 받아들일 수 있는지 따진다. 실패를 숨기려고 기대값을 완화하거나 테스트를 삭제하지 않는다.
-5. 실행 기록에는 아래 열을 사용한다. 미실행은 이유와 영향을 받는 기준을 적는다. 재실행·정정은 새 파일에 이전 결과를 연결한다. 기존 `docs/test/` 파일의 수정, 덮어쓰기, 이름 변경, 삭제는 금지한다.
+1. Derive expected outcomes from the PRD and public API first. Link each required criterion to an executable check and choose applicable normal, failure, boundary, and regression cases.
+2. Use the smallest check that exercises real public behavior. Record the command or UI steps, data setup, environment and versions, exit code and observations, and location of logs or screenshots. Follow the [shared standards](../../../.agent/standards.md) to identify the base commit and the product and test revisions actually executed.
+3. For a bug fix, where practical, check that the same procedure fails because of the defect on an isolated pre-fix version and passes after the fix. Exclude failures unrelated to the defect, such as setup errors. When running the earlier version is impractical, record a controlled incorrect input or an alternate check and its limitations. Never deliberately break product code in the shared worktree.
+4. In independent review, check skips, broken test discovery, excessive mocks, empty assertions, and expectations copied from observed values. Ask whether the test would accept an outcome that violates the expected behavior. Do not weaken expectations or delete tests to hide a failure.
+5. Use the columns below. For unexecuted checks, record the reason and affected criteria. Link the earlier result from a new file for a rerun or correction. Do not edit, overwrite, rename, or delete existing files in `docs/test/`.
 
-| 요구사항 ID | 실행 명령 또는 UI 조작 순서 | 사전 조건과 환경 | 기대 결과 | 실제 결과 | 판정 | 근거 |
+| Requirement ID | Command or UI steps | Preconditions and environment | Expected result | Actual result | Verdict | Evidence |
 | --- | --- | --- | --- | --- | --- | --- |

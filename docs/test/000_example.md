@@ -1,17 +1,17 @@
-# Example · 문서 북마크 검증 결과 양식
+# Example · Document bookmark verification record
 
-문서 유형 · 테스트 실행 증거 양식\
-상태 · Example / 미실행\
-갱신일 · 2026-11-11\
-관련 요구사항과 문서 · EX-BMK-001 AC1–AC3, [PRD](../prd/product.md), [API 계약](../api/contract.md), [구현 명세](../implementation/000_example.md), [테스트 증거 스킬](../../.agents/skills/ax-test-evidence/SKILL.md)
+Document type · Test evidence template\
+Status · Example / Unexecuted\
+Updated · 2026-11-11\
+Related requirements and documents · EX-BMK-001 AC1–AC3, [PRD](../prd/product.md), [API contract](../api/contract.md), [implementation brief](../implementation/000_example.md), [test evidence skill](../../.agents/skills/ax-test-evidence/SKILL.md)
 
-작업 ID · EX-BMK\
-기준 커밋과 검증 범위 · 실행 시 SHA, diff 식별자와 미추적 대상 파일을 기록한다.\
-이전 결과 · 재실행 또는 정정 시 이전 파일 링크를 기록한다.
+Task ID · EX-BMK\
+Base commit and verified scope · Record the SHA, diff identifier, and any untracked files covered by the run.\
+Previous result · Link the earlier record when rerunning or correcting a result.
 
-| 요구사항 ID | 실행 명령 또는 UI 조작 순서 | 사전 조건과 환경 | 기대 결과 | 실제 결과 | 판정 | 근거 |
+| Requirement ID | Command or UI steps | Preconditions and environment | Expected result | Actual result | Verdict | Evidence |
 | --- | --- | --- | --- | --- | --- | --- |
-| EX-BMK-001 AC1 | 상세 열기 → 북마크 저장 → 상세 다시 열기 | 테스트 계정, 저장한 적 없는 열람 가능 문서 | 저장 직후와 재진입 후 모두 «저장됨» 표시 | 미실행 | 미검증 | 제품 구현 전 예시 |
-| EX-BMK-001 AC2 | 같은 계정으로 동일 문서에 PUT 2건 동시 전송 → GET → 테스트 DB 레코드 수 확인 | 비어 있는 테스트 DB와 유효 세션 | 두 PUT 모두 200, GET에서 `saved: true`, 대상 레코드 1개 | 미실행 | 미검증 | 제품 구현 전 예시 |
-| EX-BMK-001 AC3 | 저장 요청에 503을 한 번 재현 → 상세의 다시 시도 선택 | 격리 환경, 첫 PUT에만 저장 실패 유도 | 오류와 재시도 표시, 두 번째 PUT 성공 뒤 «저장됨» 표시 | 미실행 | 미검증 | 제품 구현 전 예시 |
-| EX-BMK-001 회귀 | 권한 없는 계정으로 기존 상세 접근 → 같은 문서 북마크 PUT | 열람 권한 없는 테스트 계정 | 기존 상세 접근 제한 유지, PUT 404, 레코드 생성 없음 | 미실행 | 미검증 | 제품 구현 전 예시 |
+| EX-BMK-001 AC1 | Open the detail page → select Bookmark → reopen the page | Test account, accessible document with no bookmark | “Saved” appears after saving and after reopening | Unexecuted | Unverified | Example before implementation |
+| EX-BMK-001 AC2 | Send two concurrent PUTs for the same account and document → GET → count records in the test database | Empty test database and valid session | Both PUTs return 200, GET returns `saved: true`, and exactly one record exists | Unexecuted | Unverified | Example before implementation |
+| EX-BMK-001 AC3 | Trigger a 503 on one save → select Retry on the detail page | Isolated environment that fails only the first PUT | Error and retry action appear, then “Saved” appears after a successful second PUT | Unexecuted | Unverified | Example before implementation |
+| EX-BMK-001 Regression | Open the existing detail page as an unauthorized user → PUT a bookmark for that document | Test account without permission to read the document | Existing detail access remains restricted, PUT returns 404, and no record is created | Unexecuted | Unverified | Example before implementation |

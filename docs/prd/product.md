@@ -1,23 +1,23 @@
-# 제품 요구사항
+# Product requirements
 
-문서 유형 · PRD\
-상태 · 제품 범위 미정 / Example 수록\
-갱신일 · 2026-11-11\
-관련 요구사항과 문서 · EX-BMK-001 (Example), [API 계약](../api/contract.md), [구현 명세 예시](../implementation/000_example.md)
+Document type · PRD\
+Status · Product scope pending / Example included\
+Updated · 2026-11-11\
+Related requirements and documents · EX-BMK-001 (Example), [API contract](../api/contract.md), [implementation brief example](../implementation/000_example.md)
 
-## 현재 범위
+## Current scope
 
-이 저장소의 현재 범위는 AX 개발 운영 지침이다. 제품과 사용자 시나리오가 정해지면 이 절에 제품 범위, 요구사항 ID, Acceptance Criteria, 실제 구현·검증 상태를 기록한다.
+This repository currently documents the AX development workflow. Once the product and user scenarios are defined, record the product scope, requirement IDs, acceptance criteria, and actual implementation and verification status here.
 
-## Example · EX-BMK-001 문서 북마크 저장
+## Example · EX-BMK-001 Save a document bookmark
 
-로그인한 사용자가 문서 상세 화면에서 읽던 문서를 북마크에 저장한다. 같은 문서를 다시 저장해도 북마크는 하나이며 저장 확인을 받을 수 있다. 요청에 실패하면 같은 화면에서 다시 시도할 수 있다.
+A signed-in user saves a document as a bookmark from its detail page. Saving the same document again leaves one bookmark and confirms the save. If the request fails, the user can retry on the same page.
 
-| 수용 기준 | 사용자에게 보이는 동작 |
+| Acceptance criterion | Observable behavior |
 | --- | --- |
-| AC1 | 저장에 성공하면 상세 화면에 저장됨이 표시된다. 화면을 다시 열어도 저장 상태가 나타난다. |
-| AC2 | 같은 사용자가 같은 문서를 반복하거나 동시에 저장해도 하나의 북마크만 유지된다. |
-| AC3 | 저장 요청이 실패하면 오류와 재시도 버튼이 나타난다. 재시도에 성공하면 저장됨이 표시된다. |
+| AC1 | After saving, the detail page shows “Saved.” Reopening the page restores the saved state. |
+| AC2 | Repeated or concurrent saves of the same document by the same user leave exactly one bookmark. |
+| AC3 | A failed save shows an error and a retry button. A successful retry shows “Saved.” |
 
-예시 구현·검증 상태 · 미구현, 미실행\
-연결 문서 · [디자인](../design/000_example.md), [ADR](../adr/000_example.md), [API](../api/contract.md), [구현](../implementation/000_example.md), [테스트](../test/000_example.md)
+Example implementation and verification status · Pending implementation and execution\
+Related documents · [Design](../design/000_example.md), [ADR](../adr/000_example.md), [API](../api/contract.md), [implementation](../implementation/000_example.md), [test](../test/000_example.md)

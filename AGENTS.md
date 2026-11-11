@@ -1,22 +1,22 @@
-# AX Architecture 저장소 지침
+# AX Architecture repository instructions
 
-문서 유형 · Codex 프로젝트 지침\
-상태 · 적용 중\
-갱신일 · 2026-11-11\
-관련 요구사항과 문서 · [PRD](docs/prd/product.md), [공통 규칙](.agent/standards.md), [개발 워크플로](.agent/workflows/development.md)
+Document type · Codex project instructions\
+Status · Active\
+Updated · 2026-11-11\
+Related requirements and documents · [PRD](docs/prd/product.md), [shared standards](.agent/standards.md), [development workflow](.agent/workflows/development.md)
 
-AI Agent는 저장소 작업의 첫 지침으로 이 문서를 따른다. 사용자를 위한 질문, 진행 및 최종 보고와 새 문서는 한국어로 작성한다.
+AI agents use this file as their first source of repository instructions. Write questions, progress updates, final reports, and new documents in English.
 
-메인 세션은 제품 기능의 개발이나 수정, AX 개발 워크플로 실행 요청을 받으면 [`architect`](.agent/roles/architect.md)로 동작한다. [공통 규칙](.agent/standards.md)과 [개발 워크플로](.agent/workflows/development.md)를 읽고 전환표가 지정하는 서브에이전트를 이름으로 호출한다. 단계마다 결과를 받아 다음 작업을 결정한다. 질문, 설명, 읽기 전용 조사와 AX 운영 문서 정비는 요청 범위에 맞춰 수행한다. 서브에이전트는 배정된 역할과 파일 범위에서 작업하고 메인 세션에 결과를 반환한다.
+The main session acts as [`architect`](.agent/roles/architect.md) for product development, product fixes, and explicit requests to run the AX development workflow. Read the [shared standards](.agent/standards.md) and [development workflow](.agent/workflows/development.md), then invoke the named subagents in the transition table. Use the result of each stage to choose the next step. Handle questions, explanations, read-only investigation, and AX documentation maintenance within the requested scope. Subagents work within their assigned role and file scope and return results to the main session.
 
-## 역할과 호출 조건
+## Roles and when to invoke them
 
-- [`architect`](.agent/roles/architect.md) · 메인 세션이 개발 요청의 제품 범위, 기술 결정, 업무 배정과 최종 보고를 맡는다.
-- [`designer`](.codex/agents/designer.toml) · 화면이나 사용자 상호작용을 신설하거나 변경할 때 호출한다.
-- [`architecture_reviewer`](.codex/agents/architecture_reviewer.toml) · 기술 설계와 구현 명세가 준비되면 독립 검토를 맡긴다.
-- [`coder`](.codex/agents/coder.toml) · 설계 승인 후 한 명에게 전체 구현을 맡기고 구현 보완이 필요하면 다시 배정한다.
-- [`code_reviewer`](.codex/agents/code_reviewer.toml) · 구현 diff가 준비되면 작성자와 별도의 스레드에서 검토한다.
-- [`tester`](.codex/agents/tester.toml) · 코드 승인 후 수용 기준과 회귀를 검증하고 검증을 다시 할 때 새 결과를 기록한다.
-- [`test_reviewer`](.codex/agents/test_reviewer.toml) · 테스트 결과가 나오면 독립적으로 검증 범위와 증거를 심사한다.
+- [`architect`](.agent/roles/architect.md) · The main session owns product scope, technical decisions, assignments, and the final report.
+- [`designer`](.codex/agents/designer.toml) · Invoke when adding or changing screens or user interactions.
+- [`architecture_reviewer`](.codex/agents/architecture_reviewer.toml) · Invoke once the technical design and implementation brief are ready for independent review.
+- [`coder`](.codex/agents/coder.toml) · Assign the entire implementation to one coder after design approval. Return implementation fixes to that role.
+- [`code_reviewer`](.codex/agents/code_reviewer.toml) · Review the implementation diff in a separate thread from its author.
+- [`tester`](.codex/agents/tester.toml) · After code approval, verify acceptance criteria and regressions. Create a fresh record for each run.
+- [`test_reviewer`](.codex/agents/test_reviewer.toml) · Independently assess coverage and evidence once test results are available.
 
-기존 `docs/test/` 파일은 수정, 덮어쓰기, 이름 변경, 삭제를 금지한다. 추가 검증과 정정은 새 파일에 남긴다.
+Existing files in `docs/test/` are append-only history. Do not edit, overwrite, rename, or delete them. Add a new file for further verification or corrections.

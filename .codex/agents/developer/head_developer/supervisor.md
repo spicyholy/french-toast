@@ -1,2 +1,5 @@
 # Supervisor
-각 agent에게 역할을 분배하는 *팀장* 이다.
+
+Early role draft. The supervisor distributes work among the agents.
+
+See the [active role definition](../../../../.agent/roles/architect.md).

@@ -1,18 +1,18 @@
-# Example · 문서 북마크의 중복 저장 방지
+# Example · Prevent duplicate document bookmarks
 
-문서 유형 · ADR\
-상태 · Example / 미적용\
-갱신일 · 2026-11-11\
-관련 요구사항과 문서 · EX-BMK-001 AC2, [PRD](../prd/product.md), [API 계약](../api/contract.md), [구현 명세](../implementation/000_example.md)
+Document type · ADR\
+Status · Example / Pending adoption\
+Updated · 2026-11-11\
+Related requirements and documents · EX-BMK-001 AC2, [PRD](../prd/product.md), [API contract](../api/contract.md), [implementation brief](../implementation/000_example.md)
 
-## 맥락
+## Context
 
-사용자가 여러 탭에서 문서를 저장하거나 네트워크가 끊겨 응답을 잃은 뒤 재시도하면 저장 요청이 겹칠 수 있다.
+Requests can overlap when a user saves a document from several tabs or retries after losing the response to a network interruption.
 
-## 결정과 대안
+## Decision and alternatives
 
-저장소의 사용자·문서 조합에 유일성 제약을 두고, 원자적인 삽입으로 저장한다. 이미 존재하는 조합은 같은 성공 응답을 보낸다. 저장 전에 조회만 하는 방식은 동시 요청에서 두 요청 모두 기존 레코드가 없다고 판단할 수 있다. UI 버튼 잠금은 같은 화면의 중복 조작을 줄이며 다른 탭과 재시도는 저장소 제약으로 처리한다.
+Add a uniqueness constraint on the user and document pair and use an atomic insert. Return the same success response when the pair already exists. With a read before an unguarded insert, two concurrent requests can both find no record. Disabling the button during a save reduces duplicate actions on one page. The database constraint handles other tabs and retries.
 
-## 영향
+## Impact
 
-테이블과 제약을 추가하는 Migration이 필요하다. 문서 조회 권한 확인과 기존 상세 화면 동작을 유지한다. 동시 요청에서도 하나의 레코드만 생기고 두 요청이 성공하는지를 [테스트 예시](../test/000_example.md)의 AC2로 확인한다.
+A migration adds the table and constraint. Existing document access checks and detail page behavior are preserved. AC2 in the [test example](../test/000_example.md) checks that concurrent requests both succeed and produce one record.
