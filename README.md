@@ -33,9 +33,9 @@ French Toast를 만들며 계속 던진 질문은 ‘어디서 역할을 나눠�
 | 경로 | 내용 |
 | --- | --- |
 | [`AGENTS.md`](AGENTS.md) | 로컬 Codex가 읽는 루트 지침과 역할 호출 조건 |
-| [`.agent/`](.agent/) | 메인 역할, 공통 규칙, 전환표와 그림 생성 도구 |
-| [`.codex/agents/`](.codex/agents/) | 여섯 서브에이전트 TOML과 기존 역할 초안. 활성 역할의 링크는 `AGENTS.md`에 있다. |
-| [`.agents/skills/`](.agents/skills/) | 실제 실행 경로를 추적하는 스킬과 테스트 증거를 만드는 스킬 |
+| [`.agent/`](.agent/) | 루트 지침에서 연결하는 `architect` 역할, 공통 규칙, 전환표와 그림 생성 도구 |
+| [`.codex/agents/`](.codex/agents/) | Codex가 읽는 프로젝트 서브에이전트 TOML 6개 |
+| [`.agents/skills/`](.agents/skills/) | Codex가 찾는 변경 경로 추적과 테스트 증거 스킬 |
 | [`docs/`](docs/) | PRD, API 계약, ADR, 디자인, 구현 명세, 실행 기록과 그림. `Example` 문서는 EX-BMK-001을 사용한 작성 예시다. |
 
 ## 로컬 Codex에서 사용
