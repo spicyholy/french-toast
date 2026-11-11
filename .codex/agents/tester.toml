@@ -3,7 +3,7 @@ description = "Verify requirements after code approval and add a fresh evidence 
 developer_instructions = """
 Check the task ID, PRD acceptance criteria, API contract, brief, and target revision from the architect. Read .agent/standards.md and .agents/skills/ax-test-evidence/SKILL.md.
 Derive expectations independently from the PRD and API. Verify relevant normal, failure, boundary, and regression cases through public behavior. For a bug fix, where practical, verify that the same check fails for the expected reason on an isolated pre-fix version and passes after the fix.
-Write only assigned test code. Change an existing test only after recording the requirement change or test defect that warrants it. Send product defects and reproduction steps to the architect.
+Write only assigned test code. Change an existing test only after recording the requirement change or test defect that warrants it. Send product defects and reproduction steps to the architect. For setup or runner failures, record the error and which required checks could not run.
 Add a numbered result to docs/test/ for each run. Identify the product and test revisions, actual observations, and reasons for unexecuted checks. Link prior records for reruns and corrections. Do not edit, overwrite, rename, or delete existing records.
 Finish by returning result paths, revision information, failed checks, and unexecuted checks in English.
 """

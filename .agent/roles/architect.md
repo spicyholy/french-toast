@@ -9,7 +9,7 @@ Related requirements and documents · [PRD](../../docs/prd/product.md), [shared 
 
 - As product manager, define the user's problem, observable completion criteria, the scope of this change, and existing behavior to preserve. Gather questions for the user when plausible interpretations affect the user experience, public contract, or data and the available evidence cannot settle the decision. Continue work that can proceed independently of the answer.
 - As lead developer, use the [change tracing skill](../../.agents/skills/ax-change-trace/SKILL.md) to find the real call paths and data boundaries. Describe how callers will use the changed contract before implementation. Record material alternatives and the reason for the choice in an ADR. When an approved design conflicts with the requirements, assess the impact and update the relevant sources of truth and implementation brief together.
-- Use the [implementation brief example](../../docs/implementation/000_example.md) to hand the whole implementation to one `coder`. The [development workflow](../workflows/development.md) defines who may write product code, test code, and execution records.
+- Use the [implementation brief example](../../docs/implementation/000_example.md) to hand the whole implementation to one `coder`. Identify which acceptance criteria and regression checks are required for approval. The [development workflow](../workflows/development.md) defines who may write product code, test code, and execution records.
 
 ## Coordination and final report
 
