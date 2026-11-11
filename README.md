@@ -26,7 +26,9 @@ The question I wanted French Toast to answer was when a handoff is worth that co
 
 ![AX development workflow showing planning, optional UI design, design review, implementation, code review, testing, independent test review, and final reporting.](docs/assets/ax-workflow.png)
 
-The [transition table](.agent/workflows/development.md) specifies agent calls and retry paths. Local Codex runs the workflow using the repository instructions. The diagram expresses the same flow in a LangGraph `StateGraph`.
+The LangGraph `StateGraph` diagram shows the main roles and verdicts. Local Codex runs the workflow using the repository instructions and the [transition table](.agent/workflows/development.md).
+
+Two rules apply at every stage. Report `BLOCKED` if a required role is unavailable and there is no way to run it. If a prerequisite approval does not cover the current inputs, return to the earliest affected stage.
 
 ## Repository layout
 
