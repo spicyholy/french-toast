@@ -22,7 +22,7 @@
 
 ## 워크플로
 
-![AX 개발 워크플로. 신규 또는 진행 중 요청이 디자인, 설계 검토, 구현, 코드 검토, 테스트와 독립 테스트 검토를 거쳐 최종 보고로 이어진다.](docs/assets/ax-workflow.svg)
+![AX 개발 워크플로. 신규 또는 진행 중 요청이 디자인, 설계 검토, 구현, 코드 검토, 테스트와 독립 테스트 검토를 거쳐 최종 보고로 이어진다.](docs/assets/ax-workflow.png)
 
 단계별 호출과 재시도는 [전환표](.agent/workflows/development.md)를 따른다. 개발 작업은 로컬 Codex와 프로젝트 지침으로 실행한다. 그림은 같은 흐름을 LangGraph `StateGraph`로 표현한 문서 산출물이다.
 
@@ -33,7 +33,7 @@
 | [`AGENTS.md`](AGENTS.md) | 로컬 Codex가 읽는 루트 지침과 역할 호출 조건 |
 | [`.agent/`](.agent/) | 메인 역할, 공통 규칙, 전환표와 그림 생성 도구 |
 | [`.codex/agents/`](.codex/agents/) | 여섯 서브에이전트 TOML과 기존 역할 초안. 활성 역할의 링크는 `AGENTS.md`에 있다. |
-| [`.agents/skills/`](.agents/skills/) | 테스터와 테스트 리뷰어가 공유하는 테스트 증거 스킬 |
+| [`.agents/skills/`](.agents/skills/) | 실제 실행 경로를 추적하는 스킬과 테스트 증거를 만드는 스킬 |
 | [`docs/`](docs/) | PRD, API 계약, ADR, 디자인, 구현 명세, 실행 기록과 그림. `Example` 문서는 EX-BMK-001을 사용한 작성 예시다. |
 
 ## 로컬 Codex에서 사용
@@ -56,7 +56,13 @@ $axMermaid = Join-Path $axTools 'node_modules/.bin/mmdc.cmd'
 & $axPython .agent/tools/render_workflow.py --mermaid-cli $axMermaid
 ```
 
-스크립트는 [SVG](docs/assets/ax-workflow.svg)를 갱신한다. Mermaid 원본만 필요하면 `& $axPython .agent/tools/render_workflow.py --output ax-workflow.mmd`를 실행한다.
+스크립트는 README에 표시되는 [PNG](docs/assets/ax-workflow.png)를 갱신한다. Mermaid 원본이나 SVG가 필요하면 `--output ax-workflow.mmd` 또는 `--output ax-workflow.svg`를 추가한다.
+
+## pstack에서 참고한 작업 방식
+
+- 설계와 구현에 앞서 호출자 관점에서 기존 실행 경로와 공개 계약을 확인한다. [how](https://github.com/cursor/plugins/blob/main/pstack/skills/how/SKILL.md), [architect](https://github.com/cursor/plugins/blob/main/pstack/skills/architect/SKILL.md)
+- 리뷰 지적은 사용자 의도와 실제 변경을 대조하고, 재현 조건과 근거로 판단한다. 결함 수정의 회귀 검증은 가능하면 수정 전 실패와 수정 후 성공을 같은 절차로 확인한다. [interrogate](https://github.com/cursor/plugins/blob/main/pstack/skills/interrogate/SKILL.md), [tdd](https://github.com/cursor/plugins/blob/main/pstack/skills/tdd/SKILL.md)
+- 상태 전환과 실패 뒤의 복구 경로를 사용자 조작으로 표현하고, 중요한 결정과 증거의 위치를 기록한다. [statechart](https://github.com/cursor/plugins/blob/main/pstack/skills/statechart/SKILL.md), [show-me-your-work](https://github.com/cursor/plugins/blob/main/pstack/skills/show-me-your-work/SKILL.md)
 
 ## 참고 문서
 

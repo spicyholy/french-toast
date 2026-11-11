@@ -1,4 +1,4 @@
-"""개발 워크플로의 전환표를 Mermaid 원본 또는 SVG로 내보낸다."""
+"""개발 워크플로의 전환표를 PNG, SVG 또는 Mermaid 원본으로 내보낸다."""
 
 import argparse
 import shutil
@@ -10,7 +10,7 @@ from typing import Never, TypedDict
 from langgraph.graph import END, START, StateGraph
 
 ROOT = Path(__file__).resolve().parents[2]
-DEFAULT_OUTPUT = ROOT / "docs" / "assets" / "ax-workflow.svg"
+DEFAULT_OUTPUT = ROOT / "docs" / "assets" / "ax-workflow.png"
 
 
 class DiagramState(TypedDict):
@@ -96,13 +96,13 @@ def build_workflow():
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT, help="SVG 또는 .mmd 경로")
+    parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT, help="PNG, SVG 또는 .mmd 경로")
     parser.add_argument("--mermaid-cli", default="mmdc", help="Mermaid CLI 실행 경로")
     parser.add_argument("--puppeteer-config", type=Path, help="로컬 브라우저를 지정하는 JSON 파일")
     args = parser.parse_args()
     output = args.output.resolve()
-    if output.suffix not in {".mmd", ".svg"}:
-        parser.error("--output 확장자는 .mmd 또는 .svg여야 합니다.")
+    if output.suffix not in {".mmd", ".png", ".svg"}:
+        parser.error("--output 확장자는 .mmd, .png 또는 .svg여야 합니다.")
 
     mermaid = build_workflow().draw_mermaid(
         frontmatter_config={
@@ -114,7 +114,7 @@ def main() -> None:
             }
         }
     )
-    # SVG 텍스트 라벨에서 LangChain의 HTML 공백이 그대로 보이지 않게 한다.
+    # 텍스트 라벨에서 LangChain의 HTML 공백이 그대로 보이지 않게 한다.
     mermaid = mermaid.replace("&nbsp;", "")
     if output.suffix == ".mmd":
         output.write_text(mermaid, encoding="utf-8")
@@ -127,9 +127,11 @@ def main() -> None:
     # 임시 경로에서 렌더링하고 성공한 경우에만 저장소 그림을 갱신한다.
     with TemporaryDirectory(prefix="ax-workflow-") as temp_dir:
         source = Path(temp_dir) / "ax-workflow.mmd"
-        rendered = source.with_suffix(".svg")
+        rendered = source.with_suffix(output.suffix)
         source.write_text(mermaid, encoding="utf-8")
         command = [renderer, "-i", str(source), "-o", str(rendered), "-b", "white"]
+        if output.suffix == ".png":
+            command += ["--scale", "2"]
         if args.puppeteer_config:
             command += ["-p", str(args.puppeteer_config.resolve())]
         subprocess.run(command, check=True)
