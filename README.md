@@ -2,7 +2,7 @@
 
 Document type · Repository guide\
 Status · AX operating instructions\
-Updated · 2026-11-11\
+Updated · 2026-11-12\
 Related requirements and documents · [Repository instructions](AGENTS.md), [development workflow](.agent/workflows/development.md), [PRD](docs/prd/product.md)
 
 ## Why I built it
@@ -38,6 +38,7 @@ Two rules apply at every stage. Report `BLOCKED` if a required role is unavailab
 | [`.agent/`](.agent/) | The `architect` role, shared standards, transitions, and diagram renderer linked from the root instructions |
 | [`.codex/agents/`](.codex/agents/) | Six project subagent TOML files loaded by Codex |
 | [`.agents/skills/`](.agents/skills/) | Change tracing and test evidence skills discovered by Codex |
+| [`.claude/skills/`](.claude/skills/) | Change tracing and test evidence skills discovered by Claude Code |
 | [`docs/`](docs/) | PRD, API contract, ADRs, designs, implementation briefs, test records, and the diagram. The examples share requirement EX-BMK-001. |
 
 ## Run with local Codex
@@ -45,6 +46,10 @@ Two rules apply at every stage. Report `BLOCKED` if a required role is unavailab
 Open the repository root in the Codex app or start the CLI there. In a session where you trust the repository, use a request such as this.
 
 > Run the AX development workflow. [Feature to change and acceptance criteria]. Invoke the configured subagents and continue through verification and the final report.
+
+## Run skills with local Claude Code
+
+Start `claude` from the repository root. Run `/ax-change-trace` for change tracing or `/ax-test-evidence` for test design and evidence review. Claude can also load either skill when it matches your request.
 
 ## Regenerate the diagram
 
@@ -73,4 +78,5 @@ The script updates the [PNG](docs/assets/ax-workflow.png) embedded in this READM
 - [Codex project instructions](https://developers.openai.com/codex/guides/agents-md)
 - [Codex subagents](https://developers.openai.com/codex/subagents)
 - [Codex skills](https://developers.openai.com/codex/skills)
+- [Claude Code skills](https://code.claude.com/docs/en/skills)
 - [LangGraph Graph API](https://docs.langchain.com/oss/python/langgraph/graph-api)
