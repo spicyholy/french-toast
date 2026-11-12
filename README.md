@@ -2,7 +2,7 @@
 
 문서 유형 · 저장소 안내\
 상태 · AX 운영 지침\
-갱신일 · 2026-11-11\
+갱신일 · 2026-11-12\
 관련 요구사항과 문서 · [저장소 지침](AGENTS.md), [개발 워크플로](.agent/workflows/development.md), [PRD](docs/prd/product.md)
 
 ## 만들게 된 배경
@@ -38,6 +38,7 @@ LangGraph `StateGraph` 그림은 주요 역할과 판정의 흐름을 보여준�
 | [`.agent/`](.agent/) | 루트 지침에서 연결하는 `architect` 역할, 공통 규칙, 전환표와 그림 생성 도구 |
 | [`.codex/agents/`](.codex/agents/) | Codex가 읽는 프로젝트 서브에이전트 TOML 6개 |
 | [`.agents/skills/`](.agents/skills/) | Codex가 찾는 변경 경로 추적과 테스트 증거 스킬 |
+| [`.claude/skills/`](.claude/skills/) | Claude Code가 찾는 변경 경로 추적과 테스트 증거 스킬 |
 | [`docs/`](docs/) | PRD, API 계약, ADR, 디자인, 구현 명세, 실행 기록과 그림. `Example` 문서는 EX-BMK-001을 사용한 작성 예시다. |
 
 ## 로컬 Codex에서 사용
@@ -45,6 +46,10 @@ LangGraph `StateGraph` 그림은 주요 역할과 판정의 흐름을 보여준�
 저장소 루트를 Codex 앱에서 열거나 루트에서 Codex CLI를 시작한다. 저장소를 신뢰하는 세션에서 다음처럼 요청한다.
 
 > AX 개발 워크플로를 실행해. [바꿀 기능과 수용 기준]. 정의된 서브에이전트를 호출해서 검증과 최종 보고까지 진행해.
+
+## 로컬 Claude Code에서 스킬 사용
+
+저장소 루트에서 `claude`를 시작한다. 변경 경로를 추적하려면 `/ax-change-trace`를, 테스트를 설계하거나 증거를 검토하려면 `/ax-test-evidence`를 실행한다. 요청에 맞는 스킬을 Claude가 자동으로 불러올 수도 있다.
 
 ## 그림 재생성
 
@@ -73,4 +78,5 @@ $axMermaid = Join-Path $axTools 'node_modules/.bin/mmdc.cmd'
 - [Codex 프로젝트 지침](https://developers.openai.com/codex/guides/agents-md)
 - [Codex 서브에이전트](https://developers.openai.com/codex/subagents)
 - [Codex 스킬](https://developers.openai.com/codex/skills)
+- [Claude Code 스킬](https://code.claude.com/docs/en/skills)
 - [LangGraph Graph API](https://docs.langchain.com/oss/python/langgraph/graph-api)
