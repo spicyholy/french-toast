@@ -26,7 +26,7 @@ The question I wanted French Toast to answer was when a handoff is worth that co
 
 ![AX development workflow showing planning, optional UI design, design review, implementation, code review, testing, independent test review, and final reporting.](docs/assets/ax-workflow.png)
 
-The LangGraph `StateGraph` diagram shows the main roles and verdicts. Local Codex runs the workflow using the repository instructions and the [transition table](.agent/workflows/development.md).
+The LangGraph `StateGraph` diagram shows the main roles and verdicts. Local Codex and Claude Code use the shared [transition table](.agent/workflows/development.md).
 
 Two rules apply at every stage. Report `BLOCKED` if a required role is unavailable and there is no way to run it. If a prerequisite approval does not cover the current inputs, return to the earliest affected stage.
 
@@ -34,10 +34,12 @@ Two rules apply at every stage. Report `BLOCKED` if a required role is unavailab
 
 | Path | Contents |
 | --- | --- |
-| [`AGENTS.md`](AGENTS.md) | Root instructions and role entry conditions for local Codex |
+| [`AGENTS.md`](AGENTS.md) | Shared repository instructions and role entry conditions |
+| [`CLAUDE.md`](CLAUDE.md) | Claude Code project instructions and AX role mapping |
 | [`.agent/`](.agent/) | The `architect` role, shared standards, transitions, and diagram renderer linked from the root instructions |
 | [`.codex/agents/`](.codex/agents/) | Six project subagent TOML files loaded by Codex |
 | [`.agents/skills/`](.agents/skills/) | Change tracing and test evidence skills discovered by Codex |
+| [`.claude/agents/`](.claude/agents/) | Six project subagent definitions loaded by Claude Code |
 | [`.claude/skills/`](.claude/skills/) | Change tracing and test evidence skills discovered by Claude Code |
 | [`docs/`](docs/) | PRD, API contract, ADRs, designs, implementation briefs, test records, and the diagram. The examples share requirement EX-BMK-001. |
 
@@ -47,9 +49,11 @@ Open the repository root in the Codex app or start the CLI there. In a session w
 
 > Run the AX development workflow. [Feature to change and acceptance criteria]. Invoke the configured subagents and continue through verification and the final report.
 
-## Run skills with local Claude Code
+## Run with local Claude Code
 
-Start `claude` from the repository root. Run `/ax-change-trace` for change tracing or `/ax-test-evidence` for test design and evidence review. Claude can also load either skill when it matches your request.
+Start `claude` from the repository root. In a trusted session, use the AX workflow request above to run the same stages through the configured Claude Code subagents. Use `/agents` to check the available roles and `/memory` to check the loaded project instructions.
+
+Run `/ax-change-trace` for change tracing or `/ax-test-evidence` for test design and evidence review. Claude can also load either skill when it matches your request.
 
 ## Regenerate the diagram
 
@@ -78,5 +82,7 @@ The script updates the [PNG](docs/assets/ax-workflow.png) embedded in this READM
 - [Codex project instructions](https://developers.openai.com/codex/guides/agents-md)
 - [Codex subagents](https://developers.openai.com/codex/subagents)
 - [Codex skills](https://developers.openai.com/codex/skills)
+- [Claude Code project instructions](https://code.claude.com/docs/en/memory)
+- [Claude Code subagents](https://code.claude.com/docs/en/sub-agents)
 - [Claude Code skills](https://code.claude.com/docs/en/skills)
 - [LangGraph Graph API](https://docs.langchain.com/oss/python/langgraph/graph-api)
