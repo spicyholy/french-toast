@@ -1,0 +1,13 @@
+{
+  "name": "french-toast",
+  "owner": {
+    "name": "spicyholy"
+  },
+  "plugins": [
+    {
+      "name": "french-toast",
+      "source": "./plugins/french-toast",
+      "description": "Run the French Toast AX development workflow with independent reviews and test evidence."
+    }
+  ]
+}
