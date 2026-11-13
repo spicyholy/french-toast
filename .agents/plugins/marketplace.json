@@ -1,0 +1,20 @@
+{
+  "name": "french-toast",
+  "interface": {
+    "displayName": "French Toast"
+  },
+  "plugins": [
+    {
+      "name": "french-toast",
+      "source": {
+        "source": "local",
+        "path": "./plugins/french-toast"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Development"
+    }
+  ]
+}
