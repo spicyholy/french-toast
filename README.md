@@ -32,12 +32,12 @@ codex plugin marketplace add spicyholy/french-toast
 codex plugin add french-toast@french-toast
 ```
 
-In a new Codex session, type `$` and select `french-toast` to attach the skill, then enter your task. You can also use `/skills` in the CLI or select the skill from the `/` menu in the desktop app. Run `codex plugin list` in your shell to confirm the plugin is installed.
+In a new Codex session, type `$` and select `french-toast:french-toast` to attach the skill, then enter your task. You can also find the skill through `/skills` in the CLI or the `/` menu in the desktop app. Run `codex plugin list` in your shell to confirm the plugin is installed.
 
 Example
 
 ```text
-$french-toast Fix duplicate bookmarks. Saving the same document twice should leave one bookmark.
+$french-toast:french-toast Fix duplicate bookmarks. Saving the same document twice should leave one bookmark.
 ```
 
 French Toast uses built-in subagents in the target project. The project keeps its own instructions and tooling, and each client applies its usual permissions.

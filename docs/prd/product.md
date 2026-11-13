@@ -16,7 +16,7 @@ A developer installs French Toast from GitHub, opens a session in a project they
 | Acceptance criterion | Observable behavior |
 | --- | --- |
 | AC1 | Both clients can add the GitHub marketplace and install the French Toast plugin. A fresh session in a separate repository discovers the installed skill and its bundled workflow instructions. |
-| AC2 | Claude Code supports `/french-toast` where the short name is available and the qualified `/french-toast:french-toast` entry point. Codex supports an explicit `$french-toast` skill mention or skill-picker selection. |
+| AC2 | Claude Code supports `/french-toast` where the short name is available and the qualified `/french-toast:french-toast` entry point. Codex supports the installed `$french-toast:french-toast` skill mention or skill-picker selection. |
 | AC3 | With a scoped task, the installed skill directs the main session through independent AX design, code and test reviews, uses the current revision and observed evidence for decisions, and reports the final result. With no scoped task, it asks for the missing input before edits or delegation. |
 | AC4 | The README shows GitHub installation, invocation, and how to confirm installation in each client. Existing project-local AX entry points remain available on `develop`. |
 | AC5 | The current `main` tree contains only the public README, the two marketplace catalogs, and the installable package. Development materials stay on `develop`. The first release and its `v1.0.0` tag point to the verified distribution commit on `main`. |
