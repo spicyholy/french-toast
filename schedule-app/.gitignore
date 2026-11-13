@@ -1,0 +1,6 @@
+.publish/
+.openai/hosting.json
+tests/.chrome-profile/
+tests/failure.json
+node_modules/
+*.tar.gz

@@ -1,0 +1,532 @@
+{
+  "date": "2026-11-13T14:21:31.532Z",
+  "browser": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/156.0.8078.81",
+    "revision": "@060bedfb508f73250e93aeb9ca8149b3958995d8",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+    "jsVersion": "15.6.75.27"
+  },
+  "environment": {
+    "node": "v22.19.0",
+    "platform": "win32",
+    "transport": "Chrome DevTools pipe; file URL",
+    "http": "Local TCP denied; file URL tested"
+  },
+  "hashes": {
+    "dist/index.html": "ed0b364a75dcab7c3ac96101a5de702e86bf324cc1778fc126ec197029d00db7",
+    "dist/styles.css": "85bd2dcaec4712beb13c117e71d04cd4d9395f37e374d53fe8dd456811475525",
+    "dist/model.js": "a292fd8cb7ce49245222e078b4085abf559ab742a6d847442065f362d5cc5467",
+    "dist/app.js": "496fd8c0fdf8bc1eda8105d50adcd2c1aeb35437939ce949b12f12631a201a9f",
+    "tests/verify.cjs": "9f5c003ca0c813e15e45ea479c8eb7bda9f789d71085ffe2baa43cfc6b3543b9"
+  },
+  "results": [
+    {
+      "name": "R1 valid leap day",
+      "expected": true,
+      "actual": true,
+      "verdict": "PASS"
+    },
+    {
+      "name": "R1 reject nonleap day",
+      "expected": false,
+      "actual": false,
+      "verdict": "PASS"
+    },
+    {
+      "name": "R1 reject rollover date",
+      "expected": false,
+      "actual": false,
+      "verdict": "PASS"
+    },
+    {
+      "name": "R1 six-week calendar and year rollover",
+      "expected": true,
+      "actual": true,
+      "verdict": "PASS"
+    },
+    {
+      "name": "R2 blank title invalid",
+      "expected": "title",
+      "actual": "title",
+      "verdict": "PASS"
+    },
+    {
+      "name": "R2 equal time invalid",
+      "expected": "end",
+      "actual": "end",
+      "verdict": "PASS"
+    },
+    {
+      "name": "R2 reversed time invalid",
+      "expected": "end",
+      "actual": "end",
+      "verdict": "PASS"
+    },
+    {
+      "name": "R2 bad time invalid",
+      "expected": "start",
+      "actual": "start",
+      "verdict": "PASS"
+    },
+    {
+      "name": "R4 combined query/category",
+      "expected": [
+        "a"
+      ],
+      "actual": [
+        "a"
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "name": "R3 reject duplicate IDs",
+      "expected": true,
+      "actual": true,
+      "verdict": "PASS"
+    },
+    {
+      "name": "R3 reject unsupported version",
+      "expected": true,
+      "actual": true,
+      "verdict": "PASS"
+    },
+    {
+      "name": "R3 initial read locks",
+      "expected": true,
+      "actual": true,
+      "verdict": "PASS"
+    },
+    {
+      "name": "R3 unread retry never writes",
+      "expected": 0,
+      "actual": 0,
+      "verdict": "PASS"
+    },
+    {
+      "name": "R3 retry recovers old records",
+      "expected": [
+        "old"
+      ],
+      "actual": [
+        "old"
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "name": "R3 write failure retains session",
+      "expected": true,
+      "actual": true,
+      "verdict": "PASS"
+    },
+    {
+      "name": "R3 write retry persists",
+      "expected": "new",
+      "actual": "new",
+      "verdict": "PASS"
+    },
+    {
+      "name": "R1 initial month is local current month",
+      "expected": "2026년 11월",
+      "actual": "2026년 11월",
+      "verdict": "PASS"
+    },
+    {
+      "name": "R1 initial date selects today",
+      "expected": "true",
+      "actual": "true",
+      "verdict": "PASS"
+    },
+    {
+      "name": "R3 first run is empty, writable",
+      "expected": true,
+      "actual": true,
+      "verdict": "PASS"
+    },
+    {
+      "name": "R5 initial dialog focus",
+      "expected": "event-title",
+      "actual": "event-title",
+      "verdict": "PASS"
+    },
+    {
+      "name": "R5 Escape closes and restores focus",
+      "expected": true,
+      "actual": true,
+      "verdict": "PASS"
+    },
+    {
+      "name": "R2 blank title field error retains dialog",
+      "expected": true,
+      "actual": true,
+      "verdict": "PASS"
+    },
+    {
+      "name": "R2 reversed time field error",
+      "expected": true,
+      "actual": true,
+      "verdict": "PASS"
+    },
+    {
+      "name": "R2 equal time field error",
+      "expected": true,
+      "actual": true,
+      "verdict": "PASS"
+    },
+    {
+      "name": "R2 invalid date field error",
+      "expected": true,
+      "actual": true,
+      "verdict": "PASS"
+    },
+    {
+      "name": "R5 modal Tab containment 1",
+      "expected": true,
+      "actual": true,
+      "verdict": "PASS"
+    },
+    {
+      "name": "R5 modal Tab containment 2",
+      "expected": true,
+      "actual": true,
+      "verdict": "PASS"
+    },
+    {
+      "name": "R5 modal Tab containment 3",
+      "expected": true,
+      "actual": true,
+      "verdict": "PASS"
+    },
+    {
+      "name": "R5 modal Tab containment 4",
+      "expected": true,
+      "actual": true,
+      "verdict": "PASS"
+    },
+    {
+      "name": "R5 modal Tab containment 5",
+      "expected": true,
+      "actual": true,
+      "verdict": "PASS"
+    },
+    {
+      "name": "R5 modal Tab containment 6",
+      "expected": true,
+      "actual": true,
+      "verdict": "PASS"
+    },
+    {
+      "name": "R5 modal Tab containment 7",
+      "expected": true,
+      "actual": true,
+      "verdict": "PASS"
+    },
+    {
+      "name": "R5 modal Tab containment 8",
+      "expected": true,
+      "actual": true,
+      "verdict": "PASS"
+    },
+    {
+      "name": "R5 modal Tab containment 9",
+      "expected": true,
+      "actual": true,
+      "verdict": "PASS"
+    },
+    {
+      "name": "R5 modal Tab containment 10",
+      "expected": true,
+      "actual": true,
+      "verdict": "PASS"
+    },
+    {
+      "name": "R5 modal Tab containment 11",
+      "expected": true,
+      "actual": true,
+      "verdict": "PASS"
+    },
+    {
+      "name": "R5 modal Tab containment 12",
+      "expected": true,
+      "actual": true,
+      "verdict": "PASS"
+    },
+    {
+      "name": "R5 modal Tab containment 13",
+      "expected": true,
+      "actual": true,
+      "verdict": "PASS"
+    },
+    {
+      "name": "R5 modal Tab containment 14",
+      "expected": true,
+      "actual": true,
+      "verdict": "PASS"
+    },
+    {
+      "name": "R5 modal Tab containment 15",
+      "expected": true,
+      "actual": true,
+      "verdict": "PASS"
+    },
+    {
+      "name": "R5 modal Tab containment 16",
+      "expected": true,
+      "actual": true,
+      "verdict": "PASS"
+    },
+    {
+      "name": "R5 modal Tab containment 17",
+      "expected": true,
+      "actual": true,
+      "verdict": "PASS"
+    },
+    {
+      "name": "R5 modal Tab containment 18",
+      "expected": true,
+      "actual": true,
+      "verdict": "PASS"
+    },
+    {
+      "name": "R5 modal Tab containment 19",
+      "expected": true,
+      "actual": true,
+      "verdict": "PASS"
+    },
+    {
+      "name": "R5 modal Tab containment 20",
+      "expected": true,
+      "actual": true,
+      "verdict": "PASS"
+    },
+    {
+      "name": "R2 create trims title and renders",
+      "expected": "Design 회의",
+      "actual": "Design 회의",
+      "verdict": "PASS"
+    },
+    {
+      "name": "R3 refresh retains actual event",
+      "expected": "Design 회의",
+      "actual": "Design 회의",
+      "verdict": "PASS"
+    },
+    {
+      "name": "R2 edit keeps ID and replaces title",
+      "expected": true,
+      "actual": true,
+      "verdict": "PASS"
+    },
+    {
+      "name": "R1 agenda chronological order",
+      "expected": [
+        "산책",
+        "수정 회의"
+      ],
+      "actual": [
+        "산책",
+        "수정 회의"
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "name": "R1 calendar day click changes selected aria state",
+      "expected": true,
+      "actual": true,
+      "verdict": "PASS"
+    },
+    {
+      "name": "R1 calendar day click changes heading and agenda",
+      "expected": {
+        "heading": "11월 1일",
+        "count": 0
+      },
+      "actual": {
+        "heading": "11월 1일",
+        "count": 0
+      },
+      "verdict": "PASS"
+    },
+    {
+      "name": "R1 calendar return click restores selected date",
+      "expected": "2026-11-13",
+      "actual": "2026-11-13",
+      "verdict": "PASS"
+    },
+    {
+      "name": "R1 calendar return click restores saved agenda",
+      "expected": {
+        "heading": "11월 13일",
+        "titles": [
+          "산책",
+          "수정 회의"
+        ]
+      },
+      "actual": {
+        "heading": "11월 13일",
+        "titles": [
+          "산책",
+          "수정 회의"
+        ]
+      },
+      "verdict": "PASS"
+    },
+    {
+      "name": "R4 notes case-insensitive search",
+      "expected": [
+        "산책"
+      ],
+      "actual": [
+        "산책"
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "name": "R4 category AND search both views",
+      "expected": true,
+      "actual": true,
+      "verdict": "PASS"
+    },
+    {
+      "name": "R4 filter reset restores results",
+      "expected": true,
+      "actual": true,
+      "verdict": "PASS"
+    },
+    {
+      "name": "R2 deletion confirmation defaults cancel",
+      "expected": true,
+      "actual": true,
+      "verdict": "PASS"
+    },
+    {
+      "name": "R2 cancel deletion preserves records",
+      "expected": 2,
+      "actual": 2,
+      "verdict": "PASS"
+    },
+    {
+      "name": "R2 confirm deletion removes one persisted record",
+      "expected": true,
+      "actual": true,
+      "verdict": "PASS"
+    },
+    {
+      "name": "R1 December to January",
+      "expected": "2027년 1월",
+      "actual": "2027년 1월",
+      "verdict": "PASS"
+    },
+    {
+      "name": "R1 January to December",
+      "expected": "2026년 12월",
+      "actual": "2026년 12월",
+      "verdict": "PASS"
+    },
+    {
+      "name": "R1 leap date selection",
+      "expected": "2024-02-29",
+      "actual": "2024-02-29",
+      "verdict": "PASS"
+    },
+    {
+      "name": "R1 Today resets selection",
+      "expected": "2026-11-13",
+      "actual": "2026-11-13",
+      "verdict": "PASS"
+    },
+    {
+      "name": "R2 input renders literal text",
+      "expected": true,
+      "actual": true,
+      "verdict": "PASS"
+    },
+    {
+      "name": "R5 360px page no horizontal overflow",
+      "expected": true,
+      "actual": true,
+      "verdict": "PASS"
+    },
+    {
+      "name": "R5 mobile dialog fits viewport",
+      "expected": true,
+      "actual": true,
+      "verdict": "PASS"
+    },
+    {
+      "name": "R3 write failure keeps session and warning",
+      "expected": true,
+      "actual": true,
+      "verdict": "PASS"
+    },
+    {
+      "name": "R3 write retry persists session and clears warning",
+      "expected": true,
+      "actual": true,
+      "verdict": "PASS"
+    },
+    {
+      "name": "R3 failed initial read locks both add controls",
+      "expected": true,
+      "actual": true,
+      "verdict": "PASS"
+    },
+    {
+      "name": "R3 failed initial read retry has zero writes",
+      "expected": 0,
+      "actual": 0,
+      "verdict": "PASS"
+    },
+    {
+      "name": "R3 read retry restores existing records without writes",
+      "expected": true,
+      "actual": true,
+      "verdict": "PASS"
+    },
+    {
+      "name": "R3 corrupt storage stays preserved and locks editor",
+      "expected": true,
+      "actual": true,
+      "verdict": "PASS"
+    },
+    {
+      "name": "R3 corrupt retry does not overwrite",
+      "expected": "{broken",
+      "actual": "{broken",
+      "verdict": "PASS"
+    },
+    {
+      "name": "R3 canceled reset preserves original",
+      "expected": "{broken",
+      "actual": "{broken",
+      "verdict": "PASS"
+    },
+    {
+      "name": "R3 confirmed reset initializes empty writable storage",
+      "expected": true,
+      "actual": true,
+      "verdict": "PASS"
+    },
+    {
+      "name": "R5 all form controls visibly labelled",
+      "expected": true,
+      "actual": true,
+      "verdict": "PASS"
+    },
+    {
+      "name": "Browser uncaught exceptions",
+      "expected": 0,
+      "actual": 0,
+      "verdict": "PASS"
+    }
+  ],
+  "screenshots": [
+    "desktop-empty.png",
+    "desktop-populated.png",
+    "mobile-populated.png",
+    "mobile-dialog.png",
+    "desktop-demo.png",
+    "mobile-demo.png"
+  ],
+  "uncaughtExceptions": []
+}
