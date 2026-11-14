@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>일정 관리</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <noscript><p class="noscript">이 앱을 사용하려면 JavaScript를 켜 주세요.</p></noscript>
+
+  <div class="page">
+    <header class="app-header">
+      <h1>일정 관리</h1>
+      <div class="month-nav">
+        <button type="button" id="prev-month" class="btn btn-secondary btn-icon" aria-label="이전 달"><span aria-hidden="true">‹</span></button>
+        <div class="month-label" aria-live="polite"><h2 id="month-heading"></h2></div>
+        <button type="button" id="next-month" class="btn btn-secondary btn-icon" aria-label="다음 달"><span aria-hidden="true">›</span></button>
+        <button type="button" id="today" class="btn btn-secondary">오늘</button>
+      </div>
+    </header>
+
+    <div class="toolbar">
+      <div class="toolbar-row">
+        <div class="field-inline field-search">
+          <label for="search">검색</label>
+          <input type="search" id="search" placeholder="제목 또는 메모 검색" autocomplete="off">
+        </div>
+        <div class="toolbar-group">
+          <div class="field-inline">
+            <label for="category-filter">분류</label>
+            <select id="category-filter">
+              <option value="all">전체</option>
+              <option value="work">업무</option>
+              <option value="personal">개인</option>
+              <option value="health">건강</option>
+              <option value="other">기타</option>
+            </select>
+          </div>
+          <button type="button" id="new-event" class="btn btn-primary">새 일정</button>
+        </div>
+      </div>
+      <div id="filter-bar" class="filter-bar" hidden>
+        <p id="filter-summary"></p>
+        <button type="button" id="clear-filters" class="btn btn-secondary">검색 조건 지우기</button>
+      </div>
+    </div>
+
+    <div id="storage-banner" class="banner" role="alert" hidden></div>
+
+    <main class="main">
+      <div class="calendar-wrap">
+        <table id="calendar" role="grid" aria-labelledby="month-heading">
+          <thead>
+            <tr>
+              <th scope="col" abbr="일요일" class="sun">일</th>
+              <th scope="col" abbr="월요일">월</th>
+              <th scope="col" abbr="화요일">화</th>
+              <th scope="col" abbr="수요일">수</th>
+              <th scope="col" abbr="목요일">목</th>
+              <th scope="col" abbr="금요일">금</th>
+              <th scope="col" abbr="토요일" class="sat">토</th>
+            </tr>
+          </thead>
+          <tbody id="calendar-body"></tbody>
+        </table>
+      </div>
+
+      <section class="day-panel" aria-labelledby="day-heading">
+        <h2 id="day-heading" tabindex="-1"></h2>
+        <ul id="day-list"></ul>
+        <p id="day-empty" class="day-empty" hidden></p>
+      </section>
+    </main>
+
+    <p id="status" role="status" class="visually-hidden"></p>
+  </div>
+
+  <dialog id="event-dialog" aria-labelledby="event-dialog-title">
+    <form id="event-form" novalidate>
+      <h2 id="event-dialog-title">새 일정</h2>
+      <div id="form-alert" class="form-alert" role="alert" hidden></div>
+
+      <div class="form-field">
+        <label for="event-title">제목</label>
+        <input id="event-title" type="text" autocomplete="off" aria-describedby="title-count">
+        <span id="title-count" class="counter">0/100</span>
+      </div>
+
+      <div class="form-field">
+        <label for="event-date">날짜</label>
+        <input id="event-date" type="date">
+      </div>
+
+      <div class="form-field form-check">
+        <input id="event-allday" type="checkbox">
+        <label for="event-allday">종일</label>
+      </div>
+
+      <div id="time-fields" class="time-fields">
+        <div class="form-field">
+          <label for="event-start">시작 시간</label>
+          <input id="event-start" type="time">
+        </div>
+        <div class="form-field">
+          <label for="event-end">종료 시간</label>
+          <input id="event-end" type="time">
+        </div>
+      </div>
+
+      <div class="form-field">
+        <label for="event-category">분류</label>
+        <select id="event-category">
+          <option value="work">업무</option>
+          <option value="personal">개인</option>
+          <option value="health">건강</option>
+          <option value="other">기타</option>
+        </select>
+      </div>
+
+      <div class="form-field">
+        <label for="event-notes">메모</label>
+        <textarea id="event-notes" rows="4" aria-describedby="notes-count"></textarea>
+        <span id="notes-count" class="counter">0/1000</span>
+      </div>
+
+      <div class="dialog-actions">
+        <button type="button" id="delete-event" class="btn btn-danger" hidden>삭제</button>
+        <div class="dialog-actions-end">
+          <button type="button" id="cancel-event" class="btn btn-secondary">취소</button>
+          <button type="submit" id="save-event" class="btn btn-primary">저장</button>
+        </div>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="confirm-dialog" role="alertdialog" aria-labelledby="confirm-title" aria-describedby="confirm-message">
+    <h2 id="confirm-title"></h2>
+    <p id="confirm-message"></p>
+    <div id="confirm-alert" class="form-alert" role="alert" hidden></div>
+    <div class="dialog-actions dialog-actions-right">
+      <button type="button" id="confirm-cancel" class="btn btn-secondary">취소</button>
+      <button type="button" id="confirm-action" class="btn btn-danger"></button>
+    </div>
+  </dialog>
+
+  <script src="src/model.js"></script>
+  <script src="src/storage.js"></script>
+  <script src="src/app.js"></script>
+</body>
+</html>
