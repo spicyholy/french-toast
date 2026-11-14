@@ -1,0 +1,47 @@
+{
+  "base": "0a432183dc5c6c866dedccf1ddd53e499b5c49b1",
+  "ran": "2026-11-14T07:52:35.689Z",
+  "results": [
+    {
+      "id": "R0",
+      "desc": "Run from the repository root",
+      "command": "git rev-parse --show-toplevel",
+      "expected": "cwd is the top level",
+      "actual": {
+        "top": "D:/french-toast",
+        "cwd": "D:\\french-toast"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "R1",
+      "desc": "Tracked changes outside schedule-app list at most README.md",
+      "command": "git diff --name-only 0a432183dc5c6c866dedccf1ddd53e499b5c49b1 -- . ':!schedule-app'",
+      "expected": "subset of [README.md]",
+      "actual": [],
+      "verdict": "pass"
+    },
+    {
+      "id": "R2",
+      "desc": "Working tree status outside schedule-app lists at most README.md",
+      "command": "git status --porcelain --untracked-files=all -- . ':!schedule-app'",
+      "expected": "subset of [ M README.md]",
+      "actual": [],
+      "verdict": "pass"
+    },
+    {
+      "id": "R3",
+      "desc": "Normalized base README is an exact suffix of the current README; inserted report ends with a newline and has no top-level heading",
+      "command": "git show BASE:README.md vs README.md, CRLF->LF",
+      "expected": "suffix true, inserted block valid",
+      "actual": {
+        "suffix": true,
+        "insertedLength": 0,
+        "baseFirstLine": true,
+        "insertedValid": true,
+        "reportWritten": false
+      },
+      "verdict": "pass"
+    }
+  ]
+}
