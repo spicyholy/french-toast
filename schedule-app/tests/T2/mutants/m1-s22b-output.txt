@@ -1,0 +1,6 @@
+scenario SCH-005-S22
+  FAIL S22b Reset target changed and still unreadable: no write, alert, banner stays, focus on 초기화 
+    expected: {"raw":"{b","alert":"저장된 데이터가 바뀌었습니다. 내용을 다시 확인한 후 초기화해 주세요.","open":true,"banner":true,"focus":"confirm-action","writes":[]} 
+    actual:   {"raw":"{b","alert":"저장된 데이터가 바뀌었습니다. 다시 확인해 주세요.","open":true,"banner":true,"focus":"confirm-action","writes":[]}
+fatal: could not open 'C:\Users\wlstj\AppData\Local\Temp\claude\e7bc8d0b97952180\04cc882e-8d26-4aab-a753-bbd69938d15d\scratchpad\mutants\m1-s22b\schedule-app\tests\regression\check.js' for reading: No such file or directory
+{"total":4,"pass":3,"fail":1}

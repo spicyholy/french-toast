@@ -1,0 +1,4 @@
+PASS R0 Run from the repository root {"top":"D:/french-toast","cwd":"D:\\french-toast"}
+PASS R1 Tracked changes outside schedule-app list at most README.md []
+PASS R2 Working tree status outside schedule-app lists at most README.md []
+PASS R3 Normalized base README is an exact suffix of the current README; inserted report ends with a newline and has no top-level heading {"suffix":true,"insertedLength":0,"baseFirstLine":true,"insertedValid":true,"reportWritten":false}

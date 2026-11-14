@@ -1,0 +1,44 @@
+✔ SCH-004 AC2 title: 100 code points saves, 101 is blocked (ASCII) (5.3856ms)
+✔ SCH-004 AC2 title: emoji count as one code point each (100 ok, 101 blocked) (0.4375ms)
+✔ SCH-004 title is trimmed before counting and saving (0.3155ms)
+✔ SCH-004 AC1 empty and whitespace-only titles are blocked (0.8251ms)
+✔ SCH-004 AC2 notes: 1000 code points saves, 1001 is blocked (ASCII and emoji) (0.6384ms)
+✔ SCH-004 AC1 end equal to start or earlier is blocked; later is accepted (0.3099ms)
+✔ SCH-004 AC1 missing start or end time is blocked when not all-day (0.4856ms)
+✔ SCH-002 AC1 all-day ignores times and stores null start/end (0.2548ms)
+✔ SCH-004 AC1 missing or impossible dates are blocked (2.3727ms)
+✔ Year 0026 (code review F1): low years are not shifted to 19xx (4.1109ms)
+✔ SCH-004 errors are reported for every invalid field at once (5.2767ms)
+✔ SCH-002 AC1 valid input yields the record body with category and notes kept (0.5383ms)
+✔ SCH-001 grid: Sunday start, 5 or 6 weeks, covers the month (5.9882ms)
+✔ SCH-001 month navigation clamps the day (design §3.1, §6.2) (0.5277ms)
+✔ PRD ordering: all-day first, then start time, then title (27.9931ms)
+✔ SCH-006 AC1-AC3 search ignores case on title and notes; filter and search combine (0.5163ms)
+✔ Storage contract record shape check (brief) (2.1764ms)
+✔ storage key is schedule-app.events.v1 (6.764ms)
+✔ SCH-005 missing key loads as ok with no events and raw null (3.1591ms)
+✔ SCH-005 AC1 valid data loads and preserves unknown extra fields (1.8134ms)
+✔ SCH-005 AC2 bad JSON is unreadable, nothing is written and raw is unchanged (0.5233ms)
+✔ SCH-005 AC2 non-array object is unreadable, nothing is written and raw is unchanged (0.2405ms)
+✔ SCH-005 AC2 JSON string is unreadable, nothing is written and raw is unchanged (0.236ms)
+✔ SCH-005 AC2 unknown category is unreadable, nothing is written and raw is unchanged (0.4568ms)
+✔ SCH-005 AC2 duplicate ids is unreadable, nothing is written and raw is unchanged (0.3657ms)
+✔ SCH-005 AC2 invalid record is unreadable, nothing is written and raw is unchanged (2.5259ms)
+✔ SCH-005 AC2 null element is unreadable, nothing is written and raw is unchanged (0.8195ms)
+✔ SCH-005 throwing getter (blocked storage) is unreadable with raw undefined and never throws (0.9641ms)
+✔ SCH-005 throwing getItem is unreadable (0.3023ms)
+✔ SCH-005 AC3 throwing setItem (quota) returns ok:false and never throws (0.3004ms)
+✔ SCH-005 AC1 save writes a JSON array that loads back (0.5166ms)
+✔ readRaw returns the stored string unchanged (0.1781ms)
+✔ S17 reset writes [] only when raw still matches and is unreadable (0.2069ms)
+✔ S22 reset returns changed without writing when raw differs (0.2286ms)
+✔ S22 reset does not write when the matching raw value is readable (2.8407ms)
+✔ S18 reset with failing setItem returns an error and keeps the raw value (0.4191ms)
+ℹ tests 36
+ℹ suites 0
+ℹ pass 36
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 390.1932

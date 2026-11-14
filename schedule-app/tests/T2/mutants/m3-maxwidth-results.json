@@ -1,0 +1,347 @@
+{
+  "task": "CL01-SCHED",
+  "run": "T1",
+  "mode": "file",
+  "url": "file:///C:/Users/wlstj/AppData/Local/Temp/claude/e7bc8d0b97952180/04cc882e-8d26-4aab-a753-bbd69938d15d/scratchpad/mutants/m3-maxwidth/schedule-app/index.html",
+  "started": "2026-11-14T08:10:36.322Z",
+  "finished": "2026-11-14T08:10:40.805Z",
+  "chrome": "Chrome/156.0.8078.81",
+  "protocol": "1.3",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+  "node": "v22.19.0",
+  "clock": "Date overridden to local 2026-11-14T10:00 (advancing), timezone Asia/Seoul; page clock read 2026-11-14",
+  "hashes": {
+    "index.html": "0bdaccfed00ad783b2bac232caf72ed0b0f7d3ca",
+    "styles.css": "90b20cd650b2d93104cc5f15e4bc33c287adc15d",
+    "src/model.js": "3a2037477eaba50a3651bb41a4170bf47fee1067",
+    "src/storage.js": "6e521d4e3c475e5564e0bbe37e5793af4692287f",
+    "src/app.js": "6c4ad46f505178e2333f6023b55d41b60d08be06",
+    "README.md": "cd7c90b79fb7c715e104c86ebb3a6023f4cfe808",
+    "tests/unit/index.js": "dae474636ab9f9eba89bea52c4eb32e99d5c9b3b",
+    "tests/unit/model.test.js": "3152d88329f878ef94c0a1c2ce720dd64480aea0",
+    "tests/unit/storage.test.js": "4e13a7935517d29a75fb1e4ea32e80d3c930fe8f",
+    "tests/e2e/cdp.js": "6e21b42afa2ca82dc8a25e73b3d0ff11decbcf96",
+    "tests/e2e/run.js": "441a5f21bda98d3c4fef698dcc25142fa53f956d",
+    "tests/regression/check.js": null
+  },
+  "summary": {
+    "total": 15,
+    "pass": 13,
+    "fail": 2
+  },
+  "checks": [
+    {
+      "id": "L-1280",
+      "req": "SCH-007 AC1",
+      "scenario": "SCH-007-layout",
+      "viewport": "1280x800",
+      "mode": "file",
+      "desc": "No horizontal page scroll at 1280 (scrollWidth <= clientWidth) with 100-char unbroken title",
+      "expected": {
+        "noScroll": true,
+        "innerOk": true
+      },
+      "actual": {
+        "noScroll": true,
+        "innerOk": true,
+        "measured": {
+          "scrollWidth": 1265,
+          "clientWidth": 1265,
+          "innerWidth": 1280
+        }
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "L-1280-columns",
+      "req": "design §2.1",
+      "scenario": "SCH-007-layout",
+      "viewport": "1280x800",
+      "mode": "file",
+      "desc": "Two columns at 1280: day panel beside calendar, 360 px wide",
+      "expected": {
+        "side": true,
+        "panelW": 360
+      },
+      "actual": {
+        "side": true,
+        "panelW": 360
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "L-dialog-1280",
+      "req": "SCH-007 AC1",
+      "scenario": "SCH-007-layout",
+      "viewport": "1280x800",
+      "mode": "file",
+      "desc": "No horizontal scroll with the edit dialog open (1000-char notes)",
+      "expected": true,
+      "actual": true,
+      "verdict": "pass"
+    },
+    {
+      "id": "L-event-dialog-width-1280",
+      "req": "design §2.3",
+      "scenario": "SCH-007-layout",
+      "viewport": "1280x800",
+      "mode": "file",
+      "desc": "event-dialog at 1280: width min(560, 100vw - 32) ±1",
+      "expected": {
+        "open": true,
+        "width": "560 ±1"
+      },
+      "actual": {
+        "open": true,
+        "innerWidth": 1280,
+        "clientWidth": 1265,
+        "left": 352.5,
+        "right": 367.5,
+        "width": 560
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "L-confirm-dialog-width-1280",
+      "req": "design §2.3",
+      "scenario": "SCH-007-layout",
+      "viewport": "1280x800",
+      "mode": "file",
+      "desc": "confirm-dialog at 1280: width min(560, 100vw - 32) ±1",
+      "expected": {
+        "open": true,
+        "width": "560 ±1"
+      },
+      "actual": {
+        "open": true,
+        "innerWidth": 1280,
+        "clientWidth": 1265,
+        "left": 352.5,
+        "right": 367.5,
+        "width": 560
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "C-edit-dialog-1280",
+      "req": "SCH-007 AC4",
+      "scenario": "SCH-007-layout",
+      "viewport": "1280x800",
+      "mode": "file",
+      "desc": "All visible text in edit-dialog-1280 has contrast >= 4.5:1 (rendered colors)",
+      "expected": "min >= 4.5",
+      "actual": "min 6.47",
+      "verdict": "pass"
+    },
+    {
+      "id": "C-edit-dialog-1280-tokens",
+      "req": "SCH-007 AC4 / design §4, §10.6",
+      "scenario": "SCH-007-layout",
+      "viewport": "1280x800",
+      "mode": "file",
+      "desc": "Every rendered text/background pair in edit-dialog-1280 is a §4 token pair",
+      "expected": "all pairs in §4",
+      "actual": "all 5 pairs in §4",
+      "verdict": "pass"
+    },
+    {
+      "id": "L-375",
+      "req": "SCH-007 AC1",
+      "scenario": "SCH-007-layout",
+      "viewport": "375x800",
+      "mode": "file",
+      "desc": "No horizontal page scroll at 375 (scrollWidth <= clientWidth) with 100-char unbroken title",
+      "expected": {
+        "noScroll": true,
+        "innerOk": true
+      },
+      "actual": {
+        "noScroll": true,
+        "innerOk": true,
+        "measured": {
+          "scrollWidth": 375,
+          "clientWidth": 375,
+          "innerWidth": 375
+        }
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "L-375-column",
+      "req": "design §2.2",
+      "scenario": "SCH-007-layout",
+      "viewport": "375x800",
+      "mode": "file",
+      "desc": "Single column at 375: day panel below the calendar",
+      "expected": true,
+      "actual": true,
+      "verdict": "pass"
+    },
+    {
+      "id": "L-dialog-375",
+      "req": "SCH-007 AC1",
+      "scenario": "SCH-007-layout",
+      "viewport": "375x800",
+      "mode": "file",
+      "desc": "No horizontal scroll with the edit dialog open (1000-char notes)",
+      "expected": true,
+      "actual": true,
+      "verdict": "pass"
+    },
+    {
+      "id": "L-event-dialog-width-375",
+      "req": "design §2.3 / SCH-007 AC1",
+      "scenario": "SCH-007-layout",
+      "viewport": "375x800",
+      "mode": "file",
+      "desc": "event-dialog at 375 (mobile emulation, no scrollbar): width min(560, 100vw - 32) ±1 and 16 px ±1 gutters",
+      "expected": {
+        "open": true,
+        "noScrollbar": true,
+        "width": "343 ±1",
+        "left": "16 ±1",
+        "right": "16 ±1"
+      },
+      "actual": {
+        "open": true,
+        "innerWidth": 375,
+        "clientWidth": 375,
+        "left": 19,
+        "right": 19,
+        "width": 337
+      },
+      "verdict": "fail"
+    },
+    {
+      "id": "L-confirm-dialog-width-375",
+      "req": "design §2.3 / SCH-007 AC1",
+      "scenario": "SCH-007-layout",
+      "viewport": "375x800",
+      "mode": "file",
+      "desc": "confirm-dialog at 375 (mobile emulation, no scrollbar): width min(560, 100vw - 32) ±1 and 16 px ±1 gutters",
+      "expected": {
+        "open": true,
+        "noScrollbar": true,
+        "width": "343 ±1",
+        "left": "16 ±1",
+        "right": "16 ±1"
+      },
+      "actual": {
+        "open": true,
+        "innerWidth": 375,
+        "clientWidth": 375,
+        "left": 19,
+        "right": 19,
+        "width": 337
+      },
+      "verdict": "fail"
+    },
+    {
+      "id": "C-edit-dialog-375",
+      "req": "SCH-007 AC4",
+      "scenario": "SCH-007-layout",
+      "viewport": "375x800",
+      "mode": "file",
+      "desc": "All visible text in edit-dialog-375 has contrast >= 4.5:1 (rendered colors)",
+      "expected": "min >= 4.5",
+      "actual": "min 6.47",
+      "verdict": "pass"
+    },
+    {
+      "id": "C-edit-dialog-375-tokens",
+      "req": "SCH-007 AC4 / design §4, §10.6",
+      "scenario": "SCH-007-layout",
+      "viewport": "375x800",
+      "mode": "file",
+      "desc": "Every rendered text/background pair in edit-dialog-375 is a §4 token pair",
+      "expected": "all pairs in §4",
+      "actual": "all 5 pairs in §4",
+      "verdict": "pass"
+    },
+    {
+      "id": "EXC",
+      "req": "regression",
+      "scenario": "global",
+      "viewport": "",
+      "mode": "file",
+      "desc": "No uncaught page exceptions during the run",
+      "expected": [],
+      "actual": [],
+      "verdict": "pass"
+    }
+  ],
+  "contrast": [
+    {
+      "label": "edit-dialog-1280",
+      "viewport": "1280x800",
+      "pairs": [
+        {
+          "pair": "#1F2937 on #FFFFFF",
+          "ratio": 14.68,
+          "sample": "[event-category value] work",
+          "disabled": false
+        },
+        {
+          "pair": "#4B5563 on #FFFFFF",
+          "ratio": 7.56,
+          "sample": "0/1000",
+          "disabled": false
+        },
+        {
+          "pair": "#FFFFFF on #B91C1C",
+          "ratio": 6.47,
+          "sample": "삭제",
+          "disabled": false
+        },
+        {
+          "pair": "#1D4ED8 on #FFFFFF",
+          "ratio": 6.7,
+          "sample": "취소",
+          "disabled": false
+        },
+        {
+          "pair": "#FFFFFF on #1D4ED8",
+          "ratio": 6.7,
+          "sample": "저장",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "label": "edit-dialog-375",
+      "viewport": "375x800",
+      "pairs": [
+        {
+          "pair": "#1F2937 on #FFFFFF",
+          "ratio": 14.68,
+          "sample": "[event-category value] work",
+          "disabled": false
+        },
+        {
+          "pair": "#4B5563 on #FFFFFF",
+          "ratio": 7.56,
+          "sample": "0/1000",
+          "disabled": false
+        },
+        {
+          "pair": "#FFFFFF on #B91C1C",
+          "ratio": 6.47,
+          "sample": "삭제",
+          "disabled": false
+        },
+        {
+          "pair": "#1D4ED8 on #FFFFFF",
+          "ratio": 6.7,
+          "sample": "취소",
+          "disabled": false
+        },
+        {
+          "pair": "#FFFFFF on #1D4ED8",
+          "ratio": 6.7,
+          "sample": "저장",
+          "disabled": false
+        }
+      ]
+    }
+  ]
+}

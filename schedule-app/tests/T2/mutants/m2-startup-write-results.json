@@ -1,0 +1,1027 @@
+{
+  "task": "CL01-SCHED",
+  "run": "T1",
+  "mode": "file",
+  "url": "file:///C:/Users/wlstj/AppData/Local/Temp/claude/e7bc8d0b97952180/04cc882e-8d26-4aab-a753-bbd69938d15d/scratchpad/mutants/m2-startup-write/schedule-app/index.html",
+  "started": "2026-11-14T08:10:22.866Z",
+  "finished": "2026-11-14T08:10:35.241Z",
+  "chrome": "Chrome/156.0.8078.81",
+  "protocol": "1.3",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+  "node": "v22.19.0",
+  "clock": "Date overridden to local 2026-11-14T10:00 (advancing), timezone Asia/Seoul; page clock read 2026-11-14",
+  "hashes": {
+    "index.html": "0bdaccfed00ad783b2bac232caf72ed0b0f7d3ca",
+    "styles.css": "4c750d53c9dfbc7db8c8a56712238e944cd131f8",
+    "src/model.js": "3a2037477eaba50a3651bb41a4170bf47fee1067",
+    "src/storage.js": "6e521d4e3c475e5564e0bbe37e5793af4692287f",
+    "src/app.js": "64cc9e3ba1701425f9a5e7aa8f5d74917c4b7504",
+    "README.md": "cd7c90b79fb7c715e104c86ebb3a6023f4cfe808",
+    "tests/unit/index.js": "dae474636ab9f9eba89bea52c4eb32e99d5c9b3b",
+    "tests/unit/model.test.js": "3152d88329f878ef94c0a1c2ce720dd64480aea0",
+    "tests/unit/storage.test.js": "4e13a7935517d29a75fb1e4ea32e80d3c930fe8f",
+    "tests/e2e/cdp.js": "6e21b42afa2ca82dc8a25e73b3d0ff11decbcf96",
+    "tests/e2e/run.js": "441a5f21bda98d3c4fef698dcc25142fa53f956d",
+    "tests/regression/check.js": null
+  },
+  "summary": {
+    "total": 48,
+    "pass": 31,
+    "fail": 17
+  },
+  "checks": [
+    {
+      "id": "S15-banner-1280",
+      "req": "SCH-005 AC2 / S15",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "1280x800",
+      "mode": "file",
+      "desc": "Banner text and reset button shown",
+      "expected": {
+        "hidden": false,
+        "text": "저장된 일정을 불러올 수 없습니다. 저장된 데이터는 변경되지 않았습니다.",
+        "btn": "데이터 초기화"
+      },
+      "actual": {
+        "hidden": false,
+        "text": "저장된 일정을 불러올 수 없습니다. 저장된 데이터는 변경되지 않았습니다.",
+        "btn": "데이터 초기화"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S15-state-1280",
+      "req": "S15",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "1280x800",
+      "mode": "file",
+      "desc": "새 일정 disabled, no chips, empty day text, raw unchanged",
+      "expected": {
+        "disabled": true,
+        "chips": 0,
+        "empty": "이 날에는 일정이 없습니다.",
+        "raw": "{not json"
+      },
+      "actual": {
+        "disabled": true,
+        "chips": 0,
+        "empty": "이 날에는 일정이 없습니다.",
+        "raw": "{not json"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "C-banner-1280",
+      "req": "SCH-007 AC4",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "1280x800",
+      "mode": "file",
+      "desc": "All visible text in banner-1280 has contrast >= 4.5:1 (rendered colors)",
+      "expected": "min >= 4.5",
+      "actual": "min 6.41",
+      "verdict": "pass"
+    },
+    {
+      "id": "C-banner-1280-tokens",
+      "req": "SCH-007 AC4 / design §4, §10.6",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "1280x800",
+      "mode": "file",
+      "desc": "Every rendered text/background pair in banner-1280 is a §4 token pair",
+      "expected": "all pairs in §4",
+      "actual": "all 9 pairs in §4",
+      "verdict": "pass"
+    },
+    {
+      "id": "S15-hscroll-1280",
+      "req": "SCH-007 AC1",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "1280x800",
+      "mode": "file",
+      "desc": "No horizontal scroll with banner",
+      "expected": true,
+      "actual": true,
+      "verdict": "pass"
+    },
+    {
+      "id": "S15-nav-1280",
+      "req": "S15",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "1280x800",
+      "mode": "file",
+      "desc": "Month nav, search and filter still work; raw unchanged",
+      "expected": {
+        "m": "2026년 11월",
+        "raw": "{not json",
+        "summary": "이번 달에 조건에 맞는 일정이 없습니다."
+      },
+      "actual": {
+        "m": "2026년 11월",
+        "raw": "{not json",
+        "summary": "이번 달에 조건에 맞는 일정이 없습니다."
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "W-S15-load-nav-1280",
+      "req": "SCH-005 AC2 / S15 (F3)",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "1280x800",
+      "mode": "file",
+      "desc": "No setItem call to the key during load, month navigation, search and filter",
+      "expected": [],
+      "actual": [
+        "{not json"
+      ],
+      "verdict": "fail"
+    },
+    {
+      "id": "S16-open-1280",
+      "req": "S16",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "1280x800",
+      "mode": "file",
+      "desc": "Reset confirm strings and focus on 취소",
+      "expected": {
+        "open": true,
+        "t": "저장된 데이터를 초기화할까요?",
+        "m": "읽을 수 없는 저장 데이터가 삭제되며 되돌릴 수 없습니다.",
+        "c": "취소",
+        "a": "초기화",
+        "focus": "confirm-cancel"
+      },
+      "actual": {
+        "open": true,
+        "t": "저장된 데이터를 초기화할까요?",
+        "m": "읽을 수 없는 저장 데이터가 삭제되며 되돌릴 수 없습니다.",
+        "c": "취소",
+        "a": "초기화",
+        "focus": "confirm-cancel"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S16-cancel-1280",
+      "req": "S16 / SCH-005 AC2",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "1280x800",
+      "mode": "file",
+      "desc": "Cancel keeps raw byte-identical and returns focus to 데이터 초기화",
+      "expected": {
+        "open": false,
+        "focus": "banner-button",
+        "raw": "{not json"
+      },
+      "actual": {
+        "open": false,
+        "focus": "banner-button",
+        "raw": "{not json"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S16-escape-1280",
+      "req": "S16",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "1280x800",
+      "mode": "file",
+      "desc": "Escape closes reset confirm; raw unchanged",
+      "expected": {
+        "open": false,
+        "raw": "{not json"
+      },
+      "actual": {
+        "open": false,
+        "raw": "{not json"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "W-S16-cancel-1280",
+      "req": "SCH-005 AC2 / S16 (F3)",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "1280x800",
+      "mode": "file",
+      "desc": "No setItem call after reset cancel and Escape",
+      "expected": [],
+      "actual": [
+        "{not json"
+      ],
+      "verdict": "fail"
+    },
+    {
+      "id": "S15-reload-1280",
+      "req": "SCH-005 AC2",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "1280x800",
+      "mode": "file",
+      "desc": "Reload keeps raw byte-identical",
+      "expected": "{not json",
+      "actual": "{not json",
+      "verdict": "pass"
+    },
+    {
+      "id": "W-S15-reload-1280",
+      "req": "SCH-005 AC2 (F3)",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "1280x800",
+      "mode": "file",
+      "desc": "No setItem call after reload with unreadable data",
+      "expected": [],
+      "actual": [
+        "{not json"
+      ],
+      "verdict": "fail"
+    },
+    {
+      "id": "W-S17-1280",
+      "req": "S17 (F3)",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "1280x800",
+      "mode": "file",
+      "desc": "A confirmed reset makes exactly one write of []",
+      "expected": [
+        "[]"
+      ],
+      "actual": [
+        "{not json",
+        "[]"
+      ],
+      "verdict": "fail"
+    },
+    {
+      "id": "S17-1280",
+      "req": "S17",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "1280x800",
+      "mode": "file",
+      "desc": "Reset writes [], removes banner, enables 새 일정, focus to #new-event",
+      "expected": {
+        "raw": "[]",
+        "banner": false,
+        "disabled": false,
+        "focus": "new-event",
+        "status": "저장 데이터를 초기화했습니다.",
+        "confirm": false
+      },
+      "actual": {
+        "raw": "[]",
+        "banner": false,
+        "disabled": false,
+        "focus": "new-event",
+        "status": "저장 데이터를 초기화했습니다.",
+        "confirm": false
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S15-banner-375",
+      "req": "SCH-005 AC2 / S15",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "375x800",
+      "mode": "file",
+      "desc": "Banner text and reset button shown",
+      "expected": {
+        "hidden": false,
+        "text": "저장된 일정을 불러올 수 없습니다. 저장된 데이터는 변경되지 않았습니다.",
+        "btn": "데이터 초기화"
+      },
+      "actual": {
+        "hidden": false,
+        "text": "저장된 일정을 불러올 수 없습니다. 저장된 데이터는 변경되지 않았습니다.",
+        "btn": "데이터 초기화"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S15-state-375",
+      "req": "S15",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "375x800",
+      "mode": "file",
+      "desc": "새 일정 disabled, no chips, empty day text, raw unchanged",
+      "expected": {
+        "disabled": true,
+        "chips": 0,
+        "empty": "이 날에는 일정이 없습니다.",
+        "raw": "{not json"
+      },
+      "actual": {
+        "disabled": true,
+        "chips": 0,
+        "empty": "이 날에는 일정이 없습니다.",
+        "raw": "{not json"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "C-banner-375",
+      "req": "SCH-007 AC4",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "375x800",
+      "mode": "file",
+      "desc": "All visible text in banner-375 has contrast >= 4.5:1 (rendered colors)",
+      "expected": "min >= 4.5",
+      "actual": "min 6.41",
+      "verdict": "pass"
+    },
+    {
+      "id": "C-banner-375-tokens",
+      "req": "SCH-007 AC4 / design §4, §10.6",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "375x800",
+      "mode": "file",
+      "desc": "Every rendered text/background pair in banner-375 is a §4 token pair",
+      "expected": "all pairs in §4",
+      "actual": "all 9 pairs in §4",
+      "verdict": "pass"
+    },
+    {
+      "id": "S15-hscroll-375",
+      "req": "SCH-007 AC1",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "375x800",
+      "mode": "file",
+      "desc": "No horizontal scroll with banner",
+      "expected": true,
+      "actual": true,
+      "verdict": "pass"
+    },
+    {
+      "id": "S15-nav-375",
+      "req": "S15",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "375x800",
+      "mode": "file",
+      "desc": "Month nav, search and filter still work; raw unchanged",
+      "expected": {
+        "m": "2026년 11월",
+        "raw": "{not json",
+        "summary": "이번 달에 조건에 맞는 일정이 없습니다."
+      },
+      "actual": {
+        "m": "2026년 11월",
+        "raw": "{not json",
+        "summary": "이번 달에 조건에 맞는 일정이 없습니다."
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "W-S15-load-nav-375",
+      "req": "SCH-005 AC2 / S15 (F3)",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "375x800",
+      "mode": "file",
+      "desc": "No setItem call to the key during load, month navigation, search and filter",
+      "expected": [],
+      "actual": [
+        "{not json"
+      ],
+      "verdict": "fail"
+    },
+    {
+      "id": "S16-open-375",
+      "req": "S16",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "375x800",
+      "mode": "file",
+      "desc": "Reset confirm strings and focus on 취소",
+      "expected": {
+        "open": true,
+        "t": "저장된 데이터를 초기화할까요?",
+        "m": "읽을 수 없는 저장 데이터가 삭제되며 되돌릴 수 없습니다.",
+        "c": "취소",
+        "a": "초기화",
+        "focus": "confirm-cancel"
+      },
+      "actual": {
+        "open": true,
+        "t": "저장된 데이터를 초기화할까요?",
+        "m": "읽을 수 없는 저장 데이터가 삭제되며 되돌릴 수 없습니다.",
+        "c": "취소",
+        "a": "초기화",
+        "focus": "confirm-cancel"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S16-cancel-375",
+      "req": "S16 / SCH-005 AC2",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "375x800",
+      "mode": "file",
+      "desc": "Cancel keeps raw byte-identical and returns focus to 데이터 초기화",
+      "expected": {
+        "open": false,
+        "focus": "banner-button",
+        "raw": "{not json"
+      },
+      "actual": {
+        "open": false,
+        "focus": "banner-button",
+        "raw": "{not json"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S16-escape-375",
+      "req": "S16",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "375x800",
+      "mode": "file",
+      "desc": "Escape closes reset confirm; raw unchanged",
+      "expected": {
+        "open": false,
+        "raw": "{not json"
+      },
+      "actual": {
+        "open": false,
+        "raw": "{not json"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "W-S16-cancel-375",
+      "req": "SCH-005 AC2 / S16 (F3)",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "375x800",
+      "mode": "file",
+      "desc": "No setItem call after reset cancel and Escape",
+      "expected": [],
+      "actual": [
+        "{not json"
+      ],
+      "verdict": "fail"
+    },
+    {
+      "id": "S15-reload-375",
+      "req": "SCH-005 AC2",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "375x800",
+      "mode": "file",
+      "desc": "Reload keeps raw byte-identical",
+      "expected": "{not json",
+      "actual": "{not json",
+      "verdict": "pass"
+    },
+    {
+      "id": "W-S15-reload-375",
+      "req": "SCH-005 AC2 (F3)",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "375x800",
+      "mode": "file",
+      "desc": "No setItem call after reload with unreadable data",
+      "expected": [],
+      "actual": [
+        "{not json"
+      ],
+      "verdict": "fail"
+    },
+    {
+      "id": "W-S17-375",
+      "req": "S17 (F3)",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "375x800",
+      "mode": "file",
+      "desc": "A confirmed reset makes exactly one write of []",
+      "expected": [
+        "[]"
+      ],
+      "actual": [
+        "{not json",
+        "[]"
+      ],
+      "verdict": "fail"
+    },
+    {
+      "id": "S17-375",
+      "req": "S17",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "375x800",
+      "mode": "file",
+      "desc": "Reset writes [], removes banner, enables 새 일정, focus to #new-event",
+      "expected": {
+        "raw": "[]",
+        "banner": false,
+        "disabled": false,
+        "focus": "new-event",
+        "status": "저장 데이터를 초기화했습니다.",
+        "confirm": false
+      },
+      "actual": {
+        "raw": "[]",
+        "banner": false,
+        "disabled": false,
+        "focus": "new-event",
+        "status": "저장 데이터를 초기화했습니다.",
+        "confirm": false
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S15-non-array",
+      "req": "SCH-005 AC2 / brief decision 3",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "1280x800",
+      "mode": "file",
+      "desc": "non-array shows the exact banner and leaves raw byte-identical with no writes",
+      "expected": {
+        "banner": {
+          "hidden": false,
+          "text": "저장된 일정을 불러올 수 없습니다. 저장된 데이터는 변경되지 않았습니다.",
+          "btn": "데이터 초기화"
+        },
+        "raw": "{\"a\":1}",
+        "disabled": true,
+        "writes": []
+      },
+      "actual": {
+        "banner": {
+          "hidden": false,
+          "text": "저장된 일정을 불러올 수 없습니다. 저장된 데이터는 변경되지 않았습니다.",
+          "btn": "데이터 초기화"
+        },
+        "raw": "{\"a\":1}",
+        "disabled": true,
+        "writes": [
+          "{\"a\":1}"
+        ]
+      },
+      "verdict": "fail"
+    },
+    {
+      "id": "S15-unknown-category",
+      "req": "SCH-005 AC2 / brief decision 3",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "1280x800",
+      "mode": "file",
+      "desc": "unknown-category shows the exact banner and leaves raw byte-identical with no writes",
+      "expected": {
+        "banner": {
+          "hidden": false,
+          "text": "저장된 일정을 불러올 수 없습니다. 저장된 데이터는 변경되지 않았습니다.",
+          "btn": "데이터 초기화"
+        },
+        "raw": "[{\"id\":\"seed-1\",\"title\":\"일정1\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"travel\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:01.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"}]",
+        "disabled": true,
+        "writes": []
+      },
+      "actual": {
+        "banner": {
+          "hidden": false,
+          "text": "저장된 일정을 불러올 수 없습니다. 저장된 데이터는 변경되지 않았습니다.",
+          "btn": "데이터 초기화"
+        },
+        "raw": "[{\"id\":\"seed-1\",\"title\":\"일정1\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"travel\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:01.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"}]",
+        "disabled": true,
+        "writes": [
+          "[{\"id\":\"seed-1\",\"title\":\"일정1\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"travel\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:01.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"}]"
+        ]
+      },
+      "verdict": "fail"
+    },
+    {
+      "id": "S15-duplicate-ids",
+      "req": "SCH-005 AC2 / brief decision 3",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "1280x800",
+      "mode": "file",
+      "desc": "duplicate-ids shows the exact banner and leaves raw byte-identical with no writes",
+      "expected": {
+        "banner": {
+          "hidden": false,
+          "text": "저장된 일정을 불러올 수 없습니다. 저장된 데이터는 변경되지 않았습니다.",
+          "btn": "데이터 초기화"
+        },
+        "raw": "[{\"id\":\"dup\",\"title\":\"일정2\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:02.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"},{\"id\":\"dup\",\"title\":\"일정3\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:03.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"}]",
+        "disabled": true,
+        "writes": []
+      },
+      "actual": {
+        "banner": {
+          "hidden": false,
+          "text": "저장된 일정을 불러올 수 없습니다. 저장된 데이터는 변경되지 않았습니다.",
+          "btn": "데이터 초기화"
+        },
+        "raw": "[{\"id\":\"dup\",\"title\":\"일정2\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:02.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"},{\"id\":\"dup\",\"title\":\"일정3\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:03.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"}]",
+        "disabled": true,
+        "writes": [
+          "[{\"id\":\"dup\",\"title\":\"일정2\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:02.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"},{\"id\":\"dup\",\"title\":\"일정3\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:03.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"}]"
+        ]
+      },
+      "verdict": "fail"
+    },
+    {
+      "id": "S15-bad-record-pretty",
+      "req": "SCH-005 AC2 / brief decision 3",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "1280x800",
+      "mode": "file",
+      "desc": "bad-record-pretty shows the exact banner and leaves raw byte-identical with no writes",
+      "expected": {
+        "banner": {
+          "hidden": false,
+          "text": "저장된 일정을 불러올 수 없습니다. 저장된 데이터는 변경되지 않았습니다.",
+          "btn": "데이터 초기화"
+        },
+        "raw": "[\n  {\"id\": 1, \"title\": \"x\"}\n]\r\n  ",
+        "disabled": true,
+        "writes": []
+      },
+      "actual": {
+        "banner": {
+          "hidden": false,
+          "text": "저장된 일정을 불러올 수 없습니다. 저장된 데이터는 변경되지 않았습니다.",
+          "btn": "데이터 초기화"
+        },
+        "raw": "[\n  {\"id\": 1, \"title\": \"x\"}\n]\r\n  ",
+        "disabled": true,
+        "writes": [
+          "[\n  {\"id\": 1, \"title\": \"x\"}\n]\r\n  "
+        ]
+      },
+      "verdict": "fail"
+    },
+    {
+      "id": "S15-untrimmed-title",
+      "req": "SCH-005 AC2 / brief decision 3",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "1280x800",
+      "mode": "file",
+      "desc": "untrimmed-title shows the exact banner and leaves raw byte-identical with no writes",
+      "expected": {
+        "banner": {
+          "hidden": false,
+          "text": "저장된 일정을 불러올 수 없습니다. 저장된 데이터는 변경되지 않았습니다.",
+          "btn": "데이터 초기화"
+        },
+        "raw": "[{\"id\":\"seed-4\",\"title\":\" 공백\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:04.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"}]",
+        "disabled": true,
+        "writes": []
+      },
+      "actual": {
+        "banner": {
+          "hidden": false,
+          "text": "저장된 일정을 불러올 수 없습니다. 저장된 데이터는 변경되지 않았습니다.",
+          "btn": "데이터 초기화"
+        },
+        "raw": "[{\"id\":\"seed-4\",\"title\":\" 공백\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:04.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"}]",
+        "disabled": true,
+        "writes": [
+          "[{\"id\":\"seed-4\",\"title\":\" 공백\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:04.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"}]"
+        ]
+      },
+      "verdict": "fail"
+    },
+    {
+      "id": "S15-extra-ok",
+      "req": "storage contract",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "1280x800",
+      "mode": "file",
+      "desc": "Unknown extra fields are allowed (no banner)",
+      "expected": {
+        "banner": false,
+        "chips": [
+          "09:00 확장"
+        ],
+        "raw": "[{\"id\":\"seed-5\",\"title\":\"확장\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:05.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\",\"extraX\":1}]"
+      },
+      "actual": {
+        "banner": false,
+        "chips": [
+          "09:00 확장"
+        ],
+        "raw": "[{\"id\":\"seed-5\",\"title\":\"확장\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:05.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\",\"extraX\":1}]"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "BLK-stub",
+      "req": "harness",
+      "scenario": "SCH-005-blocked-storage",
+      "viewport": "1280x800",
+      "mode": "file",
+      "desc": "window.localStorage getter throws SecurityError",
+      "expected": "SecurityError",
+      "actual": "SecurityError",
+      "verdict": "pass"
+    },
+    {
+      "id": "S15-blocked",
+      "req": "SCH-005 / design open issue 2",
+      "scenario": "SCH-005-blocked-storage",
+      "viewport": "1280x800",
+      "mode": "file",
+      "desc": "Blocked storage shows S15 banner and disables 새 일정",
+      "expected": {
+        "banner": "저장된 일정을 불러올 수 없습니다. 저장된 데이터는 변경되지 않았습니다.데이터 초기화",
+        "disabled": true,
+        "chips": 0
+      },
+      "actual": {
+        "banner": "저장된 일정을 불러올 수 없습니다. 저장된 데이터는 변경되지 않았습니다.데이터 초기화",
+        "disabled": true,
+        "chips": 0
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "W-blocked-load",
+      "req": "SCH-005 (F3)",
+      "scenario": "SCH-005-blocked-storage",
+      "viewport": "1280x800",
+      "mode": "file",
+      "desc": "No setItem call to the key while storage is blocked",
+      "expected": [],
+      "actual": [],
+      "verdict": "pass"
+    },
+    {
+      "id": "W-blocked-cancel",
+      "req": "SCH-005 (F3)",
+      "scenario": "SCH-005-blocked-storage",
+      "viewport": "1280x800",
+      "mode": "file",
+      "desc": "No setItem call after reset cancel and Escape while blocked",
+      "expected": [],
+      "actual": [],
+      "verdict": "pass"
+    },
+    {
+      "id": "W-blocked-reset",
+      "req": "S18 (F3)",
+      "scenario": "SCH-005-blocked-storage",
+      "viewport": "1280x800",
+      "mode": "file",
+      "desc": "Blocked reset reaches no Storage object, so no write is recorded",
+      "expected": [],
+      "actual": [],
+      "verdict": "pass"
+    },
+    {
+      "id": "S18-blocked",
+      "req": "design open issue 2 / S18",
+      "scenario": "SCH-005-blocked-storage",
+      "viewport": "1280x800",
+      "mode": "file",
+      "desc": "Reset with blocked storage ends in S18: confirm stays, alert, banner stays, focus on 초기화",
+      "expected": {
+        "open": true,
+        "alert": "초기화하지 못했습니다. 다시 시도해 주세요.",
+        "banner": true,
+        "focus": "confirm-action"
+      },
+      "actual": {
+        "open": true,
+        "alert": "초기화하지 못했습니다. 다시 시도해 주세요.",
+        "banner": true,
+        "focus": "confirm-action"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "BLK-raw",
+      "req": "SCH-005 AC2",
+      "scenario": "SCH-005-blocked-storage",
+      "viewport": "1280x800",
+      "mode": "file",
+      "desc": "After unblocking, the stored raw value is byte-identical",
+      "expected": "[{\"id\":\"seed-1\",\"title\":\"보존\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:01.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"}]",
+      "actual": "[{\"id\":\"seed-1\",\"title\":\"보존\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:01.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"}]",
+      "verdict": "pass"
+    },
+    {
+      "id": "W-blocked-after",
+      "req": "SCH-005 AC2 (F3)",
+      "scenario": "SCH-005-blocked-storage",
+      "viewport": "1280x800",
+      "mode": "file",
+      "desc": "No setItem call after unblocking and reloading valid data",
+      "expected": [],
+      "actual": [
+        "[{\"id\":\"seed-1\",\"title\":\"보존\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:01.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"}]"
+      ],
+      "verdict": "fail"
+    },
+    {
+      "id": "S22a",
+      "req": "S22 (a)",
+      "scenario": "SCH-005-S22",
+      "viewport": "1280x800",
+      "mode": "file",
+      "desc": "Reset target became readable: no write, banner removed, event renders, focus #new-event",
+      "expected": {
+        "raw": "[{\"id\":\"evt-new\",\"title\":\"다른 탭 일정\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:01.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"}]",
+        "confirm": false,
+        "banner": false,
+        "disabled": false,
+        "chips": [
+          "09:00 다른 탭 일정"
+        ],
+        "status": "저장된 데이터를 다시 불러왔습니다.",
+        "focus": "new-event",
+        "writes": []
+      },
+      "actual": {
+        "writes": [
+          "{a"
+        ],
+        "raw": "[{\"id\":\"evt-new\",\"title\":\"다른 탭 일정\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:01.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"}]",
+        "confirm": false,
+        "banner": false,
+        "disabled": false,
+        "chips": [
+          "09:00 다른 탭 일정"
+        ],
+        "status": "저장된 데이터를 다시 불러왔습니다.",
+        "focus": "new-event"
+      },
+      "verdict": "fail"
+    },
+    {
+      "id": "S22b",
+      "req": "S22 (b)",
+      "scenario": "SCH-005-S22",
+      "viewport": "1280x800",
+      "mode": "file",
+      "desc": "Reset target changed and still unreadable: no write, alert, banner stays, focus on 초기화",
+      "expected": {
+        "raw": "{b",
+        "alert": "저장된 데이터가 바뀌었습니다. 내용을 다시 확인한 후 초기화해 주세요.",
+        "open": true,
+        "banner": true,
+        "focus": "confirm-action",
+        "writes": []
+      },
+      "actual": {
+        "raw": "{b",
+        "alert": "저장된 데이터가 바뀌었습니다. 내용을 다시 확인한 후 초기화해 주세요.",
+        "open": true,
+        "banner": true,
+        "focus": "confirm-action",
+        "writes": [
+          "{a"
+        ]
+      },
+      "verdict": "fail"
+    },
+    {
+      "id": "S22b-second",
+      "req": "S22 (b) recovery",
+      "scenario": "SCH-005-S22",
+      "viewport": "1280x800",
+      "mode": "file",
+      "desc": "Second 초기화 resets against the new baseline",
+      "expected": {
+        "raw": "[]",
+        "status": "저장 데이터를 초기화했습니다.",
+        "writes": [
+          "[]"
+        ]
+      },
+      "actual": {
+        "raw": "[]",
+        "status": "저장 데이터를 초기화했습니다.",
+        "writes": [
+          "{a",
+          "[]"
+        ]
+      },
+      "verdict": "fail"
+    },
+    {
+      "id": "EXC",
+      "req": "regression",
+      "scenario": "global",
+      "viewport": "",
+      "mode": "file",
+      "desc": "No uncaught page exceptions during the run",
+      "expected": [],
+      "actual": [],
+      "verdict": "pass"
+    }
+  ],
+  "contrast": [
+    {
+      "label": "banner-1280",
+      "viewport": "1280x800",
+      "pairs": [
+        {
+          "pair": "#1F2937 on #FFFFFF",
+          "ratio": 14.68,
+          "sample": "[category-filter value] all",
+          "disabled": false
+        },
+        {
+          "pair": "#1D4ED8 on #FFFFFF",
+          "ratio": 6.7,
+          "sample": "‹",
+          "disabled": false
+        },
+        {
+          "pair": "#4B5563 on #F3F4F6",
+          "ratio": 6.87,
+          "sample": "새 일정",
+          "disabled": true
+        },
+        {
+          "pair": "#7F1D1D on #FEF2F2",
+          "ratio": 9.16,
+          "sample": "저장된 일정을 불러올 수 없습니다. 저장된 데이터는 변경되지 않았습니다.",
+          "disabled": false
+        },
+        {
+          "pair": "#B91C1C on #FFFFFF",
+          "ratio": 6.47,
+          "sample": "일",
+          "disabled": false
+        },
+        {
+          "pair": "#4B5563 on #FFFFFF",
+          "ratio": 7.56,
+          "sample": "이 날에는 일정이 없습니다.",
+          "disabled": false
+        },
+        {
+          "pair": "#FFFFFF on #1D4ED8",
+          "ratio": 6.7,
+          "sample": "14",
+          "disabled": false
+        },
+        {
+          "pair": "#4B5563 on #F9FAFB",
+          "ratio": 7.23,
+          "sample": "1",
+          "disabled": false
+        },
+        {
+          "pair": "#1D4ED8 on #F9FAFB",
+          "ratio": 6.41,
+          "sample": "5",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "label": "banner-375",
+      "viewport": "375x800",
+      "pairs": [
+        {
+          "pair": "#1F2937 on #FFFFFF",
+          "ratio": 14.68,
+          "sample": "[category-filter value] all",
+          "disabled": false
+        },
+        {
+          "pair": "#1D4ED8 on #FFFFFF",
+          "ratio": 6.7,
+          "sample": "‹",
+          "disabled": false
+        },
+        {
+          "pair": "#4B5563 on #F3F4F6",
+          "ratio": 6.87,
+          "sample": "새 일정",
+          "disabled": true
+        },
+        {
+          "pair": "#7F1D1D on #FEF2F2",
+          "ratio": 9.16,
+          "sample": "저장된 일정을 불러올 수 없습니다. 저장된 데이터는 변경되지 않았습니다.",
+          "disabled": false
+        },
+        {
+          "pair": "#B91C1C on #FFFFFF",
+          "ratio": 6.47,
+          "sample": "일",
+          "disabled": false
+        },
+        {
+          "pair": "#4B5563 on #FFFFFF",
+          "ratio": 7.56,
+          "sample": "이 날에는 일정이 없습니다.",
+          "disabled": false
+        },
+        {
+          "pair": "#FFFFFF on #1D4ED8",
+          "ratio": 6.7,
+          "sample": "14",
+          "disabled": false
+        },
+        {
+          "pair": "#4B5563 on #F9FAFB",
+          "ratio": 7.23,
+          "sample": "1",
+          "disabled": false
+        },
+        {
+          "pair": "#1D4ED8 on #F9FAFB",
+          "ratio": 6.41,
+          "sample": "5",
+          "disabled": false
+        }
+      ]
+    }
+  ]
+}

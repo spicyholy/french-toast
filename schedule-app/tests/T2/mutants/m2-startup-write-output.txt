@@ -1,0 +1,56 @@
+scenario SCH-005-unreadable-S15-S16-S17
+  FAIL W-S15-load-nav-1280 No setItem call to the key during load, month navigation, search and filter 
+    expected: [] 
+    actual:   ["{not json"]
+  FAIL W-S16-cancel-1280 No setItem call after reset cancel and Escape 
+    expected: [] 
+    actual:   ["{not json"]
+  FAIL W-S15-reload-1280 No setItem call after reload with unreadable data 
+    expected: [] 
+    actual:   ["{not json"]
+  FAIL W-S17-1280 A confirmed reset makes exactly one write of [] 
+    expected: ["[]"] 
+    actual:   ["{not json","[]"]
+  FAIL W-S15-load-nav-375 No setItem call to the key during load, month navigation, search and filter 
+    expected: [] 
+    actual:   ["{not json"]
+  FAIL W-S16-cancel-375 No setItem call after reset cancel and Escape 
+    expected: [] 
+    actual:   ["{not json"]
+  FAIL W-S15-reload-375 No setItem call after reload with unreadable data 
+    expected: [] 
+    actual:   ["{not json"]
+  FAIL W-S17-375 A confirmed reset makes exactly one write of [] 
+    expected: ["[]"] 
+    actual:   ["{not json","[]"]
+  FAIL S15-non-array non-array shows the exact banner and leaves raw byte-identical with no writes 
+    expected: {"banner":{"hidden":false,"text":"저장된 일정을 불러올 수 없습니다. 저장된 데이터는 변경되지 않았습니다.","btn":"데이터 초기화"},"raw":"{\"a\":1}","disabled":true,"writes":[]} 
+    actual:   {"banner":{"hidden":false,"text":"저장된 일정을 불러올 수 없습니다. 저장된 데이터는 변경되지 않았습니다.","btn":"데이터 초기화"},"raw":"{\"a\":1}","disabled":true,"writes":["{\"a\":1}"]}
+  FAIL S15-unknown-category unknown-category shows the exact banner and leaves raw byte-identical with no writes 
+    expected: {"banner":{"hidden":false,"text":"저장된 일정을 불러올 수 없습니다. 저장된 데이터는 변경되지 않았습니다.","btn":"데이터 초기화"},"raw":"[{\"id\":\"seed-1\",\"title\":\"일정1\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"travel\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:01.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"}]","disabled":true,"writes":[]} 
+    actual:   {"banner":{"hidden":false,"text":"저장된 일정을 불러올 수 없습니다. 저장된 데이터는 변경되지 않았습니다.","btn":"데이터 초기화"},"raw":"[{\"id\":\"seed-1\",\"title\":\"일정1\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"travel\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:01.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"}]","disabled":true,"writes":["[{\"id\":\"seed-1\",\"title\":\"일정1\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"travel\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:01.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"}]"]}
+  FAIL S15-duplicate-ids duplicate-ids shows the exact banner and leaves raw byte-identical with no writes 
+    expected: {"banner":{"hidden":false,"text":"저장된 일정을 불러올 수 없습니다. 저장된 데이터는 변경되지 않았습니다.","btn":"데이터 초기화"},"raw":"[{\"id\":\"dup\",\"title\":\"일정2\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:02.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"},{\"id\":\"dup\",\"title\":\"일정3\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:03.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"}]","disabled":true,"writes":[]} 
+    actual:   {"banner":{"hidden":false,"text":"저장된 일정을 불러올 수 없습니다. 저장된 데이터는 변경되지 않았습니다.","btn":"데이터 초기화"},"raw":"[{\"id\":\"dup\",\"title\":\"일정2\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:02.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"},{\"id\":\"dup\",\"title\":\"일정3\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:03.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"}]","disabled":true,"writes":["[{\"id\":\"dup\",\"title\":\"일정2\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:02.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"},{\"id\":\"dup\",\"title\":\"일정3\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:03.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"}]"]}
+  FAIL S15-bad-record-pretty bad-record-pretty shows the exact banner and leaves raw byte-identical with no writes 
+    expected: {"banner":{"hidden":false,"text":"저장된 일정을 불러올 수 없습니다. 저장된 데이터는 변경되지 않았습니다.","btn":"데이터 초기화"},"raw":"[\n  {\"id\": 1, \"title\": \"x\"}\n]\r\n  ","disabled":true,"writes":[]} 
+    actual:   {"banner":{"hidden":false,"text":"저장된 일정을 불러올 수 없습니다. 저장된 데이터는 변경되지 않았습니다.","btn":"데이터 초기화"},"raw":"[\n  {\"id\": 1, \"title\": \"x\"}\n]\r\n  ","disabled":true,"writes":["[\n  {\"id\": 1, \"title\": \"x\"}\n]\r\n  "]}
+  FAIL S15-untrimmed-title untrimmed-title shows the exact banner and leaves raw byte-identical with no writes 
+    expected: {"banner":{"hidden":false,"text":"저장된 일정을 불러올 수 없습니다. 저장된 데이터는 변경되지 않았습니다.","btn":"데이터 초기화"},"raw":"[{\"id\":\"seed-4\",\"title\":\" 공백\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:04.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"}]","disabled":true,"writes":[]} 
+    actual:   {"banner":{"hidden":false,"text":"저장된 일정을 불러올 수 없습니다. 저장된 데이터는 변경되지 않았습니다.","btn":"데이터 초기화"},"raw":"[{\"id\":\"seed-4\",\"title\":\" 공백\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:04.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"}]","disabled":true,"writes":["[{\"id\":\"seed-4\",\"title\":\" 공백\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:04.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"}]"]}
+scenario SCH-005-blocked-storage
+  FAIL W-blocked-after No setItem call after unblocking and reloading valid data 
+    expected: [] 
+    actual:   ["[{\"id\":\"seed-1\",\"title\":\"보존\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:01.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"}]"]
+scenario SCH-005-S22
+  FAIL S22a Reset target became readable: no write, banner removed, event renders, focus #new-event 
+    expected: {"raw":"[{\"id\":\"evt-new\",\"title\":\"다른 탭 일정\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:01.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"}]","confirm":false,"banner":false,"disabled":false,"chips":["09:00 다른 탭 일정"],"status":"저장된 데이터를 다시 불러왔습니다.","focus":"new-event","writes":[]} 
+    actual:   {"writes":["{a"],"raw":"[{\"id\":\"evt-new\",\"title\":\"다른 탭 일정\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:01.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"}]","confirm":false,"banner":false,"disabled":false,"chips":["09:00 다른 탭 일정"],"status":"저장된 데이터를 다시 불러왔습니다.","focus":"new-event"}
+  FAIL S22b Reset target changed and still unreadable: no write, alert, banner stays, focus on 초기화 
+    expected: {"raw":"{b","alert":"저장된 데이터가 바뀌었습니다. 내용을 다시 확인한 후 초기화해 주세요.","open":true,"banner":true,"focus":"confirm-action","writes":[]} 
+    actual:   {"raw":"{b","alert":"저장된 데이터가 바뀌었습니다. 내용을 다시 확인한 후 초기화해 주세요.","open":true,"banner":true,"focus":"confirm-action","writes":["{a"]}
+  FAIL S22b-second Second 초기화 resets against the new baseline 
+    expected: {"raw":"[]","status":"저장 데이터를 초기화했습니다.","writes":["[]"]} 
+    actual:   {"raw":"[]","status":"저장 데이터를 초기화했습니다.","writes":["{a","[]"]}
+fatal: could not open 'C:\Users\wlstj\AppData\Local\Temp\claude\e7bc8d0b97952180\04cc882e-8d26-4aab-a753-bbd69938d15d\scratchpad\mutants\m2-startup-write\schedule-app\tests\regression\check.js' for reading: No such file or directory
+{"total":48,"pass":31,"fail":17}

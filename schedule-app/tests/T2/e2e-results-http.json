@@ -1,0 +1,5506 @@
+{
+  "task": "CL01-SCHED",
+  "run": "T1",
+  "mode": "http",
+  "url": "http://127.0.0.1:54064/index.html",
+  "started": "2026-11-14T08:11:40.126Z",
+  "finished": "2026-11-14T08:12:23.829Z",
+  "chrome": "Chrome/156.0.8078.81",
+  "protocol": "1.3",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+  "node": "v22.19.0",
+  "clock": "Date overridden to local 2026-11-14T10:00 (advancing), timezone Asia/Seoul; page clock read 2026-11-14",
+  "hashes": {
+    "index.html": "0bdaccfed00ad783b2bac232caf72ed0b0f7d3ca",
+    "styles.css": "4c750d53c9dfbc7db8c8a56712238e944cd131f8",
+    "src/model.js": "3a2037477eaba50a3651bb41a4170bf47fee1067",
+    "src/storage.js": "6e521d4e3c475e5564e0bbe37e5793af4692287f",
+    "src/app.js": "6c4ad46f505178e2333f6023b55d41b60d08be06",
+    "README.md": "cd7c90b79fb7c715e104c86ebb3a6023f4cfe808",
+    "tests/unit/index.js": "dae474636ab9f9eba89bea52c4eb32e99d5c9b3b",
+    "tests/unit/model.test.js": "3152d88329f878ef94c0a1c2ce720dd64480aea0",
+    "tests/unit/storage.test.js": "4e13a7935517d29a75fb1e4ea32e80d3c930fe8f",
+    "tests/e2e/cdp.js": "6e21b42afa2ca82dc8a25e73b3d0ff11decbcf96",
+    "tests/e2e/run.js": "441a5f21bda98d3c4fef698dcc25142fa53f956d",
+    "tests/regression/check.js": "4114bc1e0ffdcadbbb405f49e14cba6744f0e4e9"
+  },
+  "summary": {
+    "total": 238,
+    "pass": 238,
+    "fail": 0
+  },
+  "checks": [
+    {
+      "id": "S15-src",
+      "req": "SCH-005 AC2 / S15",
+      "scenario": "static-strings-and-S1",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "index.html source does not contain the banner text",
+      "expected": false,
+      "actual": false,
+      "verdict": "pass"
+    },
+    {
+      "id": "S19-src",
+      "req": "design §8.1",
+      "scenario": "static-strings-and-S1",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "noscript string present in source",
+      "expected": true,
+      "actual": true,
+      "verdict": "pass"
+    },
+    {
+      "id": "STR-1",
+      "req": "design §8.1",
+      "scenario": "static-strings-and-S1",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Static Korean strings",
+      "expected": {
+        "title": "일정 관리",
+        "h1": "일정 관리",
+        "prev": "이전 달",
+        "next": "다음 달",
+        "today": "오늘",
+        "weekdays": [
+          "일",
+          "월",
+          "화",
+          "수",
+          "목",
+          "금",
+          "토"
+        ],
+        "searchLabel": "검색",
+        "placeholder": "제목 또는 메모 검색",
+        "filterLabel": "분류",
+        "filterOptions": [
+          "all:전체",
+          "work:업무",
+          "personal:개인",
+          "health:건강",
+          "other:기타"
+        ],
+        "newEvent": "새 일정",
+        "clear": "검색 조건 지우기",
+        "fieldLabels": [
+          "제목",
+          "날짜",
+          "종일",
+          "시작 시간",
+          "종료 시간",
+          "분류",
+          "메모"
+        ],
+        "catOptions": [
+          "work:업무",
+          "personal:개인",
+          "health:건강",
+          "other:기타"
+        ],
+        "buttons": [
+          "취소",
+          "저장",
+          "삭제"
+        ],
+        "counters": [
+          "0/100",
+          "0/1000"
+        ]
+      },
+      "actual": {
+        "title": "일정 관리",
+        "h1": "일정 관리",
+        "prev": "이전 달",
+        "next": "다음 달",
+        "today": "오늘",
+        "weekdays": [
+          "일",
+          "월",
+          "화",
+          "수",
+          "목",
+          "금",
+          "토"
+        ],
+        "searchLabel": "검색",
+        "placeholder": "제목 또는 메모 검색",
+        "filterLabel": "분류",
+        "filterOptions": [
+          "all:전체",
+          "work:업무",
+          "personal:개인",
+          "health:건강",
+          "other:기타"
+        ],
+        "newEvent": "새 일정",
+        "clear": "검색 조건 지우기",
+        "fieldLabels": [
+          "제목",
+          "날짜",
+          "종일",
+          "시작 시간",
+          "종료 시간",
+          "분류",
+          "메모"
+        ],
+        "catOptions": [
+          "work:업무",
+          "personal:개인",
+          "health:건강",
+          "other:기타"
+        ],
+        "buttons": [
+          "취소",
+          "저장",
+          "삭제"
+        ],
+        "counters": [
+          "0/100",
+          "0/1000"
+        ]
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S1-heading",
+      "req": "SCH-001 AC1",
+      "scenario": "static-strings-and-S1",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Opens on current month (clock fixed to 2026-11-14)",
+      "expected": "2026년 11월",
+      "actual": "2026년 11월",
+      "verdict": "pass"
+    },
+    {
+      "id": "S1-today",
+      "req": "SCH-001 AC1",
+      "scenario": "static-strings-and-S1",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Exactly one today cell, selected, with marker and label",
+      "expected": {
+        "date": "2026-11-14",
+        "sel": "true",
+        "label": "2026년 11월 14일 토요일, 일정 없음, 오늘",
+        "tab": "0",
+        "numBg": "rgb(29, 78, 216)"
+      },
+      "actual": {
+        "date": "2026-11-14",
+        "sel": "true",
+        "label": "2026년 11월 14일 토요일, 일정 없음, 오늘",
+        "tab": "0",
+        "numBg": "rgb(29, 78, 216)"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S1-tabstop",
+      "req": "SCH-007 AC2 / design §3.3",
+      "scenario": "static-strings-and-S1",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Exactly one cell has tabindex=0",
+      "expected": [
+        "2026-11-14"
+      ],
+      "actual": [
+        "2026-11-14"
+      ],
+      "verdict": "pass"
+    },
+    {
+      "id": "S1-rows",
+      "req": "SCH-001 / design §2.1",
+      "scenario": "static-strings-and-S1",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "November 2026 grid has 5 rows starting 11-01",
+      "expected": {
+        "rows": 5,
+        "first": "2026-11-01"
+      },
+      "actual": {
+        "rows": 5,
+        "first": "2026-11-01"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S1-dayheading",
+      "req": "SCH-001 AC4 / design §3.4",
+      "scenario": "static-strings-and-S1",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Day heading for today",
+      "expected": "11월 14일 (토) 일정",
+      "actual": "11월 14일 (토) 일정",
+      "verdict": "pass"
+    },
+    {
+      "id": "S1-empty",
+      "req": "SCH-001 / S1",
+      "scenario": "static-strings-and-S1",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Empty day text visible",
+      "expected": "이 날에는 일정이 없습니다.",
+      "actual": "이 날에는 일정이 없습니다.",
+      "verdict": "pass"
+    },
+    {
+      "id": "S1-chips",
+      "req": "S1",
+      "scenario": "static-strings-and-S1",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "No chips on first run",
+      "expected": 0,
+      "actual": 0,
+      "verdict": "pass"
+    },
+    {
+      "id": "S1-nofocus",
+      "req": "S1",
+      "scenario": "static-strings-and-S1",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "No focus moved on load",
+      "expected": "body",
+      "actual": "body",
+      "verdict": "pass"
+    },
+    {
+      "id": "S1-nowrite",
+      "req": "SCH-005 AC2",
+      "scenario": "static-strings-and-S1",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "First run writes nothing (key still absent)",
+      "expected": null,
+      "actual": null,
+      "verdict": "pass"
+    },
+    {
+      "id": "S1-banner-hidden",
+      "req": "S15",
+      "scenario": "static-strings-and-S1",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Banner hidden on valid storage",
+      "expected": true,
+      "actual": true,
+      "verdict": "pass"
+    },
+    {
+      "id": "S1-live",
+      "req": "SCH-007 AC3 / design §6.3",
+      "scenario": "static-strings-and-S1",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Live regions: heading wrapper polite, status role=status, alerts role=alert",
+      "expected": {
+        "heading": "polite",
+        "status": "status",
+        "formAlert": "alert",
+        "confirmAlert": "alert",
+        "banner": "alert"
+      },
+      "actual": {
+        "heading": "polite",
+        "status": "status",
+        "formAlert": "alert",
+        "confirmAlert": "alert",
+        "banner": "alert"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "A11Y-labels",
+      "req": "SCH-007 AC3",
+      "scenario": "static-strings-and-S1",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Every input/select/textarea has a non-empty <label for>",
+      "expected": [],
+      "actual": [],
+      "verdict": "pass"
+    },
+    {
+      "id": "S19",
+      "req": "design §8.1 / S19",
+      "scenario": "S19-noscript",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "With JS disabled the noscript text is visible",
+      "expected": "이 앱을 사용하려면 JavaScript를 켜 주세요.",
+      "actual": "이 앱을 사용하려면 JavaScript를 켜 주세요.",
+      "verdict": "pass"
+    },
+    {
+      "id": "NAV-next",
+      "req": "SCH-001 AC2",
+      "scenario": "SCH-001-month-nav",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Next month heading, selection same day, focus stays",
+      "expected": {
+        "h": "2026년 12월",
+        "sel": "2026-12-14",
+        "f": "next-month"
+      },
+      "actual": {
+        "h": "2026년 12월",
+        "sel": "2026-12-14",
+        "f": "next-month"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "NAV-year",
+      "req": "SCH-001 AC2",
+      "scenario": "SCH-001-month-nav",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Year rollover",
+      "expected": "2027년 1월",
+      "actual": "2027년 1월",
+      "verdict": "pass"
+    },
+    {
+      "id": "NAV-prev",
+      "req": "SCH-001 AC2",
+      "scenario": "SCH-001-month-nav",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Previous month heading and focus",
+      "expected": {
+        "h": "2026년 10월",
+        "sel": "2026-10-14",
+        "f": "prev-month"
+      },
+      "actual": {
+        "h": "2026년 10월",
+        "sel": "2026-10-14",
+        "f": "prev-month"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "NAV-clamp",
+      "req": "SCH-001 AC2 / design §3.1",
+      "scenario": "SCH-001-month-nav",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "10-31 + next month clamps to 11-30",
+      "expected": {
+        "h": "2026년 11월",
+        "sel": "2026-11-30"
+      },
+      "actual": {
+        "h": "2026년 11월",
+        "sel": "2026-11-30"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "NAV-today",
+      "req": "SCH-001 AC2",
+      "scenario": "SCH-001-month-nav",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Today button returns to current month and selects today; focus stays",
+      "expected": {
+        "h": "2026년 11월",
+        "sel": "2026-11-14",
+        "f": "today"
+      },
+      "actual": {
+        "h": "2026년 11월",
+        "sel": "2026-11-14",
+        "f": "today"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "SEL-mouse",
+      "req": "SCH-001 AC4",
+      "scenario": "SCH-001-mouse-and-keyboard-selection",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Mouse click selects day and lists its events",
+      "expected": {
+        "sel": "2026-11-20",
+        "h": "11월 20일 (금) 일정",
+        "list": [
+          "스무날"
+        ],
+        "f": "2026-11-20"
+      },
+      "actual": {
+        "sel": "2026-11-20",
+        "h": "11월 20일 (금) 일정",
+        "list": [
+          "스무날"
+        ],
+        "f": "2026-11-20"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "SEL-mouse-outside",
+      "req": "SCH-001 AC4 / design §3.3",
+      "scenario": "SCH-001-mouse-and-keyboard-selection",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Clicking an outside cell switches month and selects it",
+      "expected": {
+        "m": "2026년 12월",
+        "sel": "2026-12-01",
+        "list": [
+          "다음달"
+        ]
+      },
+      "actual": {
+        "m": "2026년 12월",
+        "sel": "2026-12-01",
+        "list": [
+          "다음달"
+        ]
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "SEL-key-ArrowRight",
+      "req": "SCH-001 AC4 / design §6.2",
+      "scenario": "SCH-001-mouse-and-keyboard-selection",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "ArrowRight moves focus and selection",
+      "expected": {
+        "sel": "2026-11-15",
+        "focus": "2026-11-15",
+        "h": "11월 15일 (일) 일정",
+        "stops": [
+          "2026-11-15"
+        ]
+      },
+      "actual": {
+        "sel": "2026-11-15",
+        "focus": "2026-11-15",
+        "h": "11월 15일 (일) 일정",
+        "stops": [
+          "2026-11-15"
+        ]
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "SEL-key-ArrowLeft",
+      "req": "SCH-001 AC4 / design §6.2",
+      "scenario": "SCH-001-mouse-and-keyboard-selection",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "ArrowLeft moves focus and selection",
+      "expected": {
+        "sel": "2026-11-14",
+        "focus": "2026-11-14",
+        "h": "11월 14일 (토) 일정",
+        "stops": [
+          "2026-11-14"
+        ]
+      },
+      "actual": {
+        "sel": "2026-11-14",
+        "focus": "2026-11-14",
+        "h": "11월 14일 (토) 일정",
+        "stops": [
+          "2026-11-14"
+        ]
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "SEL-key-ArrowDown",
+      "req": "SCH-001 AC4 / design §6.2",
+      "scenario": "SCH-001-mouse-and-keyboard-selection",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "ArrowDown moves focus and selection",
+      "expected": {
+        "sel": "2026-11-21",
+        "focus": "2026-11-21",
+        "h": "11월 21일 (토) 일정",
+        "stops": [
+          "2026-11-21"
+        ]
+      },
+      "actual": {
+        "sel": "2026-11-21",
+        "focus": "2026-11-21",
+        "h": "11월 21일 (토) 일정",
+        "stops": [
+          "2026-11-21"
+        ]
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "SEL-key-ArrowUp",
+      "req": "SCH-001 AC4 / design §6.2",
+      "scenario": "SCH-001-mouse-and-keyboard-selection",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "ArrowUp moves focus and selection",
+      "expected": {
+        "sel": "2026-11-14",
+        "focus": "2026-11-14",
+        "h": "11월 14일 (토) 일정",
+        "stops": [
+          "2026-11-14"
+        ]
+      },
+      "actual": {
+        "sel": "2026-11-14",
+        "focus": "2026-11-14",
+        "h": "11월 14일 (토) 일정",
+        "stops": [
+          "2026-11-14"
+        ]
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "SEL-key-Home",
+      "req": "SCH-001 AC4 / design §6.2",
+      "scenario": "SCH-001-mouse-and-keyboard-selection",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Home moves focus and selection",
+      "expected": {
+        "sel": "2026-11-08",
+        "focus": "2026-11-08",
+        "h": "11월 8일 (일) 일정",
+        "stops": [
+          "2026-11-08"
+        ]
+      },
+      "actual": {
+        "sel": "2026-11-08",
+        "focus": "2026-11-08",
+        "h": "11월 8일 (일) 일정",
+        "stops": [
+          "2026-11-08"
+        ]
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "SEL-key-End",
+      "req": "SCH-001 AC4 / design §6.2",
+      "scenario": "SCH-001-mouse-and-keyboard-selection",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "End moves focus and selection",
+      "expected": {
+        "sel": "2026-11-14",
+        "focus": "2026-11-14",
+        "h": "11월 14일 (토) 일정",
+        "stops": [
+          "2026-11-14"
+        ]
+      },
+      "actual": {
+        "sel": "2026-11-14",
+        "focus": "2026-11-14",
+        "h": "11월 14일 (토) 일정",
+        "stops": [
+          "2026-11-14"
+        ]
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "SEL-key-PageDown",
+      "req": "SCH-001 AC4 / design §6.2",
+      "scenario": "SCH-001-mouse-and-keyboard-selection",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "PageDown moves focus and selection",
+      "expected": {
+        "sel": "2026-12-14",
+        "focus": "2026-12-14",
+        "h": "12월 14일 (월) 일정",
+        "stops": [
+          "2026-12-14"
+        ]
+      },
+      "actual": {
+        "sel": "2026-12-14",
+        "focus": "2026-12-14",
+        "h": "12월 14일 (월) 일정",
+        "stops": [
+          "2026-12-14"
+        ]
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "SEL-key-PageUp",
+      "req": "SCH-001 AC4 / design §6.2",
+      "scenario": "SCH-001-mouse-and-keyboard-selection",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "PageUp moves focus and selection",
+      "expected": {
+        "sel": "2026-11-14",
+        "focus": "2026-11-14",
+        "h": "11월 14일 (토) 일정",
+        "stops": [
+          "2026-11-14"
+        ]
+      },
+      "actual": {
+        "sel": "2026-11-14",
+        "focus": "2026-11-14",
+        "h": "11월 14일 (토) 일정",
+        "stops": [
+          "2026-11-14"
+        ]
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "SEL-key-list",
+      "req": "SCH-001 AC4",
+      "scenario": "SCH-001-mouse-and-keyboard-selection",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Keyboard selection lists that day's events",
+      "expected": [
+        "보름"
+      ],
+      "actual": [
+        "보름"
+      ],
+      "verdict": "pass"
+    },
+    {
+      "id": "SEL-cross",
+      "req": "design §10.3",
+      "scenario": "SCH-001-mouse-and-keyboard-selection",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "ArrowRight from 11-30 lands on 12-01 with focus kept in grid",
+      "expected": {
+        "m": "2026년 12월",
+        "sel": "2026-12-01",
+        "focus": "2026-12-01"
+      },
+      "actual": {
+        "m": "2026년 12월",
+        "sel": "2026-12-01",
+        "focus": "2026-12-01"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "SEL-pgdn-clamp",
+      "req": "design §6.2",
+      "scenario": "SCH-001-mouse-and-keyboard-selection",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "PageDown from 2027-01-31 clamps to 2027-02-28",
+      "expected": {
+        "m": "2027년 2월",
+        "sel": "2027-02-28",
+        "focus": "2027-02-28"
+      },
+      "actual": {
+        "m": "2027년 2월",
+        "sel": "2027-02-28",
+        "focus": "2027-02-28"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "SEL-enter",
+      "req": "SCH-001 AC4 / design §6.2",
+      "scenario": "SCH-001-mouse-and-keyboard-selection",
+      "viewport": "375x400",
+      "mode": "http",
+      "desc": "Enter keeps the focused date selected and listed",
+      "expected": {
+        "sel": "2026-11-20",
+        "focus": "2026-11-20",
+        "list": [
+          "스무날"
+        ]
+      },
+      "actual": {
+        "sel": "2026-11-20",
+        "focus": "2026-11-20",
+        "list": [
+          "스무날"
+        ]
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "SEL-space",
+      "req": "SCH-001 AC4 / design §6.2",
+      "scenario": "SCH-001-mouse-and-keyboard-selection",
+      "viewport": "375x400",
+      "mode": "http",
+      "desc": "Space selects the focused date without scrolling the page",
+      "expected": {
+        "sel": "2026-11-20",
+        "focus": "2026-11-20",
+        "scrolled": false,
+        "pageScrollable": true
+      },
+      "actual": {
+        "sel": "2026-11-20",
+        "focus": "2026-11-20",
+        "scrolled": false,
+        "pageScrollable": true
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "AC3-chips-1280",
+      "req": "SCH-001 AC3 / S2",
+      "scenario": "SCH-001-AC3-cells-and-order",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Cell shows first 3 events in PRD order",
+      "expected": [
+        "종일A",
+        "종일B",
+        "08:00 가나"
+      ],
+      "actual": [
+        "종일A",
+        "종일B",
+        "08:00 가나"
+      ],
+      "verdict": "pass"
+    },
+    {
+      "id": "AC3-overflow-1280",
+      "req": "SCH-001 AC3 / S2",
+      "scenario": "SCH-001-AC3-cells-and-order",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Overflow line +2",
+      "expected": "+2",
+      "actual": "+2",
+      "verdict": "pass"
+    },
+    {
+      "id": "AC3-overflow-vis-1280",
+      "req": "SCH-001 AC3",
+      "scenario": "SCH-001-AC3-cells-and-order",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "+N is visible",
+      "expected": true,
+      "actual": true,
+      "verdict": "pass"
+    },
+    {
+      "id": "AC3-list-1280",
+      "req": "S2 / PRD ordering",
+      "scenario": "SCH-001-AC3-cells-and-order",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Day list has all 5 in order",
+      "expected": [
+        "종일A",
+        "종일B",
+        "가나",
+        "아침",
+        "나중"
+      ],
+      "actual": [
+        "종일A",
+        "종일B",
+        "가나",
+        "아침",
+        "나중"
+      ],
+      "verdict": "pass"
+    },
+    {
+      "id": "AC3-label-1280",
+      "req": "design §3.3",
+      "scenario": "SCH-001-AC3-cells-and-order",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Cell aria-label counts events",
+      "expected": "2026년 11월 14일 토요일, 일정 5개, 오늘",
+      "actual": "2026년 11월 14일 토요일, 일정 5개, 오늘",
+      "verdict": "pass"
+    },
+    {
+      "id": "AC3-outside-1280",
+      "req": "design §3.3",
+      "scenario": "SCH-001-AC3-cells-and-order",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Outside cell 12-01 shows its own chip and is marked outside",
+      "expected": {
+        "outside": "true",
+        "chips": [
+          "바깥"
+        ]
+      },
+      "actual": {
+        "outside": "true",
+        "chips": [
+          "바깥"
+        ]
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "AC3-items-1280",
+      "req": "design §3.4",
+      "scenario": "SCH-001-AC3-cells-and-order",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "List item shows time line, category badge and title",
+      "expected": [
+        true,
+        true,
+        true
+      ],
+      "actual": [
+        true,
+        true,
+        true
+      ],
+      "verdict": "pass"
+    },
+    {
+      "id": "AC3-notes-preview-1280",
+      "req": "design §3.4",
+      "scenario": "SCH-001-AC3-cells-and-order",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Notes preview is the first 80 chars followed by …",
+      "expected": "첫 메모 첫 메모 첫 메모 첫 메모 첫 메모 첫 메모 첫 메모 첫 메모 첫 메모 첫 메모 첫 메모 첫 메모 첫 메모 첫 메모 첫 메모 첫 메모 …",
+      "actual": "첫 메모 첫 메모 첫 메모 첫 메모 첫 메모 첫 메모 첫 메모 첫 메모 첫 메모 첫 메모 첫 메모 첫 메모 첫 메모 첫 메모 첫 메모 첫 메모 …",
+      "verdict": "pass"
+    },
+    {
+      "id": "C-populated-1280",
+      "req": "SCH-007 AC4",
+      "scenario": "SCH-001-AC3-cells-and-order",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "All visible text in populated-1280 has contrast >= 4.5:1 (rendered colors)",
+      "expected": "min >= 4.5",
+      "actual": "min 5.48",
+      "verdict": "pass"
+    },
+    {
+      "id": "C-populated-1280-tokens",
+      "req": "SCH-007 AC4 / design §4, §10.6",
+      "scenario": "SCH-001-AC3-cells-and-order",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Every rendered text/background pair in populated-1280 is a §4 token pair",
+      "expected": "all pairs in §4",
+      "actual": "all 12 pairs in §4",
+      "verdict": "pass"
+    },
+    {
+      "id": "C-selected-sat-1280",
+      "req": "SCH-007 AC4",
+      "scenario": "SCH-001-AC3-cells-and-order",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "All visible text in selected-sat-1280 has contrast >= 4.5:1 (rendered colors)",
+      "expected": "min >= 4.5",
+      "actual": "min 5.48",
+      "verdict": "pass"
+    },
+    {
+      "id": "C-selected-sat-1280-tokens",
+      "req": "SCH-007 AC4 / design §4, §10.6",
+      "scenario": "SCH-001-AC3-cells-and-order",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Every rendered text/background pair in selected-sat-1280 is a §4 token pair",
+      "expected": "all pairs in §4",
+      "actual": "all 10 pairs in §4",
+      "verdict": "pass"
+    },
+    {
+      "id": "C-selected-weekday-1280",
+      "req": "SCH-007 AC4",
+      "scenario": "SCH-001-AC3-cells-and-order",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "All visible text in selected-weekday-1280 has contrast >= 4.5:1 (rendered colors)",
+      "expected": "min >= 4.5",
+      "actual": "min 5.48",
+      "verdict": "pass"
+    },
+    {
+      "id": "C-selected-weekday-1280-tokens",
+      "req": "SCH-007 AC4 / design §4, §10.6",
+      "scenario": "SCH-001-AC3-cells-and-order",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Every rendered text/background pair in selected-weekday-1280 is a §4 token pair",
+      "expected": "all pairs in §4",
+      "actual": "all 10 pairs in §4",
+      "verdict": "pass"
+    },
+    {
+      "id": "C-selected-sun-1280",
+      "req": "SCH-007 AC4",
+      "scenario": "SCH-001-AC3-cells-and-order",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "All visible text in selected-sun-1280 has contrast >= 4.5:1 (rendered colors)",
+      "expected": "min >= 4.5",
+      "actual": "min 5.48",
+      "verdict": "pass"
+    },
+    {
+      "id": "C-selected-sun-1280-tokens",
+      "req": "SCH-007 AC4 / design §4, §10.6",
+      "scenario": "SCH-001-AC3-cells-and-order",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Every rendered text/background pair in selected-sun-1280 is a §4 token pair",
+      "expected": "all pairs in §4",
+      "actual": "all 10 pairs in §4",
+      "verdict": "pass"
+    },
+    {
+      "id": "C-outside-sun-cell-1280",
+      "req": "harness",
+      "scenario": "SCH-001-AC3-cells-and-order",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "December grid has outside Sunday 11-29 in column 1",
+      "expected": {
+        "date": "2026-11-29",
+        "outside": "true"
+      },
+      "actual": {
+        "date": "2026-11-29",
+        "outside": "true"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "C-outside-sun-1280",
+      "req": "SCH-007 AC4",
+      "scenario": "SCH-001-AC3-cells-and-order",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "All visible text in outside-sun-1280 has contrast >= 4.5:1 (rendered colors)",
+      "expected": "min >= 4.5",
+      "actual": "min 6.19",
+      "verdict": "pass"
+    },
+    {
+      "id": "C-outside-sun-1280-tokens",
+      "req": "SCH-007 AC4 / design §4, §10.6",
+      "scenario": "SCH-001-AC3-cells-and-order",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Every rendered text/background pair in outside-sun-1280 is a §4 token pair",
+      "expected": "all pairs in §4",
+      "actual": "all 10 pairs in §4",
+      "verdict": "pass"
+    },
+    {
+      "id": "C-extra-pairs-1280",
+      "req": "SCH-007 AC4 / design §4.1",
+      "scenario": "SCH-001-AC3-cells-and-order",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "The three previously unmeasured §4 pairs are rendered and each >= 4.5:1",
+      "expected": [
+        "#1F2937 on #EFF6FF >= 4.5",
+        "#B91C1C on #EFF6FF >= 4.5",
+        "#B91C1C on #F9FAFB >= 4.5"
+      ],
+      "actual": [
+        "#1F2937 on #EFF6FF >= 4.5",
+        "#B91C1C on #EFF6FF >= 4.5",
+        "#B91C1C on #F9FAFB >= 4.5"
+      ],
+      "verdict": "pass"
+    },
+    {
+      "id": "AC3-chips-375",
+      "req": "SCH-001 AC3 / S2",
+      "scenario": "SCH-001-AC3-cells-and-order",
+      "viewport": "375x800",
+      "mode": "http",
+      "desc": "Cell shows first 3 events in PRD order",
+      "expected": [
+        "종일A",
+        "종일B",
+        "08:00 가나"
+      ],
+      "actual": [
+        "종일A",
+        "종일B",
+        "08:00 가나"
+      ],
+      "verdict": "pass"
+    },
+    {
+      "id": "AC3-overflow-375",
+      "req": "SCH-001 AC3 / S2",
+      "scenario": "SCH-001-AC3-cells-and-order",
+      "viewport": "375x800",
+      "mode": "http",
+      "desc": "Overflow line +2",
+      "expected": "+2",
+      "actual": "+2",
+      "verdict": "pass"
+    },
+    {
+      "id": "AC3-overflow-vis-375",
+      "req": "SCH-001 AC3",
+      "scenario": "SCH-001-AC3-cells-and-order",
+      "viewport": "375x800",
+      "mode": "http",
+      "desc": "+N is visible",
+      "expected": true,
+      "actual": true,
+      "verdict": "pass"
+    },
+    {
+      "id": "AC3-list-375",
+      "req": "S2 / PRD ordering",
+      "scenario": "SCH-001-AC3-cells-and-order",
+      "viewport": "375x800",
+      "mode": "http",
+      "desc": "Day list has all 5 in order",
+      "expected": [
+        "종일A",
+        "종일B",
+        "가나",
+        "아침",
+        "나중"
+      ],
+      "actual": [
+        "종일A",
+        "종일B",
+        "가나",
+        "아침",
+        "나중"
+      ],
+      "verdict": "pass"
+    },
+    {
+      "id": "AC3-label-375",
+      "req": "design §3.3",
+      "scenario": "SCH-001-AC3-cells-and-order",
+      "viewport": "375x800",
+      "mode": "http",
+      "desc": "Cell aria-label counts events",
+      "expected": "2026년 11월 14일 토요일, 일정 5개, 오늘",
+      "actual": "2026년 11월 14일 토요일, 일정 5개, 오늘",
+      "verdict": "pass"
+    },
+    {
+      "id": "AC3-outside-375",
+      "req": "design §3.3",
+      "scenario": "SCH-001-AC3-cells-and-order",
+      "viewport": "375x800",
+      "mode": "http",
+      "desc": "Outside cell 12-01 shows its own chip and is marked outside",
+      "expected": {
+        "outside": "true",
+        "chips": [
+          "바깥"
+        ]
+      },
+      "actual": {
+        "outside": "true",
+        "chips": [
+          "바깥"
+        ]
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "AC3-items-375",
+      "req": "design §3.4",
+      "scenario": "SCH-001-AC3-cells-and-order",
+      "viewport": "375x800",
+      "mode": "http",
+      "desc": "List item shows time line, category badge and title",
+      "expected": [
+        true,
+        true,
+        true
+      ],
+      "actual": [
+        true,
+        true,
+        true
+      ],
+      "verdict": "pass"
+    },
+    {
+      "id": "AC3-notes-preview-375",
+      "req": "design §3.4",
+      "scenario": "SCH-001-AC3-cells-and-order",
+      "viewport": "375x800",
+      "mode": "http",
+      "desc": "Notes preview is the first 80 chars followed by …",
+      "expected": "첫 메모 첫 메모 첫 메모 첫 메모 첫 메모 첫 메모 첫 메모 첫 메모 첫 메모 첫 메모 첫 메모 첫 메모 첫 메모 첫 메모 첫 메모 첫 메모 …",
+      "actual": "첫 메모 첫 메모 첫 메모 첫 메모 첫 메모 첫 메모 첫 메모 첫 메모 첫 메모 첫 메모 첫 메모 첫 메모 첫 메모 첫 메모 첫 메모 첫 메모 …",
+      "verdict": "pass"
+    },
+    {
+      "id": "AC3-mobile-bars",
+      "req": "design §2.2, open issue 4",
+      "scenario": "SCH-001-AC3-cells-and-order",
+      "viewport": "375x800",
+      "mode": "http",
+      "desc": "Mobile chips are 6px bars with titles in DOM but visually hidden",
+      "expected": {
+        "barH": 6,
+        "textInDom": true,
+        "hidden": true
+      },
+      "actual": {
+        "barH": 6,
+        "textInDom": true,
+        "hidden": true
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "C-populated-375",
+      "req": "SCH-007 AC4",
+      "scenario": "SCH-001-AC3-cells-and-order",
+      "viewport": "375x800",
+      "mode": "http",
+      "desc": "All visible text in populated-375 has contrast >= 4.5:1 (rendered colors)",
+      "expected": "min >= 4.5",
+      "actual": "min 5.48",
+      "verdict": "pass"
+    },
+    {
+      "id": "C-populated-375-tokens",
+      "req": "SCH-007 AC4 / design §4, §10.6",
+      "scenario": "SCH-001-AC3-cells-and-order",
+      "viewport": "375x800",
+      "mode": "http",
+      "desc": "Every rendered text/background pair in populated-375 is a §4 token pair",
+      "expected": "all pairs in §4",
+      "actual": "all 12 pairs in §4",
+      "verdict": "pass"
+    },
+    {
+      "id": "C-selected-sat-375",
+      "req": "SCH-007 AC4",
+      "scenario": "SCH-001-AC3-cells-and-order",
+      "viewport": "375x800",
+      "mode": "http",
+      "desc": "All visible text in selected-sat-375 has contrast >= 4.5:1 (rendered colors)",
+      "expected": "min >= 4.5",
+      "actual": "min 5.48",
+      "verdict": "pass"
+    },
+    {
+      "id": "C-selected-sat-375-tokens",
+      "req": "SCH-007 AC4 / design §4, §10.6",
+      "scenario": "SCH-001-AC3-cells-and-order",
+      "viewport": "375x800",
+      "mode": "http",
+      "desc": "Every rendered text/background pair in selected-sat-375 is a §4 token pair",
+      "expected": "all pairs in §4",
+      "actual": "all 9 pairs in §4",
+      "verdict": "pass"
+    },
+    {
+      "id": "C-selected-weekday-375",
+      "req": "SCH-007 AC4",
+      "scenario": "SCH-001-AC3-cells-and-order",
+      "viewport": "375x800",
+      "mode": "http",
+      "desc": "All visible text in selected-weekday-375 has contrast >= 4.5:1 (rendered colors)",
+      "expected": "min >= 4.5",
+      "actual": "min 6.41",
+      "verdict": "pass"
+    },
+    {
+      "id": "C-selected-weekday-375-tokens",
+      "req": "SCH-007 AC4 / design §4, §10.6",
+      "scenario": "SCH-001-AC3-cells-and-order",
+      "viewport": "375x800",
+      "mode": "http",
+      "desc": "Every rendered text/background pair in selected-weekday-375 is a §4 token pair",
+      "expected": "all pairs in §4",
+      "actual": "all 8 pairs in §4",
+      "verdict": "pass"
+    },
+    {
+      "id": "C-selected-sun-375",
+      "req": "SCH-007 AC4",
+      "scenario": "SCH-001-AC3-cells-and-order",
+      "viewport": "375x800",
+      "mode": "http",
+      "desc": "All visible text in selected-sun-375 has contrast >= 4.5:1 (rendered colors)",
+      "expected": "min >= 4.5",
+      "actual": "min 5.95",
+      "verdict": "pass"
+    },
+    {
+      "id": "C-selected-sun-375-tokens",
+      "req": "SCH-007 AC4 / design §4, §10.6",
+      "scenario": "SCH-001-AC3-cells-and-order",
+      "viewport": "375x800",
+      "mode": "http",
+      "desc": "Every rendered text/background pair in selected-sun-375 is a §4 token pair",
+      "expected": "all pairs in §4",
+      "actual": "all 8 pairs in §4",
+      "verdict": "pass"
+    },
+    {
+      "id": "C-outside-sun-cell-375",
+      "req": "harness",
+      "scenario": "SCH-001-AC3-cells-and-order",
+      "viewport": "375x800",
+      "mode": "http",
+      "desc": "December grid has outside Sunday 11-29 in column 1",
+      "expected": {
+        "date": "2026-11-29",
+        "outside": "true"
+      },
+      "actual": {
+        "date": "2026-11-29",
+        "outside": "true"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "C-outside-sun-375",
+      "req": "SCH-007 AC4",
+      "scenario": "SCH-001-AC3-cells-and-order",
+      "viewport": "375x800",
+      "mode": "http",
+      "desc": "All visible text in outside-sun-375 has contrast >= 4.5:1 (rendered colors)",
+      "expected": "min >= 4.5",
+      "actual": "min 6.19",
+      "verdict": "pass"
+    },
+    {
+      "id": "C-outside-sun-375-tokens",
+      "req": "SCH-007 AC4 / design §4, §10.6",
+      "scenario": "SCH-001-AC3-cells-and-order",
+      "viewport": "375x800",
+      "mode": "http",
+      "desc": "Every rendered text/background pair in outside-sun-375 is a §4 token pair",
+      "expected": "all pairs in §4",
+      "actual": "all 9 pairs in §4",
+      "verdict": "pass"
+    },
+    {
+      "id": "C-extra-pairs-375",
+      "req": "SCH-007 AC4 / design §4.1",
+      "scenario": "SCH-001-AC3-cells-and-order",
+      "viewport": "375x800",
+      "mode": "http",
+      "desc": "The three previously unmeasured §4 pairs are rendered and each >= 4.5:1",
+      "expected": [
+        "#1F2937 on #EFF6FF >= 4.5",
+        "#B91C1C on #EFF6FF >= 4.5",
+        "#B91C1C on #F9FAFB >= 4.5"
+      ],
+      "actual": [
+        "#1F2937 on #EFF6FF >= 4.5",
+        "#B91C1C on #EFF6FF >= 4.5",
+        "#B91C1C on #F9FAFB >= 4.5"
+      ],
+      "verdict": "pass"
+    },
+    {
+      "id": "S4-defaults",
+      "req": "SCH-002 AC3 / S4",
+      "scenario": "SCH-002-create",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Add dialog defaults: date = selected day",
+      "expected": {
+        "open": true,
+        "title": "새 일정",
+        "del": true,
+        "focus": "event-title",
+        "form": {
+          "title": "",
+          "date": "2026-11-20",
+          "allDay": false,
+          "start": "09:00",
+          "end": "10:00",
+          "category": "work",
+          "notes": ""
+        }
+      },
+      "actual": {
+        "open": true,
+        "title": "새 일정",
+        "del": true,
+        "focus": "event-title",
+        "form": {
+          "title": "",
+          "date": "2026-11-20",
+          "allDay": false,
+          "start": "09:00",
+          "end": "10:00",
+          "category": "work",
+          "notes": ""
+        }
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S4-counter",
+      "req": "design §3.5",
+      "scenario": "SCH-002-create",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Title counter updates on input",
+      "expected": "7/100",
+      "actual": "7/100",
+      "verdict": "pass"
+    },
+    {
+      "id": "S7-add",
+      "req": "SCH-002 AC1, AC2 / S7",
+      "scenario": "SCH-002-create",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Dialog closes, chip and list item appear, status, focus to #new-event",
+      "expected": {
+        "open": false,
+        "chip": [
+          "13:00 프로젝트 회의"
+        ],
+        "list": [
+          "프로젝트 회의"
+        ],
+        "status": "일정을 추가했습니다.",
+        "focus": "new-event"
+      },
+      "actual": {
+        "open": false,
+        "chip": [
+          "13:00 프로젝트 회의"
+        ],
+        "list": [
+          "프로젝트 회의"
+        ],
+        "status": "일정을 추가했습니다.",
+        "focus": "new-event"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S7-record",
+      "req": "SCH-002 AC1 / storage contract",
+      "scenario": "SCH-002-create",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Stored record matches the form",
+      "expected": {
+        "n": 1,
+        "title": "프로젝트 회의",
+        "date": "2026-11-20",
+        "allDay": false,
+        "start": "13:00",
+        "end": "14:30",
+        "category": "personal",
+        "notes": "자료 준비",
+        "id": true,
+        "ts": true
+      },
+      "actual": {
+        "n": 1,
+        "title": "프로젝트 회의",
+        "date": "2026-11-20",
+        "allDay": false,
+        "start": "13:00",
+        "end": "14:30",
+        "category": "personal",
+        "notes": "자료 준비",
+        "id": true,
+        "ts": true
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S4-allday-hides",
+      "req": "design §3.5",
+      "scenario": "SCH-002-create",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Checking 종일 hides the time fields",
+      "expected": true,
+      "actual": true,
+      "verdict": "pass"
+    },
+    {
+      "id": "S7-month-follow",
+      "req": "S7",
+      "scenario": "SCH-002-create",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Visible month switches to the event date, which is selected",
+      "expected": {
+        "m": "2026년 12월",
+        "sel": "2026-12-24",
+        "chip": [
+          "연말 휴가"
+        ],
+        "list": [
+          "연말 휴가"
+        ]
+      },
+      "actual": {
+        "m": "2026년 12월",
+        "sel": "2026-12-24",
+        "chip": [
+          "연말 휴가"
+        ],
+        "list": [
+          "연말 휴가"
+        ]
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S7-allday-record",
+      "req": "SCH-002 AC1",
+      "scenario": "SCH-002-create",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "All-day record stores null times",
+      "expected": {
+        "allDay": true,
+        "start": null,
+        "end": null
+      },
+      "actual": {
+        "allDay": true,
+        "start": null,
+        "end": null
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S7-listtime",
+      "req": "design §3.4",
+      "scenario": "SCH-002-create",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "All-day list item shows 종일",
+      "expected": true,
+      "actual": true,
+      "verdict": "pass"
+    },
+    {
+      "id": "S4-default-keyboard",
+      "req": "SCH-002 AC3",
+      "scenario": "SCH-002-create",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Add form date follows a keyboard-selected day",
+      "expected": "2026-11-22",
+      "actual": "2026-11-22",
+      "verdict": "pass"
+    },
+    {
+      "id": "S4-escape",
+      "req": "SCH-007 AC2 / S4",
+      "scenario": "SCH-002-create",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Escape closes add dialog with no change and returns focus",
+      "expected": {
+        "open": false,
+        "focus": "new-event",
+        "n": 2
+      },
+      "actual": {
+        "open": false,
+        "focus": "new-event",
+        "n": 2
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "SCH005-reload",
+      "req": "SCH-005 AC1",
+      "scenario": "SCH-002-create",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Events survive a reload",
+      "expected": {
+        "chip": [
+          "13:00 프로젝트 회의"
+        ],
+        "list": [
+          "프로젝트 회의"
+        ]
+      },
+      "actual": {
+        "chip": [
+          "13:00 프로젝트 회의"
+        ],
+        "list": [
+          "프로젝트 회의"
+        ]
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "Y0026",
+      "req": "SCH-004 / code review F1",
+      "scenario": "year-0026",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Year 0026 event: heading, weekday and grid use the real year 26",
+      "expected": {
+        "m": "26년 11월",
+        "sel": "0026-11-14",
+        "h": "11월 14일 (토) 일정",
+        "label": "26년 11월 14일 토요일, 일정 1개",
+        "firstIsSunday": true,
+        "stored": "0026-11-14"
+      },
+      "actual": {
+        "m": "26년 11월",
+        "sel": "0026-11-14",
+        "h": "11월 14일 (토) 일정",
+        "label": "26년 11월 14일 토요일, 일정 1개",
+        "firstIsSunday": true,
+        "stored": "0026-11-14"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S5-open",
+      "req": "SCH-003 AC1 / S5",
+      "scenario": "SCH-003-edit-delete",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Edit dialog shows saved values",
+      "expected": {
+        "title": "일정 수정",
+        "del": true,
+        "focus": "event-title",
+        "form": {
+          "title": "치과 예약",
+          "date": "2026-11-14",
+          "allDay": false,
+          "start": "11:00",
+          "end": "11:30",
+          "category": "health",
+          "notes": "보험증 지참"
+        }
+      },
+      "actual": {
+        "title": "일정 수정",
+        "del": true,
+        "focus": "event-title",
+        "form": {
+          "title": "치과 예약",
+          "date": "2026-11-14",
+          "allDay": false,
+          "start": "11:00",
+          "end": "11:30",
+          "category": "health",
+          "notes": "보험증 지참"
+        }
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S7-edit",
+      "req": "SCH-003 AC1 / S7",
+      "scenario": "SCH-003-edit-delete",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Saving updates calendar, list, storage; same id; focus on the item",
+      "expected": {
+        "status": "일정을 수정했습니다.",
+        "open": false,
+        "sel": "2026-11-16",
+        "list": [
+          "치과 정기검진"
+        ],
+        "chip14": [
+          "가족 행사"
+        ],
+        "chip16": [
+          "11:00 치과 정기검진"
+        ],
+        "focus": "item:evt-A",
+        "rec": {
+          "title": "치과 정기검진",
+          "date": "2026-11-16",
+          "createdAt": "2026-11-01T00:00:01.000Z",
+          "extraField": {
+            "keep": true
+          }
+        },
+        "n": 2
+      },
+      "actual": {
+        "status": "일정을 수정했습니다.",
+        "open": false,
+        "sel": "2026-11-16",
+        "list": [
+          "치과 정기검진"
+        ],
+        "chip14": [
+          "가족 행사"
+        ],
+        "chip16": [
+          "11:00 치과 정기검진"
+        ],
+        "focus": "item:evt-A",
+        "rec": {
+          "title": "치과 정기검진",
+          "date": "2026-11-16",
+          "createdAt": "2026-11-01T00:00:01.000Z",
+          "extraField": {
+            "keep": true
+          }
+        },
+        "n": 2
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S7-edit-updatedAt",
+      "req": "storage contract",
+      "scenario": "SCH-003-edit-delete",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "updatedAt changes on edit",
+      "expected": true,
+      "actual": true,
+      "verdict": "pass"
+    },
+    {
+      "id": "S5-allday",
+      "req": "design §3.5",
+      "scenario": "SCH-003-edit-delete",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Saved all-day event opens checked with 09:00/10:00 kept hidden",
+      "expected": {
+        "allDay": true,
+        "start": "09:00",
+        "end": "10:00",
+        "hidden": true
+      },
+      "actual": {
+        "allDay": true,
+        "start": "09:00",
+        "end": "10:00",
+        "hidden": true
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S9-open",
+      "req": "SCH-003 AC2 / S9",
+      "scenario": "SCH-003-edit-delete",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Confirm dialog strings and focus on 취소",
+      "expected": {
+        "open": true,
+        "t": "일정을 삭제할까요?",
+        "m": "「가족 행사」 일정이 삭제되며 되돌릴 수 없습니다.",
+        "c": "취소",
+        "a": "삭제",
+        "focus": "confirm-cancel",
+        "role": "alertdialog"
+      },
+      "actual": {
+        "open": true,
+        "t": "일정을 삭제할까요?",
+        "m": "「가족 행사」 일정이 삭제되며 되돌릴 수 없습니다.",
+        "c": "취소",
+        "a": "삭제",
+        "focus": "confirm-cancel",
+        "role": "alertdialog"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "C-confirm-dialog-1280",
+      "req": "SCH-007 AC4",
+      "scenario": "SCH-003-edit-delete",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "All visible text in confirm-dialog-1280 has contrast >= 4.5:1 (rendered colors)",
+      "expected": "min >= 4.5",
+      "actual": "min 6.47",
+      "verdict": "pass"
+    },
+    {
+      "id": "C-confirm-dialog-1280-tokens",
+      "req": "SCH-007 AC4 / design §4, §10.6",
+      "scenario": "SCH-003-edit-delete",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Every rendered text/background pair in confirm-dialog-1280 is a §4 token pair",
+      "expected": "all pairs in §4",
+      "actual": "all 3 pairs in §4",
+      "verdict": "pass"
+    },
+    {
+      "id": "S9-cancel",
+      "req": "SCH-003 AC2 / S9",
+      "scenario": "SCH-003-edit-delete",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "취소 keeps the event, event dialog stays open, focus returns to 삭제",
+      "expected": {
+        "confirm": false,
+        "edit": true,
+        "focus": "delete-event",
+        "same": true,
+        "list": [
+          "가족 행사"
+        ]
+      },
+      "actual": {
+        "confirm": false,
+        "edit": true,
+        "focus": "delete-event",
+        "same": true,
+        "list": [
+          "가족 행사"
+        ]
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S9-escape",
+      "req": "SCH-007 AC2 / S9",
+      "scenario": "SCH-003-edit-delete",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Escape closes only the confirm dialog",
+      "expected": {
+        "confirm": false,
+        "edit": true,
+        "focus": "delete-event",
+        "same": true
+      },
+      "actual": {
+        "confirm": false,
+        "edit": true,
+        "focus": "delete-event",
+        "same": true
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S10",
+      "req": "SCH-003 AC2 / S10",
+      "scenario": "SCH-003-edit-delete",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Confirmed delete removes event; focus to #day-heading",
+      "expected": {
+        "confirm": false,
+        "edit": false,
+        "status": "일정을 삭제했습니다.",
+        "focus": "day-heading",
+        "ids": [
+          "evt-A"
+        ],
+        "list": []
+      },
+      "actual": {
+        "confirm": false,
+        "edit": false,
+        "status": "일정을 삭제했습니다.",
+        "focus": "day-heading",
+        "ids": [
+          "evt-A"
+        ],
+        "list": []
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S6-whitespace",
+      "req": "SCH-004 AC1 / S6",
+      "scenario": "SCH-004-validation",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Whitespace title blocked with linked error and alert; focus on title",
+      "expected": {
+        "inv": "true",
+        "err": "제목을 입력해 주세요.",
+        "cls": "field-error",
+        "linked": true,
+        "alert": "입력 내용을 확인해 주세요.",
+        "focus": "event-title",
+        "open": true,
+        "raw": "[{\"id\":\"keep\",\"title\":\"기존\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:01.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"}]",
+        "writes": 0
+      },
+      "actual": {
+        "inv": "true",
+        "err": "제목을 입력해 주세요.",
+        "cls": "field-error",
+        "linked": true,
+        "alert": "입력 내용을 확인해 주세요.",
+        "focus": "event-title",
+        "open": true,
+        "raw": "[{\"id\":\"keep\",\"title\":\"기존\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:01.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"}]",
+        "writes": 0
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S6-describedby",
+      "req": "SCH-007 AC3 / design §6.5",
+      "scenario": "SCH-004-validation",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "aria-describedby resolves to error text and counter",
+      "expected": true,
+      "actual": true,
+      "verdict": "pass"
+    },
+    {
+      "id": "C-event-dialog-errors-1280",
+      "req": "SCH-007 AC4",
+      "scenario": "SCH-004-validation",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "All visible text in event-dialog-errors-1280 has contrast >= 4.5:1 (rendered colors)",
+      "expected": "min >= 4.5",
+      "actual": "min 5.91",
+      "verdict": "pass"
+    },
+    {
+      "id": "C-event-dialog-errors-1280-tokens",
+      "req": "SCH-007 AC4 / design §4, §10.6",
+      "scenario": "SCH-004-validation",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Every rendered text/background pair in event-dialog-errors-1280 is a §4 token pair",
+      "expected": "all pairs in §4",
+      "actual": "all 6 pairs in §4",
+      "verdict": "pass"
+    },
+    {
+      "id": "S6-clear",
+      "req": "design S6 recovery",
+      "scenario": "SCH-004-validation",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Typing a valid title clears the error and the form alert",
+      "expected": {
+        "inv": "false",
+        "err": null,
+        "alertHidden": true
+      },
+      "actual": {
+        "inv": "false",
+        "err": null,
+        "alertHidden": true
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S6-title101-ascii",
+      "req": "SCH-004 AC2",
+      "scenario": "SCH-004-validation",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Title of 101 code points (ascii) blocked; counter 101/100 in red",
+      "expected": {
+        "err": "제목은 100자 이하로 입력해 주세요.",
+        "cnt": "101/100",
+        "color": "rgb(185, 28, 28)",
+        "raw": "[{\"id\":\"keep\",\"title\":\"기존\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:01.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"}]",
+        "writes": 0,
+        "open": true
+      },
+      "actual": {
+        "err": "제목은 100자 이하로 입력해 주세요.",
+        "cnt": "101/100",
+        "color": "rgb(185, 28, 28)",
+        "raw": "[{\"id\":\"keep\",\"title\":\"기존\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:01.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"}]",
+        "writes": 0,
+        "open": true
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S6-title101-emoji",
+      "req": "SCH-004 AC2",
+      "scenario": "SCH-004-validation",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Title of 101 code points (emoji) blocked; counter 101/100 in red",
+      "expected": {
+        "err": "제목은 100자 이하로 입력해 주세요.",
+        "cnt": "101/100",
+        "color": "rgb(185, 28, 28)",
+        "raw": "[{\"id\":\"keep\",\"title\":\"기존\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:01.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"}]",
+        "writes": 0,
+        "open": true
+      },
+      "actual": {
+        "err": "제목은 100자 이하로 입력해 주세요.",
+        "cnt": "101/100",
+        "color": "rgb(185, 28, 28)",
+        "raw": "[{\"id\":\"keep\",\"title\":\"기존\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:01.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"}]",
+        "writes": 0,
+        "open": true
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S6-end-eq-start",
+      "req": "SCH-004 AC1",
+      "scenario": "SCH-004-validation",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "End equal to start blocked with error next to end field",
+      "expected": {
+        "err": "종료 시간은 시작 시간보다 늦어야 합니다.",
+        "focus": "event-end",
+        "raw": "[{\"id\":\"keep\",\"title\":\"기존\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:01.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"}]",
+        "writes": 0
+      },
+      "actual": {
+        "err": "종료 시간은 시작 시간보다 늦어야 합니다.",
+        "focus": "event-end",
+        "raw": "[{\"id\":\"keep\",\"title\":\"기존\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:01.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"}]",
+        "writes": 0
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S6-end-before",
+      "req": "SCH-004 AC1",
+      "scenario": "SCH-004-validation",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "End before start blocked",
+      "expected": "종료 시간은 시작 시간보다 늦어야 합니다.",
+      "actual": "종료 시간은 시작 시간보다 늦어야 합니다.",
+      "verdict": "pass"
+    },
+    {
+      "id": "S6-start-empty",
+      "req": "SCH-004 AC1",
+      "scenario": "SCH-004-validation",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Missing start time blocked",
+      "expected": {
+        "err": "시작 시간을 입력해 주세요.",
+        "focus": "event-start"
+      },
+      "actual": {
+        "err": "시작 시간을 입력해 주세요.",
+        "focus": "event-start"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S6-end-empty",
+      "req": "SCH-004 AC1",
+      "scenario": "SCH-004-validation",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Missing end time blocked",
+      "expected": "종료 시간을 입력해 주세요.",
+      "actual": "종료 시간을 입력해 주세요.",
+      "verdict": "pass"
+    },
+    {
+      "id": "S6-date-missing",
+      "req": "SCH-004 AC1",
+      "scenario": "SCH-004-validation",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Missing date blocked with error; focus on date",
+      "expected": {
+        "err": "날짜를 선택해 주세요.",
+        "focus": "event-date",
+        "raw": "[{\"id\":\"keep\",\"title\":\"기존\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:01.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"}]",
+        "writes": 0
+      },
+      "actual": {
+        "err": "날짜를 선택해 주세요.",
+        "focus": "event-date",
+        "raw": "[{\"id\":\"keep\",\"title\":\"기존\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:01.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"}]",
+        "writes": 0
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S6-notes1001-ascii",
+      "req": "SCH-004 AC2",
+      "scenario": "SCH-004-validation",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Notes of 1001 code points (ascii) blocked",
+      "expected": {
+        "err": "메모는 1000자 이하로 입력해 주세요.",
+        "cnt": "1001/1000",
+        "raw": "[{\"id\":\"keep\",\"title\":\"기존\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:01.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"}]",
+        "writes": 0
+      },
+      "actual": {
+        "err": "메모는 1000자 이하로 입력해 주세요.",
+        "cnt": "1001/1000",
+        "raw": "[{\"id\":\"keep\",\"title\":\"기존\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:01.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"}]",
+        "writes": 0
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S6-notes1001-emoji",
+      "req": "SCH-004 AC2",
+      "scenario": "SCH-004-validation",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Notes of 1001 code points (emoji) blocked",
+      "expected": {
+        "err": "메모는 1000자 이하로 입력해 주세요.",
+        "cnt": "1001/1000",
+        "raw": "[{\"id\":\"keep\",\"title\":\"기존\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:01.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"}]",
+        "writes": 0
+      },
+      "actual": {
+        "err": "메모는 1000자 이하로 입력해 주세요.",
+        "cnt": "1001/1000",
+        "raw": "[{\"id\":\"keep\",\"title\":\"기존\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:01.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"}]",
+        "writes": 0
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S6-first-invalid",
+      "req": "design S6",
+      "scenario": "SCH-004-validation",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "With several errors, focus goes to the first invalid field (title)",
+      "expected": {
+        "focus": "event-title",
+        "errs": [
+          "제목을 입력해 주세요.",
+          "종료 시간은 시작 시간보다 늦어야 합니다.",
+          "메모는 1000자 이하로 입력해 주세요."
+        ]
+      },
+      "actual": {
+        "focus": "event-title",
+        "errs": [
+          "제목을 입력해 주세요.",
+          "종료 시간은 시작 시간보다 늦어야 합니다.",
+          "메모는 1000자 이하로 입력해 주세요."
+        ]
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S6-counters-at-limit",
+      "req": "design §3.5",
+      "scenario": "SCH-004-validation",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Counters show code-point counts at the limit",
+      "expected": [
+        "100/100",
+        "1000/1000"
+      ],
+      "actual": [
+        "100/100",
+        "1000/1000"
+      ],
+      "verdict": "pass"
+    },
+    {
+      "id": "S6-boundary-save",
+      "req": "SCH-004 AC2",
+      "scenario": "SCH-004-validation",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "100-code-point title and 1000-code-point notes save",
+      "expected": {
+        "status": "일정을 추가했습니다.",
+        "t": 100,
+        "n": 1000,
+        "writes": 1
+      },
+      "actual": {
+        "status": "일정을 추가했습니다.",
+        "t": 100,
+        "n": 1000,
+        "writes": 1
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S6-trim-save",
+      "req": "design §3.5",
+      "scenario": "SCH-004-validation",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Title trimmed before counting and saving",
+      "expected": true,
+      "actual": true,
+      "verdict": "pass"
+    },
+    {
+      "id": "S15-banner-1280",
+      "req": "SCH-005 AC2 / S15",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Banner text and reset button shown",
+      "expected": {
+        "hidden": false,
+        "text": "저장된 일정을 불러올 수 없습니다. 저장된 데이터는 변경되지 않았습니다.",
+        "btn": "데이터 초기화"
+      },
+      "actual": {
+        "hidden": false,
+        "text": "저장된 일정을 불러올 수 없습니다. 저장된 데이터는 변경되지 않았습니다.",
+        "btn": "데이터 초기화"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S15-state-1280",
+      "req": "S15",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "새 일정 disabled, no chips, empty day text, raw unchanged",
+      "expected": {
+        "disabled": true,
+        "chips": 0,
+        "empty": "이 날에는 일정이 없습니다.",
+        "raw": "{not json"
+      },
+      "actual": {
+        "disabled": true,
+        "chips": 0,
+        "empty": "이 날에는 일정이 없습니다.",
+        "raw": "{not json"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "C-banner-1280",
+      "req": "SCH-007 AC4",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "All visible text in banner-1280 has contrast >= 4.5:1 (rendered colors)",
+      "expected": "min >= 4.5",
+      "actual": "min 6.41",
+      "verdict": "pass"
+    },
+    {
+      "id": "C-banner-1280-tokens",
+      "req": "SCH-007 AC4 / design §4, §10.6",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Every rendered text/background pair in banner-1280 is a §4 token pair",
+      "expected": "all pairs in §4",
+      "actual": "all 9 pairs in §4",
+      "verdict": "pass"
+    },
+    {
+      "id": "S15-hscroll-1280",
+      "req": "SCH-007 AC1",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "No horizontal scroll with banner",
+      "expected": true,
+      "actual": true,
+      "verdict": "pass"
+    },
+    {
+      "id": "S15-nav-1280",
+      "req": "S15",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Month nav, search and filter still work; raw unchanged",
+      "expected": {
+        "m": "2026년 11월",
+        "raw": "{not json",
+        "summary": "이번 달에 조건에 맞는 일정이 없습니다."
+      },
+      "actual": {
+        "m": "2026년 11월",
+        "raw": "{not json",
+        "summary": "이번 달에 조건에 맞는 일정이 없습니다."
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "W-S15-load-nav-1280",
+      "req": "SCH-005 AC2 / S15 (F3)",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "No setItem call to the key during load, month navigation, search and filter",
+      "expected": [],
+      "actual": [],
+      "verdict": "pass"
+    },
+    {
+      "id": "S16-open-1280",
+      "req": "S16",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Reset confirm strings and focus on 취소",
+      "expected": {
+        "open": true,
+        "t": "저장된 데이터를 초기화할까요?",
+        "m": "읽을 수 없는 저장 데이터가 삭제되며 되돌릴 수 없습니다.",
+        "c": "취소",
+        "a": "초기화",
+        "focus": "confirm-cancel"
+      },
+      "actual": {
+        "open": true,
+        "t": "저장된 데이터를 초기화할까요?",
+        "m": "읽을 수 없는 저장 데이터가 삭제되며 되돌릴 수 없습니다.",
+        "c": "취소",
+        "a": "초기화",
+        "focus": "confirm-cancel"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S16-cancel-1280",
+      "req": "S16 / SCH-005 AC2",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Cancel keeps raw byte-identical and returns focus to 데이터 초기화",
+      "expected": {
+        "open": false,
+        "focus": "banner-button",
+        "raw": "{not json"
+      },
+      "actual": {
+        "open": false,
+        "focus": "banner-button",
+        "raw": "{not json"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S16-escape-1280",
+      "req": "S16",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Escape closes reset confirm; raw unchanged",
+      "expected": {
+        "open": false,
+        "raw": "{not json"
+      },
+      "actual": {
+        "open": false,
+        "raw": "{not json"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "W-S16-cancel-1280",
+      "req": "SCH-005 AC2 / S16 (F3)",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "No setItem call after reset cancel and Escape",
+      "expected": [],
+      "actual": [],
+      "verdict": "pass"
+    },
+    {
+      "id": "S15-reload-1280",
+      "req": "SCH-005 AC2",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Reload keeps raw byte-identical",
+      "expected": "{not json",
+      "actual": "{not json",
+      "verdict": "pass"
+    },
+    {
+      "id": "W-S15-reload-1280",
+      "req": "SCH-005 AC2 (F3)",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "No setItem call after reload with unreadable data",
+      "expected": [],
+      "actual": [],
+      "verdict": "pass"
+    },
+    {
+      "id": "W-S17-1280",
+      "req": "S17 (F3)",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "A confirmed reset makes exactly one write of []",
+      "expected": [
+        "[]"
+      ],
+      "actual": [
+        "[]"
+      ],
+      "verdict": "pass"
+    },
+    {
+      "id": "S17-1280",
+      "req": "S17",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Reset writes [], removes banner, enables 새 일정, focus to #new-event",
+      "expected": {
+        "raw": "[]",
+        "banner": false,
+        "disabled": false,
+        "focus": "new-event",
+        "status": "저장 데이터를 초기화했습니다.",
+        "confirm": false
+      },
+      "actual": {
+        "raw": "[]",
+        "banner": false,
+        "disabled": false,
+        "focus": "new-event",
+        "status": "저장 데이터를 초기화했습니다.",
+        "confirm": false
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S15-banner-375",
+      "req": "SCH-005 AC2 / S15",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "375x800",
+      "mode": "http",
+      "desc": "Banner text and reset button shown",
+      "expected": {
+        "hidden": false,
+        "text": "저장된 일정을 불러올 수 없습니다. 저장된 데이터는 변경되지 않았습니다.",
+        "btn": "데이터 초기화"
+      },
+      "actual": {
+        "hidden": false,
+        "text": "저장된 일정을 불러올 수 없습니다. 저장된 데이터는 변경되지 않았습니다.",
+        "btn": "데이터 초기화"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S15-state-375",
+      "req": "S15",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "375x800",
+      "mode": "http",
+      "desc": "새 일정 disabled, no chips, empty day text, raw unchanged",
+      "expected": {
+        "disabled": true,
+        "chips": 0,
+        "empty": "이 날에는 일정이 없습니다.",
+        "raw": "{not json"
+      },
+      "actual": {
+        "disabled": true,
+        "chips": 0,
+        "empty": "이 날에는 일정이 없습니다.",
+        "raw": "{not json"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "C-banner-375",
+      "req": "SCH-007 AC4",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "375x800",
+      "mode": "http",
+      "desc": "All visible text in banner-375 has contrast >= 4.5:1 (rendered colors)",
+      "expected": "min >= 4.5",
+      "actual": "min 6.41",
+      "verdict": "pass"
+    },
+    {
+      "id": "C-banner-375-tokens",
+      "req": "SCH-007 AC4 / design §4, §10.6",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "375x800",
+      "mode": "http",
+      "desc": "Every rendered text/background pair in banner-375 is a §4 token pair",
+      "expected": "all pairs in §4",
+      "actual": "all 9 pairs in §4",
+      "verdict": "pass"
+    },
+    {
+      "id": "S15-hscroll-375",
+      "req": "SCH-007 AC1",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "375x800",
+      "mode": "http",
+      "desc": "No horizontal scroll with banner",
+      "expected": true,
+      "actual": true,
+      "verdict": "pass"
+    },
+    {
+      "id": "S15-nav-375",
+      "req": "S15",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "375x800",
+      "mode": "http",
+      "desc": "Month nav, search and filter still work; raw unchanged",
+      "expected": {
+        "m": "2026년 11월",
+        "raw": "{not json",
+        "summary": "이번 달에 조건에 맞는 일정이 없습니다."
+      },
+      "actual": {
+        "m": "2026년 11월",
+        "raw": "{not json",
+        "summary": "이번 달에 조건에 맞는 일정이 없습니다."
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "W-S15-load-nav-375",
+      "req": "SCH-005 AC2 / S15 (F3)",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "375x800",
+      "mode": "http",
+      "desc": "No setItem call to the key during load, month navigation, search and filter",
+      "expected": [],
+      "actual": [],
+      "verdict": "pass"
+    },
+    {
+      "id": "S16-open-375",
+      "req": "S16",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "375x800",
+      "mode": "http",
+      "desc": "Reset confirm strings and focus on 취소",
+      "expected": {
+        "open": true,
+        "t": "저장된 데이터를 초기화할까요?",
+        "m": "읽을 수 없는 저장 데이터가 삭제되며 되돌릴 수 없습니다.",
+        "c": "취소",
+        "a": "초기화",
+        "focus": "confirm-cancel"
+      },
+      "actual": {
+        "open": true,
+        "t": "저장된 데이터를 초기화할까요?",
+        "m": "읽을 수 없는 저장 데이터가 삭제되며 되돌릴 수 없습니다.",
+        "c": "취소",
+        "a": "초기화",
+        "focus": "confirm-cancel"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S16-cancel-375",
+      "req": "S16 / SCH-005 AC2",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "375x800",
+      "mode": "http",
+      "desc": "Cancel keeps raw byte-identical and returns focus to 데이터 초기화",
+      "expected": {
+        "open": false,
+        "focus": "banner-button",
+        "raw": "{not json"
+      },
+      "actual": {
+        "open": false,
+        "focus": "banner-button",
+        "raw": "{not json"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S16-escape-375",
+      "req": "S16",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "375x800",
+      "mode": "http",
+      "desc": "Escape closes reset confirm; raw unchanged",
+      "expected": {
+        "open": false,
+        "raw": "{not json"
+      },
+      "actual": {
+        "open": false,
+        "raw": "{not json"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "W-S16-cancel-375",
+      "req": "SCH-005 AC2 / S16 (F3)",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "375x800",
+      "mode": "http",
+      "desc": "No setItem call after reset cancel and Escape",
+      "expected": [],
+      "actual": [],
+      "verdict": "pass"
+    },
+    {
+      "id": "S15-reload-375",
+      "req": "SCH-005 AC2",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "375x800",
+      "mode": "http",
+      "desc": "Reload keeps raw byte-identical",
+      "expected": "{not json",
+      "actual": "{not json",
+      "verdict": "pass"
+    },
+    {
+      "id": "W-S15-reload-375",
+      "req": "SCH-005 AC2 (F3)",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "375x800",
+      "mode": "http",
+      "desc": "No setItem call after reload with unreadable data",
+      "expected": [],
+      "actual": [],
+      "verdict": "pass"
+    },
+    {
+      "id": "W-S17-375",
+      "req": "S17 (F3)",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "375x800",
+      "mode": "http",
+      "desc": "A confirmed reset makes exactly one write of []",
+      "expected": [
+        "[]"
+      ],
+      "actual": [
+        "[]"
+      ],
+      "verdict": "pass"
+    },
+    {
+      "id": "S17-375",
+      "req": "S17",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "375x800",
+      "mode": "http",
+      "desc": "Reset writes [], removes banner, enables 새 일정, focus to #new-event",
+      "expected": {
+        "raw": "[]",
+        "banner": false,
+        "disabled": false,
+        "focus": "new-event",
+        "status": "저장 데이터를 초기화했습니다.",
+        "confirm": false
+      },
+      "actual": {
+        "raw": "[]",
+        "banner": false,
+        "disabled": false,
+        "focus": "new-event",
+        "status": "저장 데이터를 초기화했습니다.",
+        "confirm": false
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S15-non-array",
+      "req": "SCH-005 AC2 / brief decision 3",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "non-array shows the exact banner and leaves raw byte-identical with no writes",
+      "expected": {
+        "banner": {
+          "hidden": false,
+          "text": "저장된 일정을 불러올 수 없습니다. 저장된 데이터는 변경되지 않았습니다.",
+          "btn": "데이터 초기화"
+        },
+        "raw": "{\"a\":1}",
+        "disabled": true,
+        "writes": []
+      },
+      "actual": {
+        "banner": {
+          "hidden": false,
+          "text": "저장된 일정을 불러올 수 없습니다. 저장된 데이터는 변경되지 않았습니다.",
+          "btn": "데이터 초기화"
+        },
+        "raw": "{\"a\":1}",
+        "disabled": true,
+        "writes": []
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S15-unknown-category",
+      "req": "SCH-005 AC2 / brief decision 3",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "unknown-category shows the exact banner and leaves raw byte-identical with no writes",
+      "expected": {
+        "banner": {
+          "hidden": false,
+          "text": "저장된 일정을 불러올 수 없습니다. 저장된 데이터는 변경되지 않았습니다.",
+          "btn": "데이터 초기화"
+        },
+        "raw": "[{\"id\":\"seed-1\",\"title\":\"일정1\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"travel\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:01.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"}]",
+        "disabled": true,
+        "writes": []
+      },
+      "actual": {
+        "banner": {
+          "hidden": false,
+          "text": "저장된 일정을 불러올 수 없습니다. 저장된 데이터는 변경되지 않았습니다.",
+          "btn": "데이터 초기화"
+        },
+        "raw": "[{\"id\":\"seed-1\",\"title\":\"일정1\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"travel\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:01.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"}]",
+        "disabled": true,
+        "writes": []
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S15-duplicate-ids",
+      "req": "SCH-005 AC2 / brief decision 3",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "duplicate-ids shows the exact banner and leaves raw byte-identical with no writes",
+      "expected": {
+        "banner": {
+          "hidden": false,
+          "text": "저장된 일정을 불러올 수 없습니다. 저장된 데이터는 변경되지 않았습니다.",
+          "btn": "데이터 초기화"
+        },
+        "raw": "[{\"id\":\"dup\",\"title\":\"일정2\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:02.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"},{\"id\":\"dup\",\"title\":\"일정3\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:03.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"}]",
+        "disabled": true,
+        "writes": []
+      },
+      "actual": {
+        "banner": {
+          "hidden": false,
+          "text": "저장된 일정을 불러올 수 없습니다. 저장된 데이터는 변경되지 않았습니다.",
+          "btn": "데이터 초기화"
+        },
+        "raw": "[{\"id\":\"dup\",\"title\":\"일정2\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:02.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"},{\"id\":\"dup\",\"title\":\"일정3\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:03.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"}]",
+        "disabled": true,
+        "writes": []
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S15-bad-record-pretty",
+      "req": "SCH-005 AC2 / brief decision 3",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "bad-record-pretty shows the exact banner and leaves raw byte-identical with no writes",
+      "expected": {
+        "banner": {
+          "hidden": false,
+          "text": "저장된 일정을 불러올 수 없습니다. 저장된 데이터는 변경되지 않았습니다.",
+          "btn": "데이터 초기화"
+        },
+        "raw": "[\n  {\"id\": 1, \"title\": \"x\"}\n]\r\n  ",
+        "disabled": true,
+        "writes": []
+      },
+      "actual": {
+        "banner": {
+          "hidden": false,
+          "text": "저장된 일정을 불러올 수 없습니다. 저장된 데이터는 변경되지 않았습니다.",
+          "btn": "데이터 초기화"
+        },
+        "raw": "[\n  {\"id\": 1, \"title\": \"x\"}\n]\r\n  ",
+        "disabled": true,
+        "writes": []
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S15-untrimmed-title",
+      "req": "SCH-005 AC2 / brief decision 3",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "untrimmed-title shows the exact banner and leaves raw byte-identical with no writes",
+      "expected": {
+        "banner": {
+          "hidden": false,
+          "text": "저장된 일정을 불러올 수 없습니다. 저장된 데이터는 변경되지 않았습니다.",
+          "btn": "데이터 초기화"
+        },
+        "raw": "[{\"id\":\"seed-4\",\"title\":\" 공백\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:04.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"}]",
+        "disabled": true,
+        "writes": []
+      },
+      "actual": {
+        "banner": {
+          "hidden": false,
+          "text": "저장된 일정을 불러올 수 없습니다. 저장된 데이터는 변경되지 않았습니다.",
+          "btn": "데이터 초기화"
+        },
+        "raw": "[{\"id\":\"seed-4\",\"title\":\" 공백\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:04.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"}]",
+        "disabled": true,
+        "writes": []
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S15-extra-ok",
+      "req": "storage contract",
+      "scenario": "SCH-005-unreadable-S15-S16-S17",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Unknown extra fields are allowed (no banner)",
+      "expected": {
+        "banner": false,
+        "chips": [
+          "09:00 확장"
+        ],
+        "raw": "[{\"id\":\"seed-5\",\"title\":\"확장\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:05.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\",\"extraX\":1}]"
+      },
+      "actual": {
+        "banner": false,
+        "chips": [
+          "09:00 확장"
+        ],
+        "raw": "[{\"id\":\"seed-5\",\"title\":\"확장\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:05.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\",\"extraX\":1}]"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "BLK-stub",
+      "req": "harness",
+      "scenario": "SCH-005-blocked-storage",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "window.localStorage getter throws SecurityError",
+      "expected": "SecurityError",
+      "actual": "SecurityError",
+      "verdict": "pass"
+    },
+    {
+      "id": "S15-blocked",
+      "req": "SCH-005 / design open issue 2",
+      "scenario": "SCH-005-blocked-storage",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Blocked storage shows S15 banner and disables 새 일정",
+      "expected": {
+        "banner": "저장된 일정을 불러올 수 없습니다. 저장된 데이터는 변경되지 않았습니다.데이터 초기화",
+        "disabled": true,
+        "chips": 0
+      },
+      "actual": {
+        "banner": "저장된 일정을 불러올 수 없습니다. 저장된 데이터는 변경되지 않았습니다.데이터 초기화",
+        "disabled": true,
+        "chips": 0
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "W-blocked-load",
+      "req": "SCH-005 (F3)",
+      "scenario": "SCH-005-blocked-storage",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "No setItem call to the key while storage is blocked",
+      "expected": [],
+      "actual": [],
+      "verdict": "pass"
+    },
+    {
+      "id": "W-blocked-cancel",
+      "req": "SCH-005 (F3)",
+      "scenario": "SCH-005-blocked-storage",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "No setItem call after reset cancel and Escape while blocked",
+      "expected": [],
+      "actual": [],
+      "verdict": "pass"
+    },
+    {
+      "id": "W-blocked-reset",
+      "req": "S18 (F3)",
+      "scenario": "SCH-005-blocked-storage",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Blocked reset reaches no Storage object, so no write is recorded",
+      "expected": [],
+      "actual": [],
+      "verdict": "pass"
+    },
+    {
+      "id": "S18-blocked",
+      "req": "design open issue 2 / S18",
+      "scenario": "SCH-005-blocked-storage",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Reset with blocked storage ends in S18: confirm stays, alert, banner stays, focus on 초기화",
+      "expected": {
+        "open": true,
+        "alert": "초기화하지 못했습니다. 다시 시도해 주세요.",
+        "banner": true,
+        "focus": "confirm-action"
+      },
+      "actual": {
+        "open": true,
+        "alert": "초기화하지 못했습니다. 다시 시도해 주세요.",
+        "banner": true,
+        "focus": "confirm-action"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "BLK-raw",
+      "req": "SCH-005 AC2",
+      "scenario": "SCH-005-blocked-storage",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "After unblocking, the stored raw value is byte-identical",
+      "expected": "[{\"id\":\"seed-1\",\"title\":\"보존\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:01.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"}]",
+      "actual": "[{\"id\":\"seed-1\",\"title\":\"보존\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:01.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"}]",
+      "verdict": "pass"
+    },
+    {
+      "id": "W-blocked-after",
+      "req": "SCH-005 AC2 (F3)",
+      "scenario": "SCH-005-blocked-storage",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "No setItem call after unblocking and reloading valid data",
+      "expected": [],
+      "actual": [],
+      "verdict": "pass"
+    },
+    {
+      "id": "S18-quota",
+      "req": "S18",
+      "scenario": "SCH-005-S18-quota-reset",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "setItem throws on reset: confirm stays open with alert; banner stays; raw unchanged; focus on 초기화",
+      "expected": {
+        "open": true,
+        "alert": "초기화하지 못했습니다. 다시 시도해 주세요.",
+        "banner": true,
+        "raw": "{x",
+        "focus": "confirm-action"
+      },
+      "actual": {
+        "open": true,
+        "alert": "초기화하지 못했습니다. 다시 시도해 주세요.",
+        "banner": true,
+        "raw": "{x",
+        "focus": "confirm-action"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "C-confirm-alert-1280",
+      "req": "SCH-007 AC4",
+      "scenario": "SCH-005-S18-quota-reset",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "All visible text in confirm-alert-1280 has contrast >= 4.5:1 (rendered colors)",
+      "expected": "min >= 4.5",
+      "actual": "min 5.91",
+      "verdict": "pass"
+    },
+    {
+      "id": "C-confirm-alert-1280-tokens",
+      "req": "SCH-007 AC4 / design §4, §10.6",
+      "scenario": "SCH-005-S18-quota-reset",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Every rendered text/background pair in confirm-alert-1280 is a §4 token pair",
+      "expected": "all pairs in §4",
+      "actual": "all 4 pairs in §4",
+      "verdict": "pass"
+    },
+    {
+      "id": "S18-retry",
+      "req": "S18 recovery",
+      "scenario": "SCH-005-S18-quota-reset",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Retry after restoring setItem succeeds (S17)",
+      "expected": {
+        "raw": "[]",
+        "status": "저장 데이터를 초기화했습니다."
+      },
+      "actual": {
+        "raw": "[]",
+        "status": "저장 데이터를 초기화했습니다."
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S8-add",
+      "req": "SCH-005 AC3 / S8",
+      "scenario": "SCH-005-S8-S11-write-failures",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Quota failure: dialog open with input kept, alert, no status, no new chip, focus on 저장, raw unchanged",
+      "expected": {
+        "open": true,
+        "form": {
+          "title": "S8 추가",
+          "date": "2026-11-14",
+          "allDay": false,
+          "start": "09:00",
+          "end": "10:00",
+          "category": "other",
+          "notes": "메모 유지"
+        },
+        "alert": "저장하지 못했습니다. 브라우저 저장 공간을 확인한 후 다시 시도해 주세요.",
+        "status": "",
+        "chips": [
+          "09:00 원래 제목"
+        ],
+        "list": [
+          "원래 제목"
+        ],
+        "focus": "save-event",
+        "raw": "[{\"id\":\"evt-A\",\"title\":\"원래 제목\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:01.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"}]"
+      },
+      "actual": {
+        "open": true,
+        "form": {
+          "title": "S8 추가",
+          "date": "2026-11-14",
+          "allDay": false,
+          "start": "09:00",
+          "end": "10:00",
+          "category": "other",
+          "notes": "메모 유지"
+        },
+        "alert": "저장하지 못했습니다. 브라우저 저장 공간을 확인한 후 다시 시도해 주세요.",
+        "status": "",
+        "chips": [
+          "09:00 원래 제목"
+        ],
+        "list": [
+          "원래 제목"
+        ],
+        "focus": "save-event",
+        "raw": "[{\"id\":\"evt-A\",\"title\":\"원래 제목\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:01.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"}]"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "C-form-alert-1280",
+      "req": "SCH-007 AC4",
+      "scenario": "SCH-005-S8-S11-write-failures",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "All visible text in form-alert-1280 has contrast >= 4.5:1 (rendered colors)",
+      "expected": "min >= 4.5",
+      "actual": "min 5.91",
+      "verdict": "pass"
+    },
+    {
+      "id": "C-form-alert-1280-tokens",
+      "req": "SCH-007 AC4 / design §4, §10.6",
+      "scenario": "SCH-005-S8-S11-write-failures",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Every rendered text/background pair in form-alert-1280 is a §4 token pair",
+      "expected": "all pairs in §4",
+      "actual": "all 5 pairs in §4",
+      "verdict": "pass"
+    },
+    {
+      "id": "S8-retry",
+      "req": "S8 recovery",
+      "scenario": "SCH-005-S8-S11-write-failures",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Retry after restoring setItem saves",
+      "expected": {
+        "status": "일정을 추가했습니다.",
+        "n": 2
+      },
+      "actual": {
+        "status": "일정을 추가했습니다.",
+        "n": 2
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S8-edit",
+      "req": "SCH-005 AC3 / S8",
+      "scenario": "SCH-005-S8-S11-write-failures",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Quota failure on edit leaves list and storage unchanged",
+      "expected": {
+        "open": true,
+        "title": "바뀐 제목",
+        "alert": "저장하지 못했습니다. 브라우저 저장 공간을 확인한 후 다시 시도해 주세요.",
+        "list": true,
+        "raw": "[{\"id\":\"evt-A\",\"title\":\"원래 제목\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:01.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"},{\"id\":\"1429ccaf-b821-4512-9dfb-c02616071db2\",\"title\":\"S8 추가\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"other\",\"notes\":\"메모 유지\",\"createdAt\":\"2026-11-14T01:00:00.986Z\",\"updatedAt\":\"2026-11-14T01:00:00.986Z\"}]",
+        "focus": "save-event"
+      },
+      "actual": {
+        "open": true,
+        "title": "바뀐 제목",
+        "alert": "저장하지 못했습니다. 브라우저 저장 공간을 확인한 후 다시 시도해 주세요.",
+        "list": true,
+        "raw": "[{\"id\":\"evt-A\",\"title\":\"원래 제목\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:01.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"},{\"id\":\"1429ccaf-b821-4512-9dfb-c02616071db2\",\"title\":\"S8 추가\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"other\",\"notes\":\"메모 유지\",\"createdAt\":\"2026-11-14T01:00:00.986Z\",\"updatedAt\":\"2026-11-14T01:00:00.986Z\"}]",
+        "focus": "save-event"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S11",
+      "req": "S11",
+      "scenario": "SCH-005-S8-S11-write-failures",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Quota failure on delete: confirm stays with alert, event kept, focus on confirm 삭제",
+      "expected": {
+        "confirm": true,
+        "edit": true,
+        "alert": "삭제하지 못했습니다. 다시 시도해 주세요.",
+        "list": true,
+        "raw": "[{\"id\":\"evt-A\",\"title\":\"원래 제목\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:01.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"},{\"id\":\"1429ccaf-b821-4512-9dfb-c02616071db2\",\"title\":\"S8 추가\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"other\",\"notes\":\"메모 유지\",\"createdAt\":\"2026-11-14T01:00:00.986Z\",\"updatedAt\":\"2026-11-14T01:00:00.986Z\"}]",
+        "focus": "confirm-action"
+      },
+      "actual": {
+        "confirm": true,
+        "edit": true,
+        "alert": "삭제하지 못했습니다. 다시 시도해 주세요.",
+        "list": true,
+        "raw": "[{\"id\":\"evt-A\",\"title\":\"원래 제목\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:01.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"},{\"id\":\"1429ccaf-b821-4512-9dfb-c02616071db2\",\"title\":\"S8 추가\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"other\",\"notes\":\"메모 유지\",\"createdAt\":\"2026-11-14T01:00:00.986Z\",\"updatedAt\":\"2026-11-14T01:00:00.986Z\"}]",
+        "focus": "confirm-action"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S11-cancel",
+      "req": "S11 recovery",
+      "scenario": "SCH-005-S8-S11-write-failures",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "취소 returns to the event dialog",
+      "expected": {
+        "confirm": false,
+        "edit": true
+      },
+      "actual": {
+        "confirm": false,
+        "edit": true
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S20-add",
+      "req": "S20",
+      "scenario": "SCH-005-S20-S21-concurrency",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Unreadable at write time: nothing written, input kept, alert, banner, 새 일정 disabled, focus on 저장",
+      "expected": {
+        "alert": "저장된 데이터를 읽을 수 없어 변경하지 못했습니다. 입력 내용은 유지됩니다.",
+        "open": true,
+        "form": {
+          "title": "keep me",
+          "date": "2026-11-14",
+          "allDay": false,
+          "start": "09:00",
+          "end": "10:00",
+          "category": "work",
+          "notes": ""
+        },
+        "raw": "{bad",
+        "banner": "저장된 일정을 불러올 수 없습니다. 저장된 데이터는 변경되지 않았습니다.데이터 초기화",
+        "disabled": true,
+        "focus": "save-event",
+        "chips": 0
+      },
+      "actual": {
+        "alert": "저장된 데이터를 읽을 수 없어 변경하지 못했습니다. 입력 내용은 유지됩니다.",
+        "open": true,
+        "form": {
+          "title": "keep me",
+          "date": "2026-11-14",
+          "allDay": false,
+          "start": "09:00",
+          "end": "10:00",
+          "category": "work",
+          "notes": ""
+        },
+        "raw": "{bad",
+        "banner": "저장된 일정을 불러올 수 없습니다. 저장된 데이터는 변경되지 않았습니다.데이터 초기화",
+        "disabled": true,
+        "focus": "save-event",
+        "chips": 0
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S20-escape",
+      "req": "S20 recovery",
+      "scenario": "SCH-005-S20-S21-concurrency",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Escape closes; focus to 데이터 초기화",
+      "expected": {
+        "open": false,
+        "focus": "banner-button"
+      },
+      "actual": {
+        "open": false,
+        "focus": "banner-button"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S20-reset",
+      "req": "S20 -> S17",
+      "scenario": "SCH-005-S20-S21-concurrency",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Reset against the S20 baseline writes []",
+      "expected": {
+        "raw": "[]",
+        "status": "저장 데이터를 초기화했습니다."
+      },
+      "actual": {
+        "raw": "[]",
+        "status": "저장 데이터를 초기화했습니다."
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S20-edit",
+      "req": "S20",
+      "scenario": "SCH-005-S20-S21-concurrency",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Edit save with unreadable storage writes nothing and keeps input",
+      "expected": {
+        "alert": "저장된 데이터를 읽을 수 없어 변경하지 못했습니다. 입력 내용은 유지됩니다.",
+        "title": "수정 중",
+        "raw": "{bad",
+        "open": true,
+        "focus": "save-event"
+      },
+      "actual": {
+        "alert": "저장된 데이터를 읽을 수 없어 변경하지 못했습니다. 입력 내용은 유지됩니다.",
+        "title": "수정 중",
+        "raw": "{bad",
+        "open": true,
+        "focus": "save-event"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S20-delete",
+      "req": "S20",
+      "scenario": "SCH-005-S20-S21-concurrency",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Delete with unreadable storage: both dialogs open, confirm alert, raw unchanged, focus on 삭제",
+      "expected": {
+        "alert": "저장된 데이터를 읽을 수 없어 변경하지 못했습니다. 입력 내용은 유지됩니다.",
+        "confirm": true,
+        "edit": true,
+        "raw": "{bad",
+        "focus": "confirm-action",
+        "disabled": true
+      },
+      "actual": {
+        "alert": "저장된 데이터를 읽을 수 없어 변경하지 못했습니다. 입력 내용은 유지됩니다.",
+        "confirm": true,
+        "edit": true,
+        "raw": "{bad",
+        "focus": "confirm-action",
+        "disabled": true
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S21a",
+      "req": "S21a / SCH-003",
+      "scenario": "SCH-005-S20-S21-concurrency",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Edited event removed elsewhere: no write, input kept, add mode, list re-rendered, focus on 저장",
+      "expected": {
+        "alert": "이 일정은 다른 곳에서 삭제되었습니다. 저장을 다시 누르면 새 일정으로 저장됩니다.",
+        "open": true,
+        "title": "B",
+        "dlgTitle": "새 일정",
+        "delHidden": true,
+        "raw": "[{\"id\":\"evt-C\",\"title\":\"C 일정\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"13:00\",\"end\":\"14:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:02.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"},{\"id\":\"evt-D\",\"title\":\"D 다른탭\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"15:00\",\"end\":\"16:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:03.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"}]",
+        "list": [
+          "C 일정",
+          "D 다른탭"
+        ],
+        "focus": "save-event",
+        "status": ""
+      },
+      "actual": {
+        "alert": "이 일정은 다른 곳에서 삭제되었습니다. 저장을 다시 누르면 새 일정으로 저장됩니다.",
+        "open": true,
+        "title": "B",
+        "dlgTitle": "새 일정",
+        "delHidden": true,
+        "raw": "[{\"id\":\"evt-C\",\"title\":\"C 일정\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"13:00\",\"end\":\"14:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:02.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"},{\"id\":\"evt-D\",\"title\":\"D 다른탭\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"15:00\",\"end\":\"16:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:03.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"}]",
+        "list": [
+          "C 일정",
+          "D 다른탭"
+        ],
+        "focus": "save-event",
+        "status": ""
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S21a-resave",
+      "req": "S21a",
+      "scenario": "SCH-005-S20-S21-concurrency",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Second 저장 creates a new record B with a new id; others kept; focus #new-event",
+      "expected": {
+        "status": "일정을 추가했습니다.",
+        "nB": 1,
+        "newId": true,
+        "others": [
+          "evt-C",
+          "evt-D"
+        ],
+        "focus": "new-event"
+      },
+      "actual": {
+        "status": "일정을 추가했습니다.",
+        "nB": 1,
+        "newId": true,
+        "others": [
+          "evt-C",
+          "evt-D"
+        ],
+        "focus": "new-event"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S21a-escape",
+      "req": "S21a recovery",
+      "scenario": "SCH-005-S20-S21-concurrency",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Escape after S21a writes nothing and focuses #day-heading",
+      "expected": {
+        "open": false,
+        "focus": "day-heading",
+        "raw": "[{\"id\":\"evt-C\",\"title\":\"C 일정\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"13:00\",\"end\":\"14:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:02.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"}]"
+      },
+      "actual": {
+        "open": false,
+        "focus": "day-heading",
+        "raw": "[{\"id\":\"evt-C\",\"title\":\"C 일정\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"13:00\",\"end\":\"14:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:02.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"}]"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S21b",
+      "req": "S21b",
+      "scenario": "SCH-005-S20-S21-concurrency",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Delete of event removed elsewhere: both close, no write, re-render, status, focus #day-heading",
+      "expected": {
+        "confirm": false,
+        "edit": false,
+        "raw": "[{\"id\":\"evt-C\",\"title\":\"C 일정\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"13:00\",\"end\":\"14:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:02.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"},{\"id\":\"evt-D\",\"title\":\"D 다른탭\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"15:00\",\"end\":\"16:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:03.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"}]",
+        "list": [
+          "C 일정",
+          "D 다른탭"
+        ],
+        "status": "이 일정은 다른 곳에서 이미 삭제되었습니다.",
+        "focus": "day-heading"
+      },
+      "actual": {
+        "confirm": false,
+        "edit": false,
+        "raw": "[{\"id\":\"evt-C\",\"title\":\"C 일정\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"13:00\",\"end\":\"14:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:02.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"},{\"id\":\"evt-D\",\"title\":\"D 다른탭\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"15:00\",\"end\":\"16:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:03.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"}]",
+        "list": [
+          "C 일정",
+          "D 다른탭"
+        ],
+        "status": "이 일정은 다른 곳에서 이미 삭제되었습니다.",
+        "focus": "day-heading"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "CONC-create",
+      "req": "brief F2 (re-read before write)",
+      "scenario": "SCH-005-S20-S21-concurrency",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Create after another tab wrote keeps that tab's events and shows them",
+      "expected": {
+        "ids": [
+          "evt-A",
+          "evt-C",
+          "evt-D"
+        ],
+        "newCount": 4,
+        "list": [
+          "A 일정",
+          "C 일정",
+          "D 다른탭",
+          "새것"
+        ]
+      },
+      "actual": {
+        "ids": [
+          "evt-A",
+          "evt-C",
+          "evt-D"
+        ],
+        "newCount": 4,
+        "list": [
+          "A 일정",
+          "C 일정",
+          "D 다른탭",
+          "새것"
+        ]
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "CONC-edit",
+      "req": "brief (edit spreads fresh record)",
+      "scenario": "SCH-005-S20-S21-concurrency",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Edit keeps a field another tab added",
+      "expected": {
+        "title": "A 수정",
+        "otherTabField": "x"
+      },
+      "actual": {
+        "title": "A 수정",
+        "otherTabField": "x"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S22a",
+      "req": "S22 (a)",
+      "scenario": "SCH-005-S22",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Reset target became readable: no write, banner removed, event renders, focus #new-event",
+      "expected": {
+        "raw": "[{\"id\":\"evt-new\",\"title\":\"다른 탭 일정\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:01.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"}]",
+        "confirm": false,
+        "banner": false,
+        "disabled": false,
+        "chips": [
+          "09:00 다른 탭 일정"
+        ],
+        "status": "저장된 데이터를 다시 불러왔습니다.",
+        "focus": "new-event",
+        "writes": []
+      },
+      "actual": {
+        "writes": [],
+        "raw": "[{\"id\":\"evt-new\",\"title\":\"다른 탭 일정\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:01.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"}]",
+        "confirm": false,
+        "banner": false,
+        "disabled": false,
+        "chips": [
+          "09:00 다른 탭 일정"
+        ],
+        "status": "저장된 데이터를 다시 불러왔습니다.",
+        "focus": "new-event"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S22b",
+      "req": "S22 (b)",
+      "scenario": "SCH-005-S22",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Reset target changed and still unreadable: no write, alert, banner stays, focus on 초기화",
+      "expected": {
+        "raw": "{b",
+        "alert": "저장된 데이터가 바뀌었습니다. 내용을 다시 확인한 후 초기화해 주세요.",
+        "open": true,
+        "banner": true,
+        "focus": "confirm-action",
+        "writes": []
+      },
+      "actual": {
+        "raw": "{b",
+        "alert": "저장된 데이터가 바뀌었습니다. 내용을 다시 확인한 후 초기화해 주세요.",
+        "open": true,
+        "banner": true,
+        "focus": "confirm-action",
+        "writes": []
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S22b-second",
+      "req": "S22 (b) recovery",
+      "scenario": "SCH-005-S22",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Second 초기화 resets against the new baseline",
+      "expected": {
+        "raw": "[]",
+        "status": "저장 데이터를 초기화했습니다.",
+        "writes": [
+          "[]"
+        ]
+      },
+      "actual": {
+        "raw": "[]",
+        "status": "저장 데이터를 초기화했습니다.",
+        "writes": [
+          "[]"
+        ]
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S12-summary-hidden-1280",
+      "req": "design §3.2",
+      "scenario": "SCH-006-search-filter",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Summary hidden with no search and filter all",
+      "expected": false,
+      "actual": false,
+      "verdict": "pass"
+    },
+    {
+      "id": "S12-search-1280",
+      "req": "SCH-006 AC1 / S12",
+      "scenario": "SCH-006-search-filter",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Case-insensitive search of title and notes; summary counts visible month only",
+      "expected": {
+        "c14": [
+          "등산",
+          "09:00 주간 Meeting"
+        ],
+        "c20": [],
+        "c03": [],
+        "c1201": [
+          "09:00 meeting outside"
+        ],
+        "list": [
+          "등산",
+          "주간 Meeting"
+        ],
+        "summary": "이번 달 검색 결과 2개"
+      },
+      "actual": {
+        "c14": [
+          "등산",
+          "09:00 주간 Meeting"
+        ],
+        "c20": [],
+        "c03": [],
+        "c1201": [
+          "09:00 meeting outside"
+        ],
+        "list": [
+          "등산",
+          "주간 Meeting"
+        ],
+        "summary": "이번 달 검색 결과 2개"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S12-status-1280",
+      "req": "S12 / design §6.3",
+      "scenario": "SCH-006-search-filter",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "#status announces summary after the 500 ms pause",
+      "expected": "이번 달 검색 결과 2개",
+      "actual": "이번 달 검색 결과 2개",
+      "verdict": "pass"
+    },
+    {
+      "id": "S12-combined-1280",
+      "req": "SCH-006 AC3",
+      "scenario": "SCH-006-search-filter",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Search and filter combine",
+      "expected": {
+        "c14": [
+          "등산"
+        ],
+        "list": [
+          "등산"
+        ],
+        "summary": "이번 달 검색 결과 1개"
+      },
+      "actual": {
+        "c14": [
+          "등산"
+        ],
+        "list": [
+          "등산"
+        ],
+        "summary": "이번 달 검색 결과 1개"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S12-filter-1280",
+      "req": "SCH-006 AC2",
+      "scenario": "SCH-006-search-filter",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Category filter alone limits calendar and list",
+      "expected": {
+        "c14": [
+          "등산"
+        ],
+        "c03": [
+          "09:00 치과"
+        ],
+        "c20": [],
+        "summary": "이번 달 검색 결과 2개"
+      },
+      "actual": {
+        "c14": [
+          "등산"
+        ],
+        "c03": [
+          "09:00 치과"
+        ],
+        "c20": [],
+        "summary": "이번 달 검색 결과 2개"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S14-1280",
+      "req": "S14",
+      "scenario": "SCH-006-search-filter",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Selected day has events but none match",
+      "expected": "조건에 맞는 일정이 없습니다.",
+      "actual": "조건에 맞는 일정이 없습니다.",
+      "verdict": "pass"
+    },
+    {
+      "id": "S13-1280",
+      "req": "SCH-006 AC4 / S13",
+      "scenario": "SCH-006-search-filter",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "No results: no chips, both empty texts",
+      "expected": {
+        "chips": 0,
+        "summary": "이번 달에 조건에 맞는 일정이 없습니다.",
+        "day": "조건에 맞는 일정이 없습니다.",
+        "clear": "검색 조건 지우기"
+      },
+      "actual": {
+        "chips": 0,
+        "summary": "이번 달에 조건에 맞는 일정이 없습니다.",
+        "day": "조건에 맞는 일정이 없습니다.",
+        "clear": "검색 조건 지우기"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S13-status-1280",
+      "req": "S13",
+      "scenario": "SCH-006-search-filter",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "#status announces the no-match summary",
+      "expected": "이번 달에 조건에 맞는 일정이 없습니다.",
+      "actual": "이번 달에 조건에 맞는 일정이 없습니다.",
+      "verdict": "pass"
+    },
+    {
+      "id": "S13-clear-1280",
+      "req": "SCH-006 AC3",
+      "scenario": "SCH-006-search-filter",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Clearing restores all events, resets controls, hides summary, focuses search",
+      "expected": {
+        "search": "",
+        "filter": "all",
+        "summary": false,
+        "focus": "search",
+        "chips": 5,
+        "list": [
+          "등산",
+          "주간 Meeting"
+        ],
+        "raw": "[{\"id\":\"seed-1\",\"title\":\"주간 Meeting\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:01.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"},{\"id\":\"seed-2\",\"title\":\"등산\",\"date\":\"2026-11-14\",\"allDay\":true,\"start\":null,\"end\":null,\"category\":\"health\",\"notes\":\"after meeting\",\"createdAt\":\"2026-11-01T00:00:02.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"},{\"id\":\"seed-3\",\"title\":\"독서\",\"date\":\"2026-11-20\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"personal\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:03.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"},{\"id\":\"seed-4\",\"title\":\"치과\",\"date\":\"2026-11-03\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"health\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:04.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"},{\"id\":\"seed-5\",\"title\":\"meeting outside\",\"date\":\"2026-12-01\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:05.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"}]"
+      },
+      "actual": {
+        "search": "",
+        "filter": "all",
+        "summary": false,
+        "focus": "search",
+        "chips": 5,
+        "list": [
+          "등산",
+          "주간 Meeting"
+        ],
+        "raw": "[{\"id\":\"seed-1\",\"title\":\"주간 Meeting\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:01.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"},{\"id\":\"seed-2\",\"title\":\"등산\",\"date\":\"2026-11-14\",\"allDay\":true,\"start\":null,\"end\":null,\"category\":\"health\",\"notes\":\"after meeting\",\"createdAt\":\"2026-11-01T00:00:02.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"},{\"id\":\"seed-3\",\"title\":\"독서\",\"date\":\"2026-11-20\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"personal\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:03.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"},{\"id\":\"seed-4\",\"title\":\"치과\",\"date\":\"2026-11-03\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"health\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:04.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"},{\"id\":\"seed-5\",\"title\":\"meeting outside\",\"date\":\"2026-12-01\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:05.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"}]"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S12-summary-hidden-375",
+      "req": "design §3.2",
+      "scenario": "SCH-006-search-filter",
+      "viewport": "375x800",
+      "mode": "http",
+      "desc": "Summary hidden with no search and filter all",
+      "expected": false,
+      "actual": false,
+      "verdict": "pass"
+    },
+    {
+      "id": "S12-search-375",
+      "req": "SCH-006 AC1 / S12",
+      "scenario": "SCH-006-search-filter",
+      "viewport": "375x800",
+      "mode": "http",
+      "desc": "Case-insensitive search of title and notes; summary counts visible month only",
+      "expected": {
+        "c14": [
+          "등산",
+          "09:00 주간 Meeting"
+        ],
+        "c20": [],
+        "c03": [],
+        "c1201": [
+          "09:00 meeting outside"
+        ],
+        "list": [
+          "등산",
+          "주간 Meeting"
+        ],
+        "summary": "이번 달 검색 결과 2개"
+      },
+      "actual": {
+        "c14": [
+          "등산",
+          "09:00 주간 Meeting"
+        ],
+        "c20": [],
+        "c03": [],
+        "c1201": [
+          "09:00 meeting outside"
+        ],
+        "list": [
+          "등산",
+          "주간 Meeting"
+        ],
+        "summary": "이번 달 검색 결과 2개"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S12-status-375",
+      "req": "S12 / design §6.3",
+      "scenario": "SCH-006-search-filter",
+      "viewport": "375x800",
+      "mode": "http",
+      "desc": "#status announces summary after the 500 ms pause",
+      "expected": "이번 달 검색 결과 2개",
+      "actual": "이번 달 검색 결과 2개",
+      "verdict": "pass"
+    },
+    {
+      "id": "S12-combined-375",
+      "req": "SCH-006 AC3",
+      "scenario": "SCH-006-search-filter",
+      "viewport": "375x800",
+      "mode": "http",
+      "desc": "Search and filter combine",
+      "expected": {
+        "c14": [
+          "등산"
+        ],
+        "list": [
+          "등산"
+        ],
+        "summary": "이번 달 검색 결과 1개"
+      },
+      "actual": {
+        "c14": [
+          "등산"
+        ],
+        "list": [
+          "등산"
+        ],
+        "summary": "이번 달 검색 결과 1개"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S12-filter-375",
+      "req": "SCH-006 AC2",
+      "scenario": "SCH-006-search-filter",
+      "viewport": "375x800",
+      "mode": "http",
+      "desc": "Category filter alone limits calendar and list",
+      "expected": {
+        "c14": [
+          "등산"
+        ],
+        "c03": [
+          "09:00 치과"
+        ],
+        "c20": [],
+        "summary": "이번 달 검색 결과 2개"
+      },
+      "actual": {
+        "c14": [
+          "등산"
+        ],
+        "c03": [
+          "09:00 치과"
+        ],
+        "c20": [],
+        "summary": "이번 달 검색 결과 2개"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S14-375",
+      "req": "S14",
+      "scenario": "SCH-006-search-filter",
+      "viewport": "375x800",
+      "mode": "http",
+      "desc": "Selected day has events but none match",
+      "expected": "조건에 맞는 일정이 없습니다.",
+      "actual": "조건에 맞는 일정이 없습니다.",
+      "verdict": "pass"
+    },
+    {
+      "id": "S13-375",
+      "req": "SCH-006 AC4 / S13",
+      "scenario": "SCH-006-search-filter",
+      "viewport": "375x800",
+      "mode": "http",
+      "desc": "No results: no chips, both empty texts",
+      "expected": {
+        "chips": 0,
+        "summary": "이번 달에 조건에 맞는 일정이 없습니다.",
+        "day": "조건에 맞는 일정이 없습니다.",
+        "clear": "검색 조건 지우기"
+      },
+      "actual": {
+        "chips": 0,
+        "summary": "이번 달에 조건에 맞는 일정이 없습니다.",
+        "day": "조건에 맞는 일정이 없습니다.",
+        "clear": "검색 조건 지우기"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S13-status-375",
+      "req": "S13",
+      "scenario": "SCH-006-search-filter",
+      "viewport": "375x800",
+      "mode": "http",
+      "desc": "#status announces the no-match summary",
+      "expected": "이번 달에 조건에 맞는 일정이 없습니다.",
+      "actual": "이번 달에 조건에 맞는 일정이 없습니다.",
+      "verdict": "pass"
+    },
+    {
+      "id": "S13-clear-375",
+      "req": "SCH-006 AC3",
+      "scenario": "SCH-006-search-filter",
+      "viewport": "375x800",
+      "mode": "http",
+      "desc": "Clearing restores all events, resets controls, hides summary, focuses search",
+      "expected": {
+        "search": "",
+        "filter": "all",
+        "summary": false,
+        "focus": "search",
+        "chips": 5,
+        "list": [
+          "등산",
+          "주간 Meeting"
+        ],
+        "raw": "[{\"id\":\"seed-1\",\"title\":\"주간 Meeting\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:01.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"},{\"id\":\"seed-2\",\"title\":\"등산\",\"date\":\"2026-11-14\",\"allDay\":true,\"start\":null,\"end\":null,\"category\":\"health\",\"notes\":\"after meeting\",\"createdAt\":\"2026-11-01T00:00:02.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"},{\"id\":\"seed-3\",\"title\":\"독서\",\"date\":\"2026-11-20\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"personal\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:03.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"},{\"id\":\"seed-4\",\"title\":\"치과\",\"date\":\"2026-11-03\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"health\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:04.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"},{\"id\":\"seed-5\",\"title\":\"meeting outside\",\"date\":\"2026-12-01\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:05.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"}]"
+      },
+      "actual": {
+        "search": "",
+        "filter": "all",
+        "summary": false,
+        "focus": "search",
+        "chips": 5,
+        "list": [
+          "등산",
+          "주간 Meeting"
+        ],
+        "raw": "[{\"id\":\"seed-1\",\"title\":\"주간 Meeting\",\"date\":\"2026-11-14\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:01.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"},{\"id\":\"seed-2\",\"title\":\"등산\",\"date\":\"2026-11-14\",\"allDay\":true,\"start\":null,\"end\":null,\"category\":\"health\",\"notes\":\"after meeting\",\"createdAt\":\"2026-11-01T00:00:02.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"},{\"id\":\"seed-3\",\"title\":\"독서\",\"date\":\"2026-11-20\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"personal\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:03.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"},{\"id\":\"seed-4\",\"title\":\"치과\",\"date\":\"2026-11-03\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"health\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:04.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"},{\"id\":\"seed-5\",\"title\":\"meeting outside\",\"date\":\"2026-12-01\",\"allDay\":false,\"start\":\"09:00\",\"end\":\"10:00\",\"category\":\"work\",\"notes\":\"\",\"createdAt\":\"2026-11-01T00:00:05.000Z\",\"updatedAt\":\"2026-11-01T00:00:00.000Z\"}]"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "S12-overflow",
+      "req": "S12 / SCH-006 AC2",
+      "scenario": "SCH-006-search-filter",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "+N counts only matching events",
+      "expected": {
+        "all": "+2",
+        "health": null,
+        "chips": [
+          "12:00 h1",
+          "13:00 h2"
+        ]
+      },
+      "actual": {
+        "all": "+2",
+        "health": null,
+        "chips": [
+          "12:00 h1",
+          "13:00 h2"
+        ]
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "L-1280",
+      "req": "SCH-007 AC1",
+      "scenario": "SCH-007-layout",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "No horizontal page scroll at 1280 (scrollWidth <= clientWidth) with 100-char unbroken title",
+      "expected": {
+        "noScroll": true,
+        "innerOk": true
+      },
+      "actual": {
+        "noScroll": true,
+        "innerOk": true,
+        "measured": {
+          "scrollWidth": 1265,
+          "clientWidth": 1265,
+          "innerWidth": 1280
+        }
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "L-1280-columns",
+      "req": "design §2.1",
+      "scenario": "SCH-007-layout",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Two columns at 1280: day panel beside calendar, 360 px wide",
+      "expected": {
+        "side": true,
+        "panelW": 360
+      },
+      "actual": {
+        "side": true,
+        "panelW": 360
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "L-dialog-1280",
+      "req": "SCH-007 AC1",
+      "scenario": "SCH-007-layout",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "No horizontal scroll with the edit dialog open (1000-char notes)",
+      "expected": true,
+      "actual": true,
+      "verdict": "pass"
+    },
+    {
+      "id": "L-event-dialog-width-1280",
+      "req": "design §2.3",
+      "scenario": "SCH-007-layout",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "event-dialog at 1280: width min(560, 100vw - 32) ±1",
+      "expected": {
+        "open": true,
+        "width": "560 ±1"
+      },
+      "actual": {
+        "open": true,
+        "innerWidth": 1280,
+        "clientWidth": 1265,
+        "left": 352.5,
+        "right": 367.5,
+        "width": 560
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "L-confirm-dialog-width-1280",
+      "req": "design §2.3",
+      "scenario": "SCH-007-layout",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "confirm-dialog at 1280: width min(560, 100vw - 32) ±1",
+      "expected": {
+        "open": true,
+        "width": "560 ±1"
+      },
+      "actual": {
+        "open": true,
+        "innerWidth": 1280,
+        "clientWidth": 1265,
+        "left": 352.5,
+        "right": 367.5,
+        "width": 560
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "C-edit-dialog-1280",
+      "req": "SCH-007 AC4",
+      "scenario": "SCH-007-layout",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "All visible text in edit-dialog-1280 has contrast >= 4.5:1 (rendered colors)",
+      "expected": "min >= 4.5",
+      "actual": "min 6.47",
+      "verdict": "pass"
+    },
+    {
+      "id": "C-edit-dialog-1280-tokens",
+      "req": "SCH-007 AC4 / design §4, §10.6",
+      "scenario": "SCH-007-layout",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Every rendered text/background pair in edit-dialog-1280 is a §4 token pair",
+      "expected": "all pairs in §4",
+      "actual": "all 5 pairs in §4",
+      "verdict": "pass"
+    },
+    {
+      "id": "L-375",
+      "req": "SCH-007 AC1",
+      "scenario": "SCH-007-layout",
+      "viewport": "375x800",
+      "mode": "http",
+      "desc": "No horizontal page scroll at 375 (scrollWidth <= clientWidth) with 100-char unbroken title",
+      "expected": {
+        "noScroll": true,
+        "innerOk": true
+      },
+      "actual": {
+        "noScroll": true,
+        "innerOk": true,
+        "measured": {
+          "scrollWidth": 375,
+          "clientWidth": 375,
+          "innerWidth": 375
+        }
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "L-375-column",
+      "req": "design §2.2",
+      "scenario": "SCH-007-layout",
+      "viewport": "375x800",
+      "mode": "http",
+      "desc": "Single column at 375: day panel below the calendar",
+      "expected": true,
+      "actual": true,
+      "verdict": "pass"
+    },
+    {
+      "id": "L-dialog-375",
+      "req": "SCH-007 AC1",
+      "scenario": "SCH-007-layout",
+      "viewport": "375x800",
+      "mode": "http",
+      "desc": "No horizontal scroll with the edit dialog open (1000-char notes)",
+      "expected": true,
+      "actual": true,
+      "verdict": "pass"
+    },
+    {
+      "id": "L-event-dialog-width-375",
+      "req": "design §2.3 / SCH-007 AC1",
+      "scenario": "SCH-007-layout",
+      "viewport": "375x800",
+      "mode": "http",
+      "desc": "event-dialog at 375 (mobile emulation, no scrollbar): width min(560, 100vw - 32) ±1 and 16 px ±1 gutters",
+      "expected": {
+        "open": true,
+        "noScrollbar": true,
+        "width": "343 ±1",
+        "left": "16 ±1",
+        "right": "16 ±1"
+      },
+      "actual": {
+        "open": true,
+        "innerWidth": 375,
+        "clientWidth": 375,
+        "left": 16,
+        "right": 16,
+        "width": 343
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "L-confirm-dialog-width-375",
+      "req": "design §2.3 / SCH-007 AC1",
+      "scenario": "SCH-007-layout",
+      "viewport": "375x800",
+      "mode": "http",
+      "desc": "confirm-dialog at 375 (mobile emulation, no scrollbar): width min(560, 100vw - 32) ±1 and 16 px ±1 gutters",
+      "expected": {
+        "open": true,
+        "noScrollbar": true,
+        "width": "343 ±1",
+        "left": "16 ±1",
+        "right": "16 ±1"
+      },
+      "actual": {
+        "open": true,
+        "innerWidth": 375,
+        "clientWidth": 375,
+        "left": 16,
+        "right": 16,
+        "width": 343
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "C-edit-dialog-375",
+      "req": "SCH-007 AC4",
+      "scenario": "SCH-007-layout",
+      "viewport": "375x800",
+      "mode": "http",
+      "desc": "All visible text in edit-dialog-375 has contrast >= 4.5:1 (rendered colors)",
+      "expected": "min >= 4.5",
+      "actual": "min 6.47",
+      "verdict": "pass"
+    },
+    {
+      "id": "C-edit-dialog-375-tokens",
+      "req": "SCH-007 AC4 / design §4, §10.6",
+      "scenario": "SCH-007-layout",
+      "viewport": "375x800",
+      "mode": "http",
+      "desc": "Every rendered text/background pair in edit-dialog-375 is a §4 token pair",
+      "expected": "all pairs in §4",
+      "actual": "all 5 pairs in §4",
+      "verdict": "pass"
+    },
+    {
+      "id": "K-taborder",
+      "req": "SCH-007 AC2 / design §6.1",
+      "scenario": "SCH-007-keyboard-focus",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Tab order: nav, search, filter, new, grid (one stop), list items",
+      "expected": [
+        "prev-month",
+        "next-month",
+        "today",
+        "search",
+        "category-filter",
+        "new-event",
+        "2026-11-14",
+        "item:k1",
+        "item:k2"
+      ],
+      "actual": [
+        "prev-month",
+        "next-month",
+        "today",
+        "search",
+        "category-filter",
+        "new-event",
+        "2026-11-14",
+        "item:k1",
+        "item:k2"
+      ],
+      "verdict": "pass"
+    },
+    {
+      "id": "K-focus-visible",
+      "req": "SCH-007 AC2 / design §7",
+      "scenario": "SCH-007-keyboard-focus",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Each focused element shows a 3px solid #1D4ED8 outline",
+      "expected": [],
+      "actual": [],
+      "verdict": "pass"
+    },
+    {
+      "id": "K-taborder-filter",
+      "req": "design §6.1",
+      "scenario": "SCH-007-keyboard-focus",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Clear-filters button follows 새 일정 when shown",
+      "expected": [
+        "category-filter",
+        "new-event",
+        "clear-filters",
+        "2026-11-14"
+      ],
+      "actual": [
+        "category-filter",
+        "new-event",
+        "clear-filters",
+        "2026-11-14"
+      ],
+      "verdict": "pass"
+    },
+    {
+      "id": "K-at-new",
+      "req": "harness",
+      "scenario": "SCH-007-keyboard-focus",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Focus reached #new-event by Tab",
+      "expected": "new-event",
+      "actual": "new-event",
+      "verdict": "pass"
+    },
+    {
+      "id": "K-open",
+      "req": "SCH-007 AC2",
+      "scenario": "SCH-007-keyboard-focus",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Enter opens the add dialog and focuses title",
+      "expected": {
+        "open": true,
+        "focus": "event-title"
+      },
+      "actual": {
+        "open": true,
+        "focus": "event-title"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "K-trap",
+      "req": "SCH-007 AC2 / design §10.4",
+      "scenario": "SCH-007-keyboard-focus",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "40 Tab/Shift+Tab presses never leave the dialog",
+      "expected": 0,
+      "actual": 0,
+      "verdict": "pass"
+    },
+    {
+      "id": "K-create",
+      "req": "SCH-007 AC2",
+      "scenario": "SCH-007-keyboard-focus",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Enter in title submits; event added; focus returns to #new-event",
+      "expected": {
+        "status": "일정을 추가했습니다.",
+        "focus": "new-event",
+        "has": true
+      },
+      "actual": {
+        "status": "일정을 추가했습니다.",
+        "focus": "new-event",
+        "has": true
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "K-edit-open",
+      "req": "SCH-007 AC2",
+      "scenario": "SCH-007-keyboard-focus",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Enter on a list item opens edit dialog",
+      "expected": {
+        "open": true,
+        "title": "일정 수정"
+      },
+      "actual": {
+        "open": true,
+        "title": "일정 수정"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "K-escape-return",
+      "req": "SCH-007 AC2",
+      "scenario": "SCH-007-keyboard-focus",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Escape closes and returns focus to the opener item",
+      "expected": {
+        "open": false,
+        "focus": "item:k1"
+      },
+      "actual": {
+        "open": false,
+        "focus": "item:k1"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "K-at-delete",
+      "req": "SCH-007 AC2 / design §6.4",
+      "scenario": "SCH-007-keyboard-focus",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Shift+Tab from title wraps to the last control and reaches 삭제",
+      "expected": "delete-event",
+      "actual": "delete-event",
+      "verdict": "pass"
+    },
+    {
+      "id": "K-confirm-focus",
+      "req": "S9",
+      "scenario": "SCH-007-keyboard-focus",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Confirm opens with focus on 취소",
+      "expected": "confirm-cancel",
+      "actual": "confirm-cancel",
+      "verdict": "pass"
+    },
+    {
+      "id": "K-confirm-trap",
+      "req": "SCH-007 AC2",
+      "scenario": "SCH-007-keyboard-focus",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Tab stays inside the stacked confirm dialog",
+      "expected": 0,
+      "actual": 0,
+      "verdict": "pass"
+    },
+    {
+      "id": "K-delete",
+      "req": "SCH-007 AC2 / S10",
+      "scenario": "SCH-007-keyboard-focus",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Keyboard delete succeeds",
+      "expected": {
+        "status": "일정을 삭제했습니다.",
+        "ids": [
+          "k2"
+        ]
+      },
+      "actual": {
+        "status": "일정을 삭제했습니다.",
+        "ids": [
+          "k2"
+        ]
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "K-month",
+      "req": "SCH-007 AC2",
+      "scenario": "SCH-007-keyboard-focus",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Enter on 다음 달 changes month and keeps focus",
+      "expected": {
+        "m": "2026년 12월",
+        "f": "next-month"
+      },
+      "actual": {
+        "m": "2026년 12월",
+        "f": "next-month"
+      },
+      "verdict": "pass"
+    },
+    {
+      "id": "C-placeholder",
+      "req": "SCH-007 AC4 / design §4.1",
+      "scenario": "SCH-007-keyboard-focus",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Search placeholder color is #6B7280 (4.83:1 on white)",
+      "expected": "rgb(107, 114, 128)",
+      "actual": "rgb(107, 114, 128)",
+      "verdict": "pass"
+    },
+    {
+      "id": "K-taborder-banner",
+      "req": "design §6.1",
+      "scenario": "SCH-007-keyboard-focus",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Banner state: 데이터 초기화 follows filter (새 일정 disabled), then grid",
+      "expected": [
+        "prev-month",
+        "next-month",
+        "today",
+        "search",
+        "category-filter",
+        "banner-button",
+        "2026-11-14"
+      ],
+      "actual": [
+        "prev-month",
+        "next-month",
+        "today",
+        "search",
+        "category-filter",
+        "banner-button",
+        "2026-11-14"
+      ],
+      "verdict": "pass"
+    },
+    {
+      "id": "C-disabled-banner-1280",
+      "req": "SCH-007 AC4",
+      "scenario": "SCH-007-keyboard-focus",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "All visible text in disabled-banner-1280 has contrast >= 4.5:1 (rendered colors)",
+      "expected": "min >= 4.5",
+      "actual": "min 6.41",
+      "verdict": "pass"
+    },
+    {
+      "id": "C-disabled-banner-1280-tokens",
+      "req": "SCH-007 AC4 / design §4, §10.6",
+      "scenario": "SCH-007-keyboard-focus",
+      "viewport": "1280x800",
+      "mode": "http",
+      "desc": "Every rendered text/background pair in disabled-banner-1280 is a §4 token pair",
+      "expected": "all pairs in §4",
+      "actual": "all 9 pairs in §4",
+      "verdict": "pass"
+    },
+    {
+      "id": "EXC",
+      "req": "regression",
+      "scenario": "global",
+      "viewport": "",
+      "mode": "http",
+      "desc": "No uncaught page exceptions during the run",
+      "expected": [],
+      "actual": [],
+      "verdict": "pass"
+    }
+  ],
+  "contrast": [
+    {
+      "label": "populated-1280",
+      "viewport": "1280x800",
+      "pairs": [
+        {
+          "pair": "#1F2937 on #FFFFFF",
+          "ratio": 14.68,
+          "sample": "[category-filter value] all",
+          "disabled": false
+        },
+        {
+          "pair": "#1D4ED8 on #FFFFFF",
+          "ratio": 6.7,
+          "sample": "‹",
+          "disabled": false
+        },
+        {
+          "pair": "#FFFFFF on #1D4ED8",
+          "ratio": 6.7,
+          "sample": "새 일정",
+          "disabled": false
+        },
+        {
+          "pair": "#B91C1C on #FFFFFF",
+          "ratio": 6.47,
+          "sample": "일",
+          "disabled": false
+        },
+        {
+          "pair": "#4B5563 on #FFFFFF",
+          "ratio": 7.56,
+          "sample": "15:00~16:00",
+          "disabled": false
+        },
+        {
+          "pair": "#FFFFFF on #047857",
+          "ratio": 5.48,
+          "sample": "09:00 토요일외",
+          "disabled": false
+        },
+        {
+          "pair": "#FFFFFF on #1E40AF",
+          "ratio": 8.72,
+          "sample": "종일A",
+          "disabled": false
+        },
+        {
+          "pair": "#4B5563 on #EFF6FF",
+          "ratio": 6.94,
+          "sample": "+2",
+          "disabled": false
+        },
+        {
+          "pair": "#4B5563 on #F9FAFB",
+          "ratio": 7.23,
+          "sample": "1",
+          "disabled": false
+        },
+        {
+          "pair": "#1D4ED8 on #F9FAFB",
+          "ratio": 6.41,
+          "sample": "5",
+          "disabled": false
+        },
+        {
+          "pair": "#FFFFFF on #7E22CE",
+          "ratio": 6.98,
+          "sample": "개인",
+          "disabled": false
+        },
+        {
+          "pair": "#FFFFFF on #4B5563",
+          "ratio": 7.56,
+          "sample": "기타",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "label": "selected-sat-1280",
+      "viewport": "1280x800",
+      "pairs": [
+        {
+          "pair": "#1F2937 on #FFFFFF",
+          "ratio": 14.68,
+          "sample": "[category-filter value] all",
+          "disabled": false
+        },
+        {
+          "pair": "#1D4ED8 on #FFFFFF",
+          "ratio": 6.7,
+          "sample": "‹",
+          "disabled": false
+        },
+        {
+          "pair": "#FFFFFF on #1D4ED8",
+          "ratio": 6.7,
+          "sample": "새 일정",
+          "disabled": false
+        },
+        {
+          "pair": "#B91C1C on #FFFFFF",
+          "ratio": 6.47,
+          "sample": "일",
+          "disabled": false
+        },
+        {
+          "pair": "#4B5563 on #FFFFFF",
+          "ratio": 7.56,
+          "sample": "09:00~10:00",
+          "disabled": false
+        },
+        {
+          "pair": "#1D4ED8 on #EFF6FF",
+          "ratio": 6.16,
+          "sample": "7",
+          "disabled": false
+        },
+        {
+          "pair": "#FFFFFF on #047857",
+          "ratio": 5.48,
+          "sample": "09:00 토요일외",
+          "disabled": false
+        },
+        {
+          "pair": "#FFFFFF on #1E40AF",
+          "ratio": 8.72,
+          "sample": "종일A",
+          "disabled": false
+        },
+        {
+          "pair": "#4B5563 on #F9FAFB",
+          "ratio": 7.23,
+          "sample": "1",
+          "disabled": false
+        },
+        {
+          "pair": "#1D4ED8 on #F9FAFB",
+          "ratio": 6.41,
+          "sample": "5",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "label": "selected-weekday-1280",
+      "viewport": "1280x800",
+      "pairs": [
+        {
+          "pair": "#1F2937 on #FFFFFF",
+          "ratio": 14.68,
+          "sample": "[category-filter value] all",
+          "disabled": false
+        },
+        {
+          "pair": "#1D4ED8 on #FFFFFF",
+          "ratio": 6.7,
+          "sample": "‹",
+          "disabled": false
+        },
+        {
+          "pair": "#FFFFFF on #1D4ED8",
+          "ratio": 6.7,
+          "sample": "새 일정",
+          "disabled": false
+        },
+        {
+          "pair": "#B91C1C on #FFFFFF",
+          "ratio": 6.47,
+          "sample": "일",
+          "disabled": false
+        },
+        {
+          "pair": "#4B5563 on #FFFFFF",
+          "ratio": 7.56,
+          "sample": "이 날에는 일정이 없습니다.",
+          "disabled": false
+        },
+        {
+          "pair": "#FFFFFF on #047857",
+          "ratio": 5.48,
+          "sample": "09:00 토요일외",
+          "disabled": false
+        },
+        {
+          "pair": "#FFFFFF on #1E40AF",
+          "ratio": 8.72,
+          "sample": "종일A",
+          "disabled": false
+        },
+        {
+          "pair": "#1F2937 on #EFF6FF",
+          "ratio": 13.49,
+          "sample": "18",
+          "disabled": false
+        },
+        {
+          "pair": "#4B5563 on #F9FAFB",
+          "ratio": 7.23,
+          "sample": "1",
+          "disabled": false
+        },
+        {
+          "pair": "#1D4ED8 on #F9FAFB",
+          "ratio": 6.41,
+          "sample": "5",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "label": "selected-sun-1280",
+      "viewport": "1280x800",
+      "pairs": [
+        {
+          "pair": "#1F2937 on #FFFFFF",
+          "ratio": 14.68,
+          "sample": "[category-filter value] all",
+          "disabled": false
+        },
+        {
+          "pair": "#1D4ED8 on #FFFFFF",
+          "ratio": 6.7,
+          "sample": "‹",
+          "disabled": false
+        },
+        {
+          "pair": "#FFFFFF on #1D4ED8",
+          "ratio": 6.7,
+          "sample": "새 일정",
+          "disabled": false
+        },
+        {
+          "pair": "#B91C1C on #FFFFFF",
+          "ratio": 6.47,
+          "sample": "일",
+          "disabled": false
+        },
+        {
+          "pair": "#4B5563 on #FFFFFF",
+          "ratio": 7.56,
+          "sample": "이 날에는 일정이 없습니다.",
+          "disabled": false
+        },
+        {
+          "pair": "#FFFFFF on #047857",
+          "ratio": 5.48,
+          "sample": "09:00 토요일외",
+          "disabled": false
+        },
+        {
+          "pair": "#FFFFFF on #1E40AF",
+          "ratio": 8.72,
+          "sample": "종일A",
+          "disabled": false
+        },
+        {
+          "pair": "#B91C1C on #EFF6FF",
+          "ratio": 5.95,
+          "sample": "15",
+          "disabled": false
+        },
+        {
+          "pair": "#4B5563 on #F9FAFB",
+          "ratio": 7.23,
+          "sample": "1",
+          "disabled": false
+        },
+        {
+          "pair": "#1D4ED8 on #F9FAFB",
+          "ratio": 6.41,
+          "sample": "5",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "label": "outside-sun-1280",
+      "viewport": "1280x800",
+      "pairs": [
+        {
+          "pair": "#1F2937 on #FFFFFF",
+          "ratio": 14.68,
+          "sample": "[category-filter value] all",
+          "disabled": false
+        },
+        {
+          "pair": "#1D4ED8 on #FFFFFF",
+          "ratio": 6.7,
+          "sample": "‹",
+          "disabled": false
+        },
+        {
+          "pair": "#FFFFFF on #1D4ED8",
+          "ratio": 6.7,
+          "sample": "새 일정",
+          "disabled": false
+        },
+        {
+          "pair": "#B91C1C on #FFFFFF",
+          "ratio": 6.47,
+          "sample": "일",
+          "disabled": false
+        },
+        {
+          "pair": "#4B5563 on #FFFFFF",
+          "ratio": 7.56,
+          "sample": "이 날에는 일정이 없습니다.",
+          "disabled": false
+        },
+        {
+          "pair": "#B91C1C on #F9FAFB",
+          "ratio": 6.19,
+          "sample": "29",
+          "disabled": false
+        },
+        {
+          "pair": "#4B5563 on #F9FAFB",
+          "ratio": 7.23,
+          "sample": "30",
+          "disabled": false
+        },
+        {
+          "pair": "#FFFFFF on #1E40AF",
+          "ratio": 8.72,
+          "sample": "바깥",
+          "disabled": false
+        },
+        {
+          "pair": "#1F2937 on #EFF6FF",
+          "ratio": 13.49,
+          "sample": "15",
+          "disabled": false
+        },
+        {
+          "pair": "#1D4ED8 on #F9FAFB",
+          "ratio": 6.41,
+          "sample": "2",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "label": "populated-375",
+      "viewport": "375x800",
+      "pairs": [
+        {
+          "pair": "#1F2937 on #FFFFFF",
+          "ratio": 14.68,
+          "sample": "[category-filter value] all",
+          "disabled": false
+        },
+        {
+          "pair": "#1D4ED8 on #FFFFFF",
+          "ratio": 6.7,
+          "sample": "‹",
+          "disabled": false
+        },
+        {
+          "pair": "#FFFFFF on #1D4ED8",
+          "ratio": 6.7,
+          "sample": "새 일정",
+          "disabled": false
+        },
+        {
+          "pair": "#B91C1C on #FFFFFF",
+          "ratio": 6.47,
+          "sample": "일",
+          "disabled": false
+        },
+        {
+          "pair": "#4B5563 on #FFFFFF",
+          "ratio": 7.56,
+          "sample": "15:00~16:00",
+          "disabled": false
+        },
+        {
+          "pair": "#4B5563 on #EFF6FF",
+          "ratio": 6.94,
+          "sample": "+2",
+          "disabled": false
+        },
+        {
+          "pair": "#4B5563 on #F9FAFB",
+          "ratio": 7.23,
+          "sample": "1",
+          "disabled": false
+        },
+        {
+          "pair": "#1D4ED8 on #F9FAFB",
+          "ratio": 6.41,
+          "sample": "5",
+          "disabled": false
+        },
+        {
+          "pair": "#FFFFFF on #1E40AF",
+          "ratio": 8.72,
+          "sample": "업무",
+          "disabled": false
+        },
+        {
+          "pair": "#FFFFFF on #047857",
+          "ratio": 5.48,
+          "sample": "건강",
+          "disabled": false
+        },
+        {
+          "pair": "#FFFFFF on #7E22CE",
+          "ratio": 6.98,
+          "sample": "개인",
+          "disabled": false
+        },
+        {
+          "pair": "#FFFFFF on #4B5563",
+          "ratio": 7.56,
+          "sample": "기타",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "label": "selected-sat-375",
+      "viewport": "375x800",
+      "pairs": [
+        {
+          "pair": "#1F2937 on #FFFFFF",
+          "ratio": 14.68,
+          "sample": "[category-filter value] all",
+          "disabled": false
+        },
+        {
+          "pair": "#1D4ED8 on #FFFFFF",
+          "ratio": 6.7,
+          "sample": "‹",
+          "disabled": false
+        },
+        {
+          "pair": "#FFFFFF on #1D4ED8",
+          "ratio": 6.7,
+          "sample": "새 일정",
+          "disabled": false
+        },
+        {
+          "pair": "#B91C1C on #FFFFFF",
+          "ratio": 6.47,
+          "sample": "일",
+          "disabled": false
+        },
+        {
+          "pair": "#4B5563 on #FFFFFF",
+          "ratio": 7.56,
+          "sample": "09:00~10:00",
+          "disabled": false
+        },
+        {
+          "pair": "#1D4ED8 on #EFF6FF",
+          "ratio": 6.16,
+          "sample": "7",
+          "disabled": false
+        },
+        {
+          "pair": "#4B5563 on #F9FAFB",
+          "ratio": 7.23,
+          "sample": "1",
+          "disabled": false
+        },
+        {
+          "pair": "#1D4ED8 on #F9FAFB",
+          "ratio": 6.41,
+          "sample": "5",
+          "disabled": false
+        },
+        {
+          "pair": "#FFFFFF on #047857",
+          "ratio": 5.48,
+          "sample": "건강",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "label": "selected-weekday-375",
+      "viewport": "375x800",
+      "pairs": [
+        {
+          "pair": "#1F2937 on #FFFFFF",
+          "ratio": 14.68,
+          "sample": "[category-filter value] all",
+          "disabled": false
+        },
+        {
+          "pair": "#1D4ED8 on #FFFFFF",
+          "ratio": 6.7,
+          "sample": "‹",
+          "disabled": false
+        },
+        {
+          "pair": "#FFFFFF on #1D4ED8",
+          "ratio": 6.7,
+          "sample": "새 일정",
+          "disabled": false
+        },
+        {
+          "pair": "#B91C1C on #FFFFFF",
+          "ratio": 6.47,
+          "sample": "일",
+          "disabled": false
+        },
+        {
+          "pair": "#4B5563 on #FFFFFF",
+          "ratio": 7.56,
+          "sample": "이 날에는 일정이 없습니다.",
+          "disabled": false
+        },
+        {
+          "pair": "#1F2937 on #EFF6FF",
+          "ratio": 13.49,
+          "sample": "18",
+          "disabled": false
+        },
+        {
+          "pair": "#4B5563 on #F9FAFB",
+          "ratio": 7.23,
+          "sample": "1",
+          "disabled": false
+        },
+        {
+          "pair": "#1D4ED8 on #F9FAFB",
+          "ratio": 6.41,
+          "sample": "5",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "label": "selected-sun-375",
+      "viewport": "375x800",
+      "pairs": [
+        {
+          "pair": "#1F2937 on #FFFFFF",
+          "ratio": 14.68,
+          "sample": "[category-filter value] all",
+          "disabled": false
+        },
+        {
+          "pair": "#1D4ED8 on #FFFFFF",
+          "ratio": 6.7,
+          "sample": "‹",
+          "disabled": false
+        },
+        {
+          "pair": "#FFFFFF on #1D4ED8",
+          "ratio": 6.7,
+          "sample": "새 일정",
+          "disabled": false
+        },
+        {
+          "pair": "#B91C1C on #FFFFFF",
+          "ratio": 6.47,
+          "sample": "일",
+          "disabled": false
+        },
+        {
+          "pair": "#4B5563 on #FFFFFF",
+          "ratio": 7.56,
+          "sample": "이 날에는 일정이 없습니다.",
+          "disabled": false
+        },
+        {
+          "pair": "#B91C1C on #EFF6FF",
+          "ratio": 5.95,
+          "sample": "15",
+          "disabled": false
+        },
+        {
+          "pair": "#4B5563 on #F9FAFB",
+          "ratio": 7.23,
+          "sample": "1",
+          "disabled": false
+        },
+        {
+          "pair": "#1D4ED8 on #F9FAFB",
+          "ratio": 6.41,
+          "sample": "5",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "label": "outside-sun-375",
+      "viewport": "375x800",
+      "pairs": [
+        {
+          "pair": "#1F2937 on #FFFFFF",
+          "ratio": 14.68,
+          "sample": "[category-filter value] all",
+          "disabled": false
+        },
+        {
+          "pair": "#1D4ED8 on #FFFFFF",
+          "ratio": 6.7,
+          "sample": "‹",
+          "disabled": false
+        },
+        {
+          "pair": "#FFFFFF on #1D4ED8",
+          "ratio": 6.7,
+          "sample": "새 일정",
+          "disabled": false
+        },
+        {
+          "pair": "#B91C1C on #FFFFFF",
+          "ratio": 6.47,
+          "sample": "일",
+          "disabled": false
+        },
+        {
+          "pair": "#4B5563 on #FFFFFF",
+          "ratio": 7.56,
+          "sample": "이 날에는 일정이 없습니다.",
+          "disabled": false
+        },
+        {
+          "pair": "#B91C1C on #F9FAFB",
+          "ratio": 6.19,
+          "sample": "29",
+          "disabled": false
+        },
+        {
+          "pair": "#4B5563 on #F9FAFB",
+          "ratio": 7.23,
+          "sample": "30",
+          "disabled": false
+        },
+        {
+          "pair": "#1F2937 on #EFF6FF",
+          "ratio": 13.49,
+          "sample": "15",
+          "disabled": false
+        },
+        {
+          "pair": "#1D4ED8 on #F9FAFB",
+          "ratio": 6.41,
+          "sample": "2",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "label": "confirm-dialog-1280",
+      "viewport": "1280x800",
+      "pairs": [
+        {
+          "pair": "#1F2937 on #FFFFFF",
+          "ratio": 14.68,
+          "sample": "「가족 행사」 일정이 삭제되며 되돌릴 수 없습니다.",
+          "disabled": false
+        },
+        {
+          "pair": "#1D4ED8 on #FFFFFF",
+          "ratio": 6.7,
+          "sample": "취소",
+          "disabled": false
+        },
+        {
+          "pair": "#FFFFFF on #B91C1C",
+          "ratio": 6.47,
+          "sample": "삭제",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "label": "event-dialog-errors-1280",
+      "viewport": "1280x800",
+      "pairs": [
+        {
+          "pair": "#1F2937 on #FFFFFF",
+          "ratio": 14.68,
+          "sample": "[event-category value] work",
+          "disabled": false
+        },
+        {
+          "pair": "#B91C1C on #FEF2F2",
+          "ratio": 5.91,
+          "sample": "입력 내용을 확인해 주세요.",
+          "disabled": false
+        },
+        {
+          "pair": "#B91C1C on #FFFFFF",
+          "ratio": 6.47,
+          "sample": "제목을 입력해 주세요.",
+          "disabled": false
+        },
+        {
+          "pair": "#4B5563 on #FFFFFF",
+          "ratio": 7.56,
+          "sample": "0/1000",
+          "disabled": false
+        },
+        {
+          "pair": "#1D4ED8 on #FFFFFF",
+          "ratio": 6.7,
+          "sample": "취소",
+          "disabled": false
+        },
+        {
+          "pair": "#FFFFFF on #1D4ED8",
+          "ratio": 6.7,
+          "sample": "저장",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "label": "banner-1280",
+      "viewport": "1280x800",
+      "pairs": [
+        {
+          "pair": "#1F2937 on #FFFFFF",
+          "ratio": 14.68,
+          "sample": "[category-filter value] all",
+          "disabled": false
+        },
+        {
+          "pair": "#1D4ED8 on #FFFFFF",
+          "ratio": 6.7,
+          "sample": "‹",
+          "disabled": false
+        },
+        {
+          "pair": "#4B5563 on #F3F4F6",
+          "ratio": 6.87,
+          "sample": "새 일정",
+          "disabled": true
+        },
+        {
+          "pair": "#7F1D1D on #FEF2F2",
+          "ratio": 9.16,
+          "sample": "저장된 일정을 불러올 수 없습니다. 저장된 데이터는 변경되지 않았습니다.",
+          "disabled": false
+        },
+        {
+          "pair": "#B91C1C on #FFFFFF",
+          "ratio": 6.47,
+          "sample": "일",
+          "disabled": false
+        },
+        {
+          "pair": "#4B5563 on #FFFFFF",
+          "ratio": 7.56,
+          "sample": "이 날에는 일정이 없습니다.",
+          "disabled": false
+        },
+        {
+          "pair": "#FFFFFF on #1D4ED8",
+          "ratio": 6.7,
+          "sample": "14",
+          "disabled": false
+        },
+        {
+          "pair": "#4B5563 on #F9FAFB",
+          "ratio": 7.23,
+          "sample": "1",
+          "disabled": false
+        },
+        {
+          "pair": "#1D4ED8 on #F9FAFB",
+          "ratio": 6.41,
+          "sample": "5",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "label": "banner-375",
+      "viewport": "375x800",
+      "pairs": [
+        {
+          "pair": "#1F2937 on #FFFFFF",
+          "ratio": 14.68,
+          "sample": "[category-filter value] all",
+          "disabled": false
+        },
+        {
+          "pair": "#1D4ED8 on #FFFFFF",
+          "ratio": 6.7,
+          "sample": "‹",
+          "disabled": false
+        },
+        {
+          "pair": "#4B5563 on #F3F4F6",
+          "ratio": 6.87,
+          "sample": "새 일정",
+          "disabled": true
+        },
+        {
+          "pair": "#7F1D1D on #FEF2F2",
+          "ratio": 9.16,
+          "sample": "저장된 일정을 불러올 수 없습니다. 저장된 데이터는 변경되지 않았습니다.",
+          "disabled": false
+        },
+        {
+          "pair": "#B91C1C on #FFFFFF",
+          "ratio": 6.47,
+          "sample": "일",
+          "disabled": false
+        },
+        {
+          "pair": "#4B5563 on #FFFFFF",
+          "ratio": 7.56,
+          "sample": "이 날에는 일정이 없습니다.",
+          "disabled": false
+        },
+        {
+          "pair": "#FFFFFF on #1D4ED8",
+          "ratio": 6.7,
+          "sample": "14",
+          "disabled": false
+        },
+        {
+          "pair": "#4B5563 on #F9FAFB",
+          "ratio": 7.23,
+          "sample": "1",
+          "disabled": false
+        },
+        {
+          "pair": "#1D4ED8 on #F9FAFB",
+          "ratio": 6.41,
+          "sample": "5",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "label": "confirm-alert-1280",
+      "viewport": "1280x800",
+      "pairs": [
+        {
+          "pair": "#1F2937 on #FFFFFF",
+          "ratio": 14.68,
+          "sample": "읽을 수 없는 저장 데이터가 삭제되며 되돌릴 수 없습니다.",
+          "disabled": false
+        },
+        {
+          "pair": "#B91C1C on #FEF2F2",
+          "ratio": 5.91,
+          "sample": "초기화하지 못했습니다. 다시 시도해 주세요.",
+          "disabled": false
+        },
+        {
+          "pair": "#1D4ED8 on #FFFFFF",
+          "ratio": 6.7,
+          "sample": "취소",
+          "disabled": false
+        },
+        {
+          "pair": "#FFFFFF on #B91C1C",
+          "ratio": 6.47,
+          "sample": "초기화",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "label": "form-alert-1280",
+      "viewport": "1280x800",
+      "pairs": [
+        {
+          "pair": "#1F2937 on #FFFFFF",
+          "ratio": 14.68,
+          "sample": "[event-notes value] 메모 유지",
+          "disabled": false
+        },
+        {
+          "pair": "#B91C1C on #FEF2F2",
+          "ratio": 5.91,
+          "sample": "저장하지 못했습니다. 브라우저 저장 공간을 확인한 후 다시 시도해 주세요",
+          "disabled": false
+        },
+        {
+          "pair": "#4B5563 on #FFFFFF",
+          "ratio": 7.56,
+          "sample": "5/1000",
+          "disabled": false
+        },
+        {
+          "pair": "#1D4ED8 on #FFFFFF",
+          "ratio": 6.7,
+          "sample": "취소",
+          "disabled": false
+        },
+        {
+          "pair": "#FFFFFF on #1D4ED8",
+          "ratio": 6.7,
+          "sample": "저장",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "label": "edit-dialog-1280",
+      "viewport": "1280x800",
+      "pairs": [
+        {
+          "pair": "#1F2937 on #FFFFFF",
+          "ratio": 14.68,
+          "sample": "[event-category value] work",
+          "disabled": false
+        },
+        {
+          "pair": "#4B5563 on #FFFFFF",
+          "ratio": 7.56,
+          "sample": "0/1000",
+          "disabled": false
+        },
+        {
+          "pair": "#FFFFFF on #B91C1C",
+          "ratio": 6.47,
+          "sample": "삭제",
+          "disabled": false
+        },
+        {
+          "pair": "#1D4ED8 on #FFFFFF",
+          "ratio": 6.7,
+          "sample": "취소",
+          "disabled": false
+        },
+        {
+          "pair": "#FFFFFF on #1D4ED8",
+          "ratio": 6.7,
+          "sample": "저장",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "label": "edit-dialog-375",
+      "viewport": "375x800",
+      "pairs": [
+        {
+          "pair": "#1F2937 on #FFFFFF",
+          "ratio": 14.68,
+          "sample": "[event-category value] work",
+          "disabled": false
+        },
+        {
+          "pair": "#4B5563 on #FFFFFF",
+          "ratio": 7.56,
+          "sample": "0/1000",
+          "disabled": false
+        },
+        {
+          "pair": "#FFFFFF on #B91C1C",
+          "ratio": 6.47,
+          "sample": "삭제",
+          "disabled": false
+        },
+        {
+          "pair": "#1D4ED8 on #FFFFFF",
+          "ratio": 6.7,
+          "sample": "취소",
+          "disabled": false
+        },
+        {
+          "pair": "#FFFFFF on #1D4ED8",
+          "ratio": 6.7,
+          "sample": "저장",
+          "disabled": false
+        }
+      ]
+    },
+    {
+      "label": "disabled-banner-1280",
+      "viewport": "1280x800",
+      "pairs": [
+        {
+          "pair": "#1F2937 on #FFFFFF",
+          "ratio": 14.68,
+          "sample": "[category-filter value] all",
+          "disabled": false
+        },
+        {
+          "pair": "#1D4ED8 on #FFFFFF",
+          "ratio": 6.7,
+          "sample": "‹",
+          "disabled": false
+        },
+        {
+          "pair": "#4B5563 on #F3F4F6",
+          "ratio": 6.87,
+          "sample": "새 일정",
+          "disabled": true
+        },
+        {
+          "pair": "#7F1D1D on #FEF2F2",
+          "ratio": 9.16,
+          "sample": "저장된 일정을 불러올 수 없습니다. 저장된 데이터는 변경되지 않았습니다.",
+          "disabled": false
+        },
+        {
+          "pair": "#B91C1C on #FFFFFF",
+          "ratio": 6.47,
+          "sample": "일",
+          "disabled": false
+        },
+        {
+          "pair": "#4B5563 on #FFFFFF",
+          "ratio": 7.56,
+          "sample": "이 날에는 일정이 없습니다.",
+          "disabled": false
+        },
+        {
+          "pair": "#FFFFFF on #1D4ED8",
+          "ratio": 6.7,
+          "sample": "14",
+          "disabled": false
+        },
+        {
+          "pair": "#4B5563 on #F9FAFB",
+          "ratio": 7.23,
+          "sample": "1",
+          "disabled": false
+        },
+        {
+          "pair": "#1D4ED8 on #F9FAFB",
+          "ratio": 6.41,
+          "sample": "5",
+          "disabled": false
+        }
+      ]
+    }
+  ]
+}
