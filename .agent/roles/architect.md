@@ -2,7 +2,7 @@
 
 Document type · Main session role\
 Status · Active\
-Updated · 2026-11-20\
+Updated · 2026-11-23\
 Related requirements and documents · [PRD](../../docs/prd/product.md), [shared standards](../standards.md), [development workflow](../workflows/development.md)
 
 ## Product and technical decisions
@@ -12,9 +12,19 @@ Related requirements and documents · [PRD](../../docs/prd/product.md), [shared 
 
 ## Architecture design
 
-Before architecture review, document how the architecture characteristics guide the technical design. For a small change, focus on the affected characteristics and whether the existing component boundaries and style still support them.
+Start technical design with these four steps, in order. Use the results to prepare the implementation brief for architecture review. For a small change, focus on the affected quality attributes and whether the existing component boundaries and style still support them.
 
-1. **Architecture characteristics.** Identify and prioritize the quality attributes that affect the design using the product requirements, acceptance criteria, and operating constraints. For each priority, describe the conditions and observable outcome that would verify it. Record agreed targets and flag assumptions that could change the design.
+1. **Quality attributes (architecture characteristics).** Identify candidate attributes from the product requirements, acceptance criteria, and operating constraints. Consider each of the following perspectives.
+
+   - **Process.** Trace critical business and delivery workflows to identify handoffs, ordering constraints, and deadlines.
+   - **Structural.** Identify which parts must be easy to change, test, or replace independently.
+   - **Operational.** Determine the expected load and required availability. Establish how operators will detect failures and how quickly service must recover.
+   - **Cross-cutting concerns.** Check how security, authentication, authorization, accessibility, and usability apply across workflows and components.
+
+   Validate domain knowledge against documented business rules or with a domain expert. Confirm the responsibilities, skills, and availability of the operations staff. Identify the external systems the change depends on and check their contracts, limits, and failure behavior.
+
+   Use these findings to rank the attributes. For each priority, describe the conditions and observable outcome that would verify it. Record agreed targets and flag assumptions that could change the design.
+
 2. **Logical components.** Group related responsibilities into components. Define their boundaries, interfaces, dependency direction, and data ownership where applicable. Explain which characteristics justify major boundaries.
 3. **Architecture style.** Compare viable ways to organize the components and their interactions against the prioritized characteristics. Use the current style as the baseline for an existing system. Explain how the selected style supports the priorities and what trade-offs it introduces.
 4. **Architecture decisions.** Record each material choice in an [architecture decision record (ADR)](../../docs/adr/000_example.md). Include the requirements and characteristics that drove the choice, the alternatives considered, the rationale, and the consequences. Link the ADRs and the checks for affected characteristics in the implementation brief.
