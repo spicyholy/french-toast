@@ -2,19 +2,38 @@
 
 Document type · Portable stages, roles, and verification rules\
 Status · Active\
-Updated · 2026-11-13\
+Updated · 2026-11-24\
 Related requirement · FT-DIST-001 · [French Toast skill](../SKILL.md)
 
 ## Start and handoff
 
 1. Inspect the target project's instructions, existing changes, requirements, entry points, and tests. Record a task ID, scoped user intent, observable acceptance criteria, and regressions to check. For a bug, reproduce it through a normal entry point before editing when practical.
 2. Trace the changed path from the caller's action through validation, module and data boundaries, observable output, and failure handling. Identify code paths and symbols. Check existing callers, earlier data, public errors, and retry behavior. Describe the planned entry point and caller usage for a new feature.
-3. Invoke `designer` for new or changed screens or interactions. Write the technical design and implementation brief with scope, rationale, the expected revision, and verification criteria. Use the project's document locations and conventions when available. For a project without AX documents, carry the brief and evidence in the task and handoffs.
+3. Invoke `designer` for new or changed screens or interactions. Follow the [architecture design steps](#architecture-design) to write the technical design and implementation brief with scope, rationale, the expected revision, and verification criteria. Use the project's document locations and conventions when available. For a project without AX documents, carry the brief and evidence in the task and handoffs.
 4. Ask `architecture_reviewer` to review the design and brief independently. Use the transitions below to progress through implementation, code review, testing, and test review.
 
 Use the host's built-in delegation mechanism. In Claude Code, use the `Agent` tool with `general-purpose`. In Codex, use a built-in subagent suited to the work, such as `worker` for implementation or `default` for independent review. Give the agent its AX role, the matching instructions below, the task and requirement IDs, acceptance criteria, source locations, assigned file scope, and the current revision. Give independent reviewers the raw design, code, or test inputs needed to reach their own conclusions.
 
 Record the base commit when available and identify the exact input files and their current content hashes, including relevant untracked files. Keep one writer per file at a time. Keep the `coder` available for implementation fixes and reuse an independent reviewer to confirm targeted corrections when the host supports continuing its context. For a follow-up, provide the current revision, what changed, and the relevant findings.
+
+## Architecture design
+
+Start technical design with these four steps, in order. Use the results to prepare the implementation brief for architecture review. For a small change, focus on the affected quality attributes and whether the existing component boundaries and style still support them.
+
+1. **Quality attributes (architecture characteristics).** Identify candidate attributes from the product requirements, acceptance criteria, and operating constraints. Consider each of the following perspectives.
+
+   - **Process.** Trace critical business and delivery workflows to identify handoffs, ordering constraints, and deadlines.
+   - **Structural.** Identify which parts must be easy to change, test, or replace independently.
+   - **Operational.** Determine the expected load and required availability. Establish how operators will detect failures and how quickly service must recover.
+   - **Cross-cutting concerns.** Check how security, authentication, authorization, accessibility, and usability apply across workflows and components.
+
+   Validate domain knowledge against documented business rules or with a domain expert. Confirm the responsibilities, skills, and availability of the operations staff. Identify the external systems the change depends on and check their contracts, limits, and failure behavior.
+
+   Use these findings to rank the attributes. For each priority, describe the conditions and observable outcome that would verify it. Record agreed targets and flag assumptions that could change the design.
+
+2. **Logical components.** Group related responsibilities into components. Define their boundaries, interfaces, dependency direction, and data ownership where applicable. Explain which characteristics justify major boundaries.
+3. **Architecture style.** Compare viable ways to organize the components and their interactions against the prioritized characteristics. Use the current style as the baseline for an existing system. Explain how the selected style supports the priorities and what trade-offs it introduces.
+4. **Architecture decisions.** Record each material choice in an architecture decision record (ADR). Include the requirements and characteristics that drove the choice, the alternatives considered, the rationale, and the consequences. Link the ADRs and the checks for affected characteristics in the implementation brief.
 
 ## AX role instructions
 
