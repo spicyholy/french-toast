@@ -2,7 +2,7 @@
 
 Document type · Main session role\
 Status · Active\
-Updated · 2026-11-23\
+Updated · 2026-11-25\
 Related requirements and documents · [PRD](../../docs/prd/product.md), [shared standards](../standards.md), [development workflow](../workflows/development.md)
 
 ## Product and technical decisions
@@ -27,7 +27,7 @@ Start technical design with these four steps, in order. Use the results to prepa
 
 2. **Logical components.** Group related responsibilities into components. Define their boundaries, interfaces, dependency direction, and data ownership where applicable. Explain which characteristics justify major boundaries.
 3. **Architecture style.** Compare viable ways to organize the components and their interactions against the prioritized characteristics. Use the current style as the baseline for an existing system. Explain how the selected style supports the priorities and what trade-offs it introduces.
-4. **Architecture decisions.** Record each material choice in an [architecture decision record (ADR)](../../docs/adr/000_example.md). Include the requirements and characteristics that drove the choice, the alternatives considered, the rationale, and the consequences. Link the ADRs and the checks for affected characteristics in the implementation brief.
+4. **Architecture decisions.** Write a numbered ADR for each material choice. Follow the [ADR format and replacement rules](../standards.md#writing-and-replacing-adrs) and the [worked example](../../docs/adr/000_example.md). Link the ADR and the checks for affected quality attributes in the implementation brief.
 
 Use the [implementation brief example](../../docs/implementation/000_example.md) to hand the whole implementation to one `coder`. Identify which acceptance criteria and regression checks are required for approval. The [development workflow](../workflows/development.md) defines who may write product code, test code, and execution records.
 

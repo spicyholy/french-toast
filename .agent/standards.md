@@ -2,7 +2,7 @@
 
 Document type · Repository operating standards\
 Status · Active\
-Updated · 2026-11-11\
+Updated · 2026-11-25\
 Related requirements and documents · [PRD](../docs/prd/product.md), [development workflow](workflows/development.md)
 
 ## Work and records
@@ -24,10 +24,28 @@ Related requirements and documents · [PRD](../docs/prd/product.md), [developmen
 | --- | --- |
 | [`docs/prd/`](../docs/prd/product.md) | Product scope, user scenarios, stable requirement IDs, and acceptance criteria |
 | [`docs/api/`](../docs/api/contract.md) | Public API input, output, errors, compatibility, and required migrations |
-| [`docs/adr/`](../docs/adr/000_example.md) | Context, decision, alternatives, rationale, and impact. When replacing a decision, reference the previous ADR from the next numbered file. |
+| [`docs/adr/`](../docs/adr/000_example.md) | Numbered architecture decisions. Follow the [ADR format and replacement rules](#writing-and-replacing-adrs). |
 | [`docs/design/`](../docs/design/000_example.md) | Screen flows, states, interactions, accessibility, design artifacts, and reference links |
 | [`docs/implementation/`](../docs/implementation/000_example.md) | Work order, PRD, ADR, API, and design references, acceptance criteria, expected scope, affected call paths, and regression checks. Add a follow-up file that references the previous number if a handed-off brief changes substantially. |
 | [`docs/test/`](../docs/test/000_example.md) | Results for each verification run. Put executable tests in existing test paths. If this is the first test, specify a path that follows the stack's conventions in the brief. |
+
+## Writing and replacing ADRs
+
+Use all seven fields in this order.
+
+| Field | What to record |
+| --- | --- |
+| Title | Give the ADR number and name the decision. |
+| Status | Record whether the decision is proposed, approved, or superseded. |
+| Context | Identify the problem, requirements, quality attributes, and constraints that drive the choice. |
+| Decision | State the choice, the alternatives considered, and why the selected option fits the context. |
+| Consequence | Describe the benefits, costs, and trade-offs that follow from the decision. |
+| Governance | Specify who will check that the implementation follows the decision, when, and what evidence they will use. |
+| Notes | Link supporting material and related ADRs by number. |
+
+When conditions change and a decision needs replacing, create the next numbered ADR. In its Context, describe what changed and why the earlier decision needs replacing. In Notes, link to the earlier record by number (for example, `Supersedes ADR-003`). Submit the new ADR for approval.
+
+Once the new ADR is approved, mark it `Approved`. In the earlier ADR, set Status to `Superseded` and add a link in Notes to the approved replacement (for example, `Superseded by ADR-007`). Preserve the earlier decision text and any existing history links.
 
 ## Numbering and test history
 
