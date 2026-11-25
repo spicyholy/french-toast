@@ -1,18 +1,29 @@
-# Example · Prevent duplicate document bookmarks
+# Title · ADR-000 · Prevent duplicate document bookmarks
 
-Document type · ADR\
-Status · Example / Pending adoption\
-Updated · 2026-11-11\
+Document type · ADR (Example)\
+Updated · 2026-11-25\
 Related requirements and documents · EX-BMK-001 AC2, [PRD](../prd/product.md), [API contract](../api/contract.md), [implementation brief](../implementation/000_example.md)
+
+## Status
+
+Proposed
 
 ## Context
 
-Requests can overlap when a user saves a document from several tabs or retries after losing the response to a network interruption.
+A user can save the same document from two tabs or retry after a lost response. EX-BMK-001 AC2 requires these requests to leave exactly one bookmark.
 
-## Decision and alternatives
+## Decision
 
-Add a uniqueness constraint on the user and document pair and use an atomic insert. Return the same success response when the pair already exists. With a read before an unguarded insert, two concurrent requests can both find no record. Disabling the button during a save reduces duplicate actions on one page. The database constraint handles other tabs and retries.
+Enforce uniqueness on the user and document pair in the database. Insert the bookmark atomically and return the same success response if the pair already exists. A read before an unguarded insert lets two requests both see an empty result. Disabling the save button protects only the current tab.
 
-## Impact
+## Consequence
 
-A migration adds the table and constraint. Existing document access checks and detail page behavior are preserved. AC2 in the [test example](../test/000_example.md) checks that concurrent requests both succeed and produce one record.
+Retries and concurrent saves produce one bookmark. Deployment requires a migration to create the table and its uniqueness constraint. The document detail page keeps its existing behavior and access checks.
+
+## Governance
+
+During code review, the reviewer checks that the migration enforces uniqueness on the pair and that the save uses an atomic insert. During testing, the tester sends two concurrent saves for the same pair and verifies that both succeed and exactly one row exists.
+
+## Notes
+
+The [AC2 test example](../test/000_example.md) gives the requests, database check, and expected responses.
