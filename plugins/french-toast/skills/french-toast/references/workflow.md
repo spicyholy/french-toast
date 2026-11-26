@@ -2,7 +2,7 @@
 
 Document type · Portable stages, roles, and verification rules\
 Status · Active\
-Updated · 2026-11-24\
+Updated · 2026-11-26\
 Related requirement · FT-DIST-001 · [French Toast skill](../SKILL.md)
 
 ## Start and handoff
@@ -33,7 +33,37 @@ Start technical design with these four steps, in order. Use the results to prepa
 
 2. **Logical components.** Group related responsibilities into components. Define their boundaries, interfaces, dependency direction, and data ownership where applicable. Explain which characteristics justify major boundaries.
 3. **Architecture style.** Compare viable ways to organize the components and their interactions against the prioritized characteristics. Use the current style as the baseline for an existing system. Explain how the selected style supports the priorities and what trade-offs it introduces.
-4. **Architecture decisions.** Record each material choice in an architecture decision record (ADR). Include the requirements and characteristics that drove the choice, the alternatives considered, the rationale, and the consequences. Link the ADRs and the checks for affected characteristics in the implementation brief.
+4. **Architecture decisions.** Write a numbered ADR for each material choice. Follow the [ADR format and replacement rules](#writing-and-replacing-adrs). Link the ADR and the checks for affected quality attributes in the implementation brief.
+
+### Writing and replacing ADRs
+
+Use all seven fields in this order.
+
+| Field | What to record |
+| --- | --- |
+| Title | Give the ADR number and name the decision. |
+| Status | Record whether the decision is proposed, approved, or superseded. |
+| Context | Identify the problem, requirements, quality attributes, and constraints that drive the choice. |
+| Decision | State the choice, the alternatives considered, and why the selected option fits the context. |
+| Consequence | Describe the benefits, costs, and trade-offs that follow from the decision. |
+| Governance | Specify who will check that the implementation follows the decision, when, and what evidence they will use. |
+| Notes | Link supporting material and related ADRs by number. |
+
+When conditions change and a decision needs replacing, create the next numbered ADR. In its Context, describe what changed and why the earlier decision needs replacing. In Notes, link to the earlier record by number (for example, `Supersedes ADR-003`). Submit the new ADR for approval.
+
+Once the new ADR is approved, mark it `Approved`. In the earlier ADR, set Status to `Superseded` and add a link in Notes to the approved replacement (for example, `Superseded by ADR-007`). Preserve the earlier decision text and any existing history links.
+
+### Example · Prevent duplicate document bookmarks
+
+| Field | Example |
+| --- | --- |
+| Title | ADR-000 · Prevent duplicate document bookmarks |
+| Status | Proposed |
+| Context | A user can save the same document from two tabs or retry after a lost response. EX-BMK-001 AC2 requires these requests to leave exactly one bookmark. |
+| Decision | Enforce uniqueness on the user and document pair in the database. Insert the bookmark atomically and return the same success response if the pair already exists. A read before an unguarded insert lets two requests both see an empty result. Disabling the save button protects only the current tab. |
+| Consequence | Retries and concurrent saves produce one bookmark. Deployment requires a migration to create the table and its uniqueness constraint. The document detail page keeps its existing behavior and access checks. |
+| Governance | During code review, the reviewer checks that the migration enforces uniqueness on the pair and that the save uses an atomic insert. During testing, the tester sends two concurrent saves for the same pair and verifies that both succeed and exactly one row exists. |
+| Notes | EX-BMK-001 AC2 covers concurrent save requests, the database row count, and the expected responses. |
 
 ## AX role instructions
 
