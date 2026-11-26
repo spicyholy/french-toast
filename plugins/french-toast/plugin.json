@@ -1,6 +1,6 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "french-toast",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Run the French Toast AX development workflow with independent reviews and test evidence."
 }
